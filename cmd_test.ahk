@@ -1,6 +1,7 @@
 ;#IfWinActive GTA:SA:MP ; Nur wenn das Fenster aktiv ist, werden die Befehle ausgeführt
 #SingleInstance force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schließt sich die alte. (Reload)
 #Include API.ahk
+#Include memlib.ahk
 
 Gui,Add,text,cblack x350 y220  +backgroundtrans
 Gui,1: Show,,
@@ -81,12 +82,10 @@ if (EngineState = 1)
 	SendChat("/motor")
 	SendChat("/licht")
 	SendChat("/me schaltet seinen Wagen aus")
-	SendInput,{"n"}
 	AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 }
 else if (EngingeState = 0)
 {
-	SendInput,{"n"}
 	SendChat("/licht")
 	SendChat("/motor")
 	SendChat("/me startet seinen Wagen")
@@ -94,7 +93,9 @@ else if (EngingeState = 0)
 }
 return
 
-
+Zähler:
+Freigabe :=1
+return
 
 Zollsystem:
 #IfWinActive, GTA:SA:MP
