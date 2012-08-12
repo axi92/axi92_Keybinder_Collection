@@ -226,14 +226,6 @@ Suspend Permit
 ;}
 return
 
-9::
-Send n
-SendRaw n
-SendInput n
-SendPlay n
-SendEvent n
-return
-
 b:: ;Drogen
 SendChat(/usedrugs)
 return
