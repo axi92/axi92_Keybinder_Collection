@@ -88,6 +88,7 @@ if(IsPlayerInAnyVehicle() == 1)
 						SendChat("/licht")
 					}
 					SendChat("/me schaltet seinen Wagen aus")
+					;Send, {N}
 					AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 				}
 				else if (GetVehicleEngineState() == 0)
@@ -96,6 +97,7 @@ if(IsPlayerInAnyVehicle() == 1)
 					{
 						SendChat("/licht")
 					}
+					;Send, {N}
 					SendChat("/motor")
 					SendChat("/me startet seinen Wagen")
 					AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AN{FFFFFF}.")		
