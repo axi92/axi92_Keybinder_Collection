@@ -10,26 +10,23 @@ return
 
 ;Hier der Header wo die Taste T , ENTER und Escape Bestimmt ist einfügen ( Siehe Ganz Oben)
 
-Pause::Suspend ;Pausiert den Keybinder
-if (pause = 0)
-{
-	Suspend On
-	pause = 1
-	AddChatMessage(0xFFFFFF, "Keybinder ist nun {FFA000}pausiert{FFFFFF}.")
-	Hotkey, Break, Toggle
-}
-else ;if (pause = 1)
-{
-	Suspend Off
-	pause = 0
-	AddChatMessage(0xFFFFFF, "Keybinder ist nun {FFA000}aktiv{FFFFFF}.")
-}
+!P::
+Pause::
+suspend
+if ( A_IsSuspended )
+    {
+       AddChatMessage(0xFFFFFF,"Keybinder deaktiviert")
+    }
+if ( !A_IsSuspended )
+    {
+       AddChatMessage(0xFFFFFF,"Keybinder aktiviert")
+	}
 return
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;GUIclose:
 ;ExitApp
-;#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
+#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
 ;#UseHook
 ;#SingleInstance, Force
 
@@ -75,21 +72,37 @@ return
 
 
 F2::
-Suspend Permit ; Unterbricht die Subroutine, damit diese nicht unterbrochen wird
-EngineState := DllCall("API.dll\API_GetVehicleEngineState")
-if (EngineState = 1)
+if(IsPlayerInAnyVehicle() == 1)
 {
-	SendChat("/motor")
-	SendChat("/licht")
-	SendChat("/me schaltet seinen Wagen aus")
-	AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AUS{FFFFFF}.")
-}
-else if (EngingeState = 0)
-{
-	SendChat("/licht")
-	SendChat("/motor")
-	SendChat("/me startet seinen Wagen")
-	AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AN{FFFFFF}.")		
+	if(GetVehicleModel() != 510)
+	{
+		if(GetVehicleModel() != 509)
+		{
+			if(GetVehicleModel() != 481)
+			{
+				if (GetVehicleEngineState() == 1)
+				{
+					SendChat("/motor")
+					if (GetVehicleLightState() == 1)
+					{
+						SendChat("/licht")
+					}
+					SendChat("/me schaltet seinen Wagen aus")
+					AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AUS{FFFFFF}.")
+				}
+				else if (GetVehicleEngineState() == 0)
+				{
+					if (GetVehicleLightState() == 0)
+					{
+						SendChat("/licht")
+					}
+					SendChat("/motor")
+					SendChat("/me startet seinen Wagen")
+					AddChatMessage(0xFFFFFF, "Motor ist nun {FFA000}AN{FFFFFF}.")		
+				}
+			}
+		}
+	}
 }
 return
 
