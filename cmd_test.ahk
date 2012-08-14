@@ -156,6 +156,11 @@ SendChat("/me prüft den Puls des Patienten")
 return
 
 End::
+Suspend On
+Hotkey, Enter, On
+Hotkey, Escape, On
+Hotkey, Numpad1, Off
+Hotkey, t, Off
 Send t/heal  500{Left 4}
 return
 
