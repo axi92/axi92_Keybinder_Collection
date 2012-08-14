@@ -155,6 +155,10 @@ return
 SendChat("/me prüft den Puls des Patienten")
 return
 
+End::
+Send t/heal  500{Left 4}
+return
+
 Zähler:
 Freigabe :=1
 return
