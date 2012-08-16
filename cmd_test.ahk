@@ -1,6 +1,46 @@
 #UseHook
 #SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schließt sich die alte. (Reload)
 
+Gui,Add,text,cred x10 y1  +backgroundtrans, Pause = Keybinder pausieren
+Gui,Add,text,cblack x10 y20   +backgroundtrans, Tastenbelegung:
+Gui,Add,text,cblack x10 y40   +backgroundtrans, Linke Strg = Motor
+Gui,Add,text,cblack x10 y60   +backgroundtrans, F2 = /acceptrevival
+Gui,Add,text,cblack x10 y80  +backgroundtrans, F3 = /anrufliste
+Gui,Add,text,cblack x10 y100  +backgroundtrans, F10 = Bitte umfahren Sie die Unfallstelle
+Gui,Add,text,cblack x10 y120  +backgroundtrans, Numpad7 = Medicport LS
+Gui,Add,text,cblack x10 y140  +backgroundtrans, Numpad8 = Medicport SF
+Gui,Add,text,cblack x10 y160  +backgroundtrans, Numpad9 = Medicport LV
+Gui,Add,text,cblack x10 y180  +backgroundtrans, Numpad+ = Medicport Base
+;Run, %Pfad%\samp.exe %ServerIP%
+
+Gui,Add,text,cblack x230 y20  +backgroundtrans, Tastenbelegung:
+Gui,Add,text,cblack x230 y40  +backgroundtrans, Punkt (.) = /revival
+Gui,Add,text,cblack x230 y60  +backgroundtrans, Ende = Heal
+;Gui,Add,text,cblack x230 y80  +backgroundtrans, /aref = /accept refill
+;Gui,Add,text,cblack x230 y100  +backgroundtrans, /arep = /accept repair
+;Gui,Add,text,cblack x230 y120  +backgroundtrans, /ab = Anrufbeantworter
+
+
+
+Gui,1:Add,Button, w200 h25 gSampbutton, BE-Quickjoin
+;Gui,1:Add,Button, w200 h25 gSprüche,Sprüche
+;Gui,1:Add,Button, w200 h25 gWaffen,Waffen
+;Gui,1:Add,Button, w200 h25 gSexlist,Sexlist
+;Gui,1:Add,Button, w200 h25 gPasswort,Passwörter
+;Gui, Add, Button, x507 y7 h20 w150 gInformationen, Informationen
+Gui,1: Show,,
+return
+
+
+Sampbutton:
+RegRead GTA_SA_EXE, HKEY_CURRENT_USER, Software\SAMP, gta_sa_exe
+SplitPath, GTA_SA_EXE,, PFAD
+Run %Pfad%\samp.exe 46.251.236.250:7777, %PFAD%
+return
+
+
+
+
 
 ;memlib
 OpenMemoryfromProcess(process,right=0x1F0FFF)
@@ -107,9 +147,34 @@ return DllCall("ntdll\NtResumeProcess","uint",hwnd)
 Settimer, Zollsystem, 1
 Freigabe := 1
 
-IfNotExist, %A_MyDocuments%\Zoll-System\
+version := 0.8
+
+UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/API.dll, API.dll
+UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/version.txt, version.txt
+FileRead, newver, version.txt
+FileDelete, version.txt
+if (version < newver)
 {
-   FileCreateDir, %A_MyDocuments%\Zoll-System\
+	neueverfügbar = 1
+	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver%. Es wird geupdated
+	UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/MedicKeybinder.exe, %A_ScriptName%.new
+	BatchFile=n
+	(
+		Ping 127.0.0.1
+		Del "%A_ScriptName%"
+		Rename "%A_ScriptName%.new" "%A_ScriptName%"
+		cd "%A_ScriptFullPath%"
+		"%A_ScriptName%"
+		Del Update.bat
+	)
+	FileDelete,update.bat
+	FileAppend,%BatchFile%,update.bat
+	Run,update.bat,,hide
+	ExitApp
+}
+else
+{
+	neueverfügbar = 0
 }
 
 #Include API.ahk
