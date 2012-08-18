@@ -106,7 +106,7 @@ return DllCall("ntdll\NtResumeProcess","uint",hwnd)
 Settimer, Zollsystem, 1
 Freigabe := 1
 
-version := 0.8
+version := 0.9
 
 UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/API.dll, API.dll
 UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/version.txt, version.txt
@@ -137,7 +137,7 @@ else
 }
 
 #Include API.ahk
-
+#Include GUI_Medic.ahk
 Gui,Add,text,cblack x350 y220  +backgroundtrans
 Gui,1: Show,,
 return
@@ -216,7 +216,9 @@ if(IsPlayerInAnyVehicle() == 1)
 			{
 				if (GetVehicleEngineState() == 1)
 				{
-					SendChat("/motor")
+					Random, Zufall, 1, 2
+					GoSub, Motor%Zufall%
+					;SendChat("/motor")
 					if (GetVehicleLightState() == 1)
 					{
 						SendChat("/licht")
@@ -230,7 +232,9 @@ if(IsPlayerInAnyVehicle() == 1)
 					{
 						SendChat("/licht")
 					}
-					SendChat("/motor")
+					Random, Zufall, 1, 2
+					GoSub, Motor%Zufall%
+					;SendChat("/motor")
 					;SendChat("/me startet seinen Wagen")
 					AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AN{FFFFFF}.")		
 				}
@@ -241,6 +245,10 @@ if(IsPlayerInAnyVehicle() == 1)
 return
 
 F2::
+Suspend On
+Hotkey, Enter, On
+Hotkey, Escape, On
+Hotkey, t, Off
 Send t/acceptrevival{space}
 return
 
@@ -321,6 +329,22 @@ Hotkey, Escape, On
 Hotkey, t, Off
 Send t/heal  500{Left 4}
 return
+
+Motor1:
+SendChat("/motor a")
+return
+
+Motor2:
+SendChat("/motor b")
+return
+
+Motor3:
+SendChat("/motor c")
+return
+
+
+
+
 
 Zollsystem:
 #IfWinActive, GTA:SA:MP
