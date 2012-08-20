@@ -106,17 +106,17 @@ return DllCall("ntdll\NtResumeProcess","uint",hwnd)
 Settimer, Zollsystem, 1
 Freigabe := 1
 
-version := 0.9
+version := 1.0
 
-UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/API.dll, API.dll
-UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/version.txt, version.txt
+UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/API.dll, API.dll
+UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, version.txt
 FileRead, newver, version.txt
 FileDelete, version.txt
 if (version < newver)
 {
 	neueverfügbar = 1
 	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver%. Es wird geupdated
-	UrlDownloadToFile, http://www.axi92.net/download/keybinder/medic/MedicKeybinder.exe, %A_ScriptName%.new
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %A_ScriptName%.new
 	BatchFile=n
 	(
 		Ping 127.0.0.1
@@ -142,7 +142,6 @@ Gui,Add,text,cblack x350 y220  +backgroundtrans
 Gui,1: Show,,
 return
 
-
 ;Hier der Header wo die Taste T , ENTER und Escape Bestimmt ist einfügen ( Siehe Ganz Oben)
 
 !P::
@@ -166,7 +165,7 @@ return
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
-;ExitApp
+ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
 ;#UseHook
 #SingleInstance, Force
@@ -216,7 +215,7 @@ if(IsPlayerInAnyVehicle() == 1)
 			{
 				if (GetVehicleEngineState() == 1)
 				{
-					Random, Zufall, 1, 2
+					Random, Zufall, 1, 2, 3
 					GoSub, Motor%Zufall%
 					;SendChat("/motor")
 					if (GetVehicleLightState() == 1)
@@ -358,7 +357,7 @@ YPOS:=ReadMemory(exe, carpopoint+52, "float", 4)
 CloseMemory(exe)
 If (Freigabe = 1)
 {
-	If(XPOS>=1008.6192-8&&XPOS<=1000.3409+8) && (YPOS>=-942.3373-4&&YPOS<=-938.2012+4) || IsPlayerInRangeOfPoint(-2407.561, 976.198, 45.424, 5)
+	If(XPOS>=1008.6192-8&&XPOS<=1000.3409+8) && (YPOS>=-942.3373-4&&YPOS<=-938.2012+4) || IsPlayerInRangeOfPoint(-2407.561, 976.198, 45.424, 5) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -382,7 +381,7 @@ If (Freigabe = 1)
 	Settimer, Zähler, 1000
 	Var :=0
 	}
-	Else If(XPOS>=-94.9821&&XPOS<=-88.0944) && (YPOS>=-1173.7999&&YPOS<=-1165.8394)
+	Else If(XPOS>=-94.9821&&XPOS<=-88.0944) && (YPOS>=-1173.7999&&YPOS<=-1165.8394) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -427,7 +426,7 @@ If (Freigabe = 1)
 		Settimer, Zähler, 1000
 		Var :=0
 	}
-	else If(XPOS>=658.7794&&XPOS<=653.0157) && (YPOS>=-568.6906&&YPOS<=-560.7563)
+	else If(XPOS>=658.7794&&XPOS<=653.0157) && (YPOS>=-568.6906&&YPOS<=-560.7563) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -451,7 +450,7 @@ If (Freigabe = 1)
 		Settimer, Zähler, 1000
 		Var :=0
 	}
-	else if(XPOS>=853.3868-8&&XPOS<=845.1692+8) && (YPOS>=-1231.5667-3&&YPOS<=-1227.4775+3)
+	else if(XPOS>=853.3868-8&&XPOS<=845.1692+8) && (YPOS>=-1231.5667-3&&YPOS<=-1227.4775+3) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -468,7 +467,7 @@ If (Freigabe = 1)
 			Freigabe := 1
 		}
 	}
-	else if(XPOS>=1943.6532-2&&XPOS<=1946.0018+2) && (YPOS>=-1769.7651-5&&YPOS<=-1775.5492+5)
+	else if(XPOS>=1943.6532-2&&XPOS<=1946.0018+2) && (YPOS>=-1769.7651-5&&YPOS<=-1775.5492+5) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -485,7 +484,7 @@ If (Freigabe = 1)
 			Freigabe := 1
 		}
 	}
-	else if(XPOS>=1519.1462-2&&XPOS<=1524.9775+2) && (YPOS>=-1765.2529-5&&YPOS<=-1765.2268+5)
+	else if(XPOS>=1519.1462-2&&XPOS<=1524.9775+2) && (YPOS>=-1765.2529-5&&YPOS<=-1765.2268+5) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -502,7 +501,7 @@ If (Freigabe = 1)
 			Freigabe := 1
 		}
 	}
-	else if(XPOS>=609.7499&&XPOS<=614.7625) && (YPOS>=1692.1746&&YPOS<=1697.033)
+	else if(XPOS>=609.7499&&XPOS<=614.7625) && (YPOS>=1692.1746&&YPOS<=1697.033) && IsPlayerDriver() == true
 	{
 		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
 		Keywait, X, D, T10
@@ -577,10 +576,13 @@ If (Freigabe = 1)
 	}
 	else If(IsPlayerInRangeOfPoint(61.8802, -251.8676, 1.5781, 3)) ;Truckerdepot
 	{
-		SendChat("/sellimport 1000")
-		Freigabe :=0
-		Settimer, Zähler, 5000
-		Var :=0
+		if(GetVehicleModel() = 515) && IsPlayerDriver() == true
+		{
+			SendChat("/sellimport 1000")
+			Freigabe :=0
+			Settimer, Zähler, 5000
+			Var :=0
+		}
 	}
 	else If(IsPlayerInRangeOfPoint(2827.5278,-1568.4065,10.9219, 5)) ;Mopen in der Medic Base
 	{

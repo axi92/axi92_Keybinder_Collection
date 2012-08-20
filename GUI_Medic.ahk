@@ -15,9 +15,10 @@ Gui,Add,text,cblack x10 y180  +backgroundtrans, Numpad+ = Medicport Base
 Gui,Add,text,cblack x230 y20  +backgroundtrans, Tastenbelegung:
 Gui,Add,text,cblack x230 y40  +backgroundtrans, Punkt (.) = /revival
 Gui,Add,text,cblack x230 y60  +backgroundtrans, Ende = Heal
+;Gui, Add, Checkbox, x230 y80 vtempomat gTempomat, Tempomat ein?
 ;Gui,Add,text,cblack x230 y80  +backgroundtrans, /aref = /accept refill
 ;Gui,Add,text,cblack x230 y100  +backgroundtrans, /arep = /accept repair
-;Gui,Add,text,cblack x230 y120  +backgroundtrans, /ab = Anrufbeantworter
+;Gui,Add,text,cblack x230 y120  +backgroundtrans, %vtempomat%
 
 
 
