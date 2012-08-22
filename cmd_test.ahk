@@ -103,32 +103,40 @@ Resumeprocess(hwnd)
 return DllCall("ntdll\NtResumeProcess","uint",hwnd)
 }
 
+
+MainDir := A_MyDocuments "\MedicKeybinder"
+SetWorkingDir, %MainDir%
+IfNotExist, %MainDir%
+	FileCreateDir, %MainDir%
+	
 Settimer, Zollsystem, 1
 Freigabe := 1
+OnExit, Callback_OnExit
 
 version := 1.0
 
-UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/API.dll, API.dll
-UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, version.txt
+UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/API.dll, %MainDir%\API.dll
+UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, version.txt
 FileDelete, version.txt
 if (version < newver)
 {
 	neueverfügbar = 1
 	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver%. Es wird geupdated
-	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %A_ScriptName%.new
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %MainDir%\%A_ScriptName%.new
 	BatchFile=n
 	(
 		Ping 127.0.0.1
-		Del "%A_ScriptName%"
-		Rename "%A_ScriptName%.new" "%A_ScriptName%"
+		Del "%MainDir%\%A_ScriptName%"
+		Rename "%MainDir%\%A_ScriptName%.new" "%MainDir%\%A_ScriptName%"
 		cd "%A_ScriptFullPath%"
-		"%A_ScriptName%"
+		"%MainDir%\%A_ScriptName%"
 		Del Update.bat
 	)
 	FileDelete,update.bat
 	FileAppend,%BatchFile%,update.bat
 	Run,update.bat,,hide
+	FileCreateShortcut, %MainDir%\MedicKeybinder.exe, %A_Desktop%\MedicKeybinder.lnk
 	ExitApp
 }
 else
@@ -136,13 +144,14 @@ else
 	neueverfügbar = 0
 }
 
-#Include API.ahk
-#Include GUI_Medic.ahk
+#Include Einzelteile/API.ahk
+#Include Einzelteile/GUI_Medic1.ahk
 Gui,Add,text,cblack x350 y220  +backgroundtrans
 Gui,1: Show,,
 return
 
 ;Hier der Header wo die Taste T , ENTER und Escape Bestimmt ist einfügen ( Siehe Ganz Oben)
+
 
 !P::
 Pause::
@@ -269,7 +278,7 @@ SendChat("/m Bitte umfahren Sie die Unfallstelle")
 return
 
 Numpad1::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -277,7 +286,7 @@ SendChat("/zoll")
 return
 
 Numpad7::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -285,7 +294,7 @@ SendChat("/medicport ls")
 return
 
 Numpad8::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -293,7 +302,7 @@ SendChat("/medicport sf")
 return
 
 Numpad9::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -305,7 +314,7 @@ SendChat("/medicport base")
 return
 
 .::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -314,7 +323,7 @@ SendChat("/revival")
 return
 
 ,::
-if(IsChatOpen() == 1 or IsDialogOpen() == 1)
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 {
     return
 }
@@ -608,4 +617,9 @@ If (Var = 7)
 	Settimer, Zähler, Off
 	Freigabe := 1
 }
+return
+
+Callback_OnExit:
+DestroyAllVisual()
+ExitApp
 return

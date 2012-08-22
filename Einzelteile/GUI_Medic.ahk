@@ -1,4 +1,5 @@
 #SingleInstance, Force
+Tacho := 0
 
 Gui,Add,text,cred x10 y1  +backgroundtrans, Pause = Keybinder pausieren
 Gui,Add,text,cblack x10 y20   +backgroundtrans, Tastenbelegung:
@@ -15,22 +16,18 @@ Gui,Add,text,cblack x10 y180  +backgroundtrans, Numpad+ = Medicport Base
 Gui,Add,text,cblack x230 y20  +backgroundtrans, Tastenbelegung:
 Gui,Add,text,cblack x230 y40  +backgroundtrans, Punkt (.) = /revival
 Gui,Add,text,cblack x230 y60  +backgroundtrans, Ende = Heal
-;Gui, Add, Checkbox, x230 y80 vtempomat gTempomat, Tempomat ein?
-;Gui,Add,text,cblack x230 y80  +backgroundtrans, /aref = /accept refill
-;Gui,Add,text,cblack x230 y100  +backgroundtrans, /arep = /accept repair
-;Gui,Add,text,cblack x230 y120  +backgroundtrans, %vtempomat%
-
-
-
+Gui, Add, text, cblack x230 y400, %Tacho% KM/H
+Gui, Add, Checkbox, x230 y80 Checked%Tacho% , Tempomat ein? ;Checked sagt den wert aus da dieser 0 oder 1 ist erkennt das dass Steuerelement
 Gui,1:Add,Button, w200 h25 gSampbutton, BE-Quickjoin
-;Gui,1:Add,Button, w200 h25 gSprüche,Sprüche
-;Gui,1:Add,Button, w200 h25 gWaffen,Waffen
-;Gui,1:Add,Button, w200 h25 gSexlist,Sexlist
-;Gui,1:Add,Button, w200 h25 gPasswort,Passwörter
-;Gui, Add, Button, x507 y7 h20 w150 gInformationen, Informationen
+Gui,1:Add,Button, w200 h25 gSpeichern, Speichern
 Gui,1: Show,,
 return
 
+;IniRead, %Tacho%, %MainDir%\config.ini, Einstellung, Tacho
+
+Speichern:
+IniWrite, %Tacho%, config.ini, Einstellung, Tacho
+return
 
 Sampbutton:
 RegRead GTA_SA_EXE, HKEY_CURRENT_USER, Software\SAMP, gta_sa_exe
