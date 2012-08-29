@@ -16,18 +16,18 @@ Gui,Add,text,cblack x10 y180  +backgroundtrans, Numpad+ = Medicport Base
 Gui,Add,text,cblack x230 y20  +backgroundtrans, Tastenbelegung:
 Gui,Add,text,cblack x230 y40  +backgroundtrans, Punkt (.) = /revival
 Gui,Add,text,cblack x230 y60  +backgroundtrans, Ende = Heal
-Gui, Add, text, cblack x230 y400, %Tacho% KM/H
-Gui, Add, Checkbox, x230 y80 Checked%Tacho% , Tempomat ein? ;Checked sagt den wert aus da dieser 0 oder 1 ist erkennt das dass Steuerelement
+;Gui, Add, text, cblack x230 y400, %Tacho% KM/H
+;Gui, Add, Checkbox, x230 y80 Checked%Tacho% , Tempomat ein? ;Checked sagt den wert aus da dieser 0 oder 1 ist erkennt das dass Steuerelement
 Gui,1:Add,Button, w200 h25 gSampbutton, BE-Quickjoin
-Gui,1:Add,Button, w200 h25 gSpeichern, Speichern
+;Gui,1:Add,Button, w200 h25 gSpeichern, Speichern
 Gui,1: Show,,
 return
 
 ;IniRead, %Tacho%, %MainDir%\config.ini, Einstellung, Tacho
 
-Speichern:
-IniWrite, %Tacho%, config.ini, Einstellung, Tacho
-return
+;Speichern:
+;IniWrite, %Tacho%, config.ini, Einstellung, Tacho
+;return
 
 Sampbutton:
 RegRead GTA_SA_EXE, HKEY_CURRENT_USER, Software\SAMP, gta_sa_exe

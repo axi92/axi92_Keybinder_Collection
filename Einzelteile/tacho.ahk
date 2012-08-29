@@ -1,5 +1,5 @@
 ;###### Speedo ######
-
+IniRead, Tacho, %MainDir%\config.ini, Einstellung, Tacho
 Speedo:
 if(IsPlayerInAnyVehicle() == 0 || IsPlayerDriver() == 0 || GetVehicleEngineState() == 0 || Tacho == 0)
 return

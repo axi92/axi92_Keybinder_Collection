@@ -3,10 +3,10 @@ Pause::
 suspend
 if ( A_IsSuspended )
     {
-       AddChatMessage(0xFFFFFF,"Keybinder deaktiviert")
+       AddChatMessage(0xFF3333,"Keybinder deaktiviert")
     }
 if ( !A_IsSuspended )
     {
-       AddChatMessage(0xFFFFFF,"Keybinder aktiviert")
+       AddChatMessage(0xFF3333,"Keybinder aktiviert")
 	}
 return
