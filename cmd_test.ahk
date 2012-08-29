@@ -9,8 +9,9 @@ IfNotExist, %MainDir%
 
 Settimer, Zollsystem, 100
 Settimer, CarHeal, 1000
+Settimer, Playerheal, 1000
 Freigabe := 1
-;veh_hp := -1
+heal := -1
 OnExit, Callback_OnExit
 
 version := 1.0
@@ -112,8 +113,8 @@ Carheal:
         if(Carheal == -1)
         {
             Carheal := TextCreate("Arial", 12, true, false)
-            TextSetPos(Carheal, 490, 485)
-            TextSetColor(Carheal, 0xFF000000)
+            TextSetPos(Carheal, 600, 450)
+            TextSetColor(Carheal, 0xffff0000)
             TextShow(Carheal)
         }
         if(Carheal != -1) 
@@ -133,6 +134,28 @@ Carheal:
     }
     return
 }
+
+Playerheal:
+{
+    IfWinNotActive, GTA:SA:MP
+    {
+        return
+    }
+	if(heal == -1)
+	{
+		heal := TextCreate("Arial", 8, true, false)
+		TextSetPos(heal, 685, 91)
+		TextSetColor(heal, 0xffffffff)
+		TextShow(heal)
+	}
+	if(heal != -1) 
+	{
+		TextSetString(heal, GetPlayerHealth())
+	}
+return
+}
+
+
 
 Motor1:
 SendChat("/motor a")
