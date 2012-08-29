@@ -38,6 +38,14 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
 SendChat("/medicport sf")
 return
 
+Numpad9::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
+{
+    return
+}
+SendChat("/medicport lv")
+return
+
 NumpadAdd::
 SendChat("/medicport base")
 return

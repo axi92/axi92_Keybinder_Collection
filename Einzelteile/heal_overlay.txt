@@ -1,0 +1,32 @@
+Carheal:
+{
+    IfWinNotActive, GTA:SA:MP
+    {
+        return
+    }
+    if ( IsPlayerInAnyVehicle() == true )
+    {
+        if(Carheal == -1)
+        {
+            Carheal := TextCreate("Arial", 12, true, false)
+            TextSetPos(Carheal, 490, 485)
+            TextSetColor(Carheal, 0xFF000000)
+            TextShow(Carheal)
+        }
+        if(Carheal != -1) 
+        {
+            GetCityName(city)
+            GetZoneName(zone)
+            TextSetString(Carheal, "Fahrzeug Health: " . GetVehicleHealth() . "`nStandort: " . city . " - " . zone . "" )
+        }
+    } else 
+    {
+        if ( Carheal != -1)
+        {
+            TextHide(Carheal)
+            TextDestroy(Carheal)
+            Carheal := -1
+        }
+    }
+    return
+}

@@ -251,6 +251,20 @@ If (Freigabe = 1)
 		Settimer, Zähler, 1000
 		Var :=0
 	}
+	else If(IsPlayerInRangeOfPoint(1181.3202,-900.6298,43.2939, 3)) ;rgopen am KH
+	{
+		if(GetPlayerHealth() < 90)
+		{
+			SendChat("/drivein")
+			Sleep, 500
+			Send {DOWN 2}
+			Sleep, 200
+			Send {ENTER}
+			Freigabe :=0
+			Settimer, Zähler, 1000
+			Var :=0
+		}
+	}	
 }
 return
 

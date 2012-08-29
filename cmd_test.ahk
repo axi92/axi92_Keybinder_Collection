@@ -8,7 +8,7 @@ IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
 
 Settimer, Zollsystem, 100
-;Settimer, CarHeal, 100
+Settimer, CarHeal, 1000
 Freigabe := 1
 ;veh_hp := -1
 OnExit, Callback_OnExit
@@ -101,29 +101,34 @@ return
 
 #Include Einzelteile/medic_binds.ahk
 
-CarHeal:
+Carheal:
 {
-    if(IsPlayerInAnyVehicle() == true)
+    IfWinNotActive, GTA:SA:MP
     {
-        if ( veh_hp == -1 )
-        {    
-            CarHeal := TextCreate("Arial", 12, false, false)
-            TextSetPos(CarHeal, 600, 300)        
-            TextSetColor(CarHeal, 0xFF3333)
-            ;TextShow(CarHeal)
-            ;AddChatMessage(0xFF3333, "Carheal AN.")
-        }
-        health := GetVehicleHealth()
-        TextSetString(CarHeal, health)    
         return
     }
-    else
+    if ( IsPlayerInAnyVehicle() == true )
     {
-        if ( veh_hp != -1 )
+        if(Carheal == -1)
         {
-            ;TextHide(CarHeal)
-            TextDestroy(CarHeal)
-            ;AddChatMessage(0xFF3333, "Carheal AUS.")
+            Carheal := TextCreate("Arial", 12, true, false)
+            TextSetPos(Carheal, 490, 485)
+            TextSetColor(Carheal, 0xFF000000)
+            TextShow(Carheal)
+        }
+        if(Carheal != -1) 
+        {
+            GetCityName(city)
+            GetZoneName(zone)
+            TextSetString(Carheal, "Fahrzeug Health: " . GetVehicleHealth() . "`nStandort: " . city . " - " . zone . "" )
+        }
+    } else 
+    {
+        if ( Carheal != -1)
+        {
+            TextHide(Carheal)
+            TextDestroy(Carheal)
+            Carheal := -1
         }
     }
     return
