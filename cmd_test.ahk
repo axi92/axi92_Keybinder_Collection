@@ -1,5 +1,6 @@
 #UseHook
 #SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schließt sich die alte. (Reload)
+#Persistent
 #Include Einzelteile/memlib.ahk
 
 MainDir := A_MyDocuments "\MedicKeybinder"
@@ -10,11 +11,12 @@ IfNotExist, %MainDir%
 Settimer, Zollsystem, 100
 Settimer, CarHeal, 1000
 Settimer, Playerheal, 1000
+Settimer, Speedo, 200
 Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 1.0
+version := 1.1
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/API.dll, %MainDir%\API.dll
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
@@ -60,7 +62,7 @@ return
 GUIclose:
 ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
-;#UseHook
+#UseHook
 #SingleInstance, Force
 
 Hotkey, Enter, Off
@@ -102,60 +104,9 @@ return
 
 #Include Einzelteile/medic_binds.ahk
 
-Carheal:
-{
-    IfWinNotActive, GTA:SA:MP
-    {
-        return
-    }
-    if ( IsPlayerInAnyVehicle() == true )
-    {
-        if(Carheal == -1)
-        {
-            Carheal := TextCreate("Arial", 12, true, false)
-            TextSetPos(Carheal, 600, 450)
-            TextSetColor(Carheal, 0xffff0000)
-            TextShow(Carheal)
-        }
-        if(Carheal != -1) 
-        {
-            GetCityName(city)
-            GetZoneName(zone)
-            TextSetString(Carheal, "Fahrzeug Health: " . GetVehicleHealth() . "`nStandort: " . city . " - " . zone . "" )
-        }
-    } else 
-    {
-        if ( Carheal != -1)
-        {
-            TextHide(Carheal)
-            TextDestroy(Carheal)
-            Carheal := -1
-        }
-    }
-    return
-}
+#Include Einzelteile/tacho.ahk
 
-Playerheal:
-{
-    IfWinNotActive, GTA:SA:MP
-    {
-        return
-    }
-	if(heal == -1)
-	{
-		heal := TextCreate("Arial", 8, true, false)
-		TextSetPos(heal, 685, 91)
-		TextSetColor(heal, 0xffffffff)
-		TextShow(heal)
-	}
-	if(heal != -1) 
-	{
-		TextSetString(heal, GetPlayerHealth())
-	}
-return
-}
-
-
+#Include Einzelteile/heal_hud.ahk
 
 Motor1:
 SendChat("/motor a")
@@ -170,6 +121,12 @@ SendChat("/motor c")
 return
 
 #Include Einzelteile/zoll.ahk
+
+:?:/atvoff::
+Suspend Permit
+SendChat("/togphone")
+Suspend Off
+return
 
 Callback_OnExit:
 DestroyAllVisual()

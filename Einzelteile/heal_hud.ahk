@@ -1,3 +1,6 @@
+#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
+#UseHook
+
 Carheal:
 {
     IfWinNotActive, GTA:SA:MP
@@ -9,8 +12,8 @@ Carheal:
         if(Carheal == -1)
         {
             Carheal := TextCreate("Arial", 12, true, false)
-            TextSetPos(Carheal, 490, 485)
-            TextSetColor(Carheal, 0xFF000000)
+            TextSetPos(Carheal, 600, 450)
+            TextSetColor(Carheal, 0xffff0000)
             TextShow(Carheal)
         }
         if(Carheal != -1) 
@@ -29,4 +32,24 @@ Carheal:
         }
     }
     return
+}
+
+Playerheal:
+{
+    IfWinNotActive, GTA:SA:MP
+    {
+        return
+    }
+	if(heal == -1)
+	{
+		heal := TextCreate("Arial", 8, true, false)
+		TextSetPos(heal, 685, 91)
+		TextSetColor(heal, 0xffffffff)
+		TextShow(heal)
+	}
+	if(heal != -1) 
+	{
+		TextSetString(heal, GetPlayerHealth())
+	}
+return
 }
