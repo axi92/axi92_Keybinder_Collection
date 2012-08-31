@@ -18,10 +18,10 @@ OnExit, Callback_OnExit
 
 version := 1.1
 
-UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/API.dll, %MainDir%\API.dll
+FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, version.txt
-FileDelete, version.txt
+FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
 	neueverfügbar = 1
