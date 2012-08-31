@@ -18,13 +18,11 @@ OnExit, Callback_OnExit
 
 version := 1.1
 
-FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
-	neueverfügbar = 1
 	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver%. Es wird geupdated
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %MainDir%\%A_ScriptName%.new
 	BatchFile=n
@@ -42,19 +40,13 @@ if (version < newver)
 	FileCreateShortcut, %MainDir%\MedicKeybinder.exe, %A_Desktop%\MedicKeybinder.lnk
 	ExitApp
 }
-else
-{
-	neueverfügbar = 0
-}
+FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
 Gui,Add,text,cblack x350 y220  +backgroundtrans
 Gui,1: Show,,
 return
-
-;Hier der Header wo die Taste T , ENTER und Escape Bestimmt ist einfügen ( Siehe Ganz Oben)
-
 
 #Include Einzelteile/pause.ahk ;Pause Funktion
 
