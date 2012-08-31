@@ -1,70 +1,88 @@
-F2::
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Hotkey, t, Off
+ï»¿F2::
+Suspend, Permit
 Send t/acceptrevival{space}
+Suspend, Off
 return
 
 F3::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 SendChat("/anrufliste")
 return
 
 F4::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 SendChat("/s 100l Benzin = 500$; Reparieren = 100$")
 return
 
 F5::
-SendChat("/m Für Heilung bitte mit `G einsteigen!")
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+SendChat("/m FÃ¼r Heilung bitte mit `G einsteigen!")
 return
 
 F10::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 SendChat("/m Bitte umfahren Sie die Unfallstelle")
 return
 
 Numpad7::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
-{
-    return
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
 }
 SendChat("/medicport ls")
 return
 
 Numpad8::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
-{
-    return
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
 }
 SendChat("/medicport sf")
 return
 
 Numpad9::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
-{
-    return
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
 }
 SendChat("/medicport lv")
 return
 
 NumpadAdd::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 SendChat("/medicport base")
 return
 
 .::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
-{
-    return
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
 }
-SendChat("/me beginnt mit den Wiederbelebungsmaßnahmen")
+SendChat("/me beginnt mit den WiederbelebungsmaÃŸnahmen")
 SendChat("/revival")
 return
 
 ,::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsMenuOpen() == 1)
-{
-    return
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
 }
-SendChat("/me prüft den Puls des Patienten")
+SendChat("/me prÃ¼ft den Puls des Patienten")
 return
 
 End::
@@ -90,7 +108,7 @@ AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
 AddChatMessage(0xFFFFFF, "Linke Strg = Motor")
 AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
 AddChatMessage(0xFFFFFF, "F3 = /anrufliste")
-AddChatMessage(0xFFFFFF, "F5 = Für Heilung bitte mit G einsteigen!")
+AddChatMessage(0xFFFFFF, "F5 = FÃ¼r Heilung bitte mit G einsteigen!")
 AddChatMessage(0xFFFFFF, "F10 = Bitte umfahren Sie die Unfallstelle")
 AddChatMessage(0xFFFFFF, "Numpad7 = Medicport LS")
 AddChatMessage(0xFFFFFF, "Numpad8 = Medicport SF")
@@ -107,7 +125,7 @@ return
 Suspend Permit
 SendChat("/p")
 Sleep, 100
-SendChat("Ich bin derzeit schwer beschäftigt und kann desswegen nicht reden,")
+SendChat("Ich bin derzeit schwer beschÃ¤ftigt und kann desswegen nicht reden,")
 Sleep, 100
 SendChat("bitte schreibe eine SMS!")
 Sleep, 100
