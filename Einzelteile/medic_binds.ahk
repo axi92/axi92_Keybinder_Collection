@@ -94,11 +94,10 @@ Send t/heal  500{Left 4}
 Keywait, ENTER, D, T10
 if !errorLevel
 {
-	GetChatLine(0, str)
-	if str contains "bereits maximales Heal"
-	{
-		SendChat("Du hast schon mehr als 100HP ich kann dich leider nicht heilen!")
-	}
+   Sleep,500
+   GetChatLine(0, str)
+   if InStr(str, "bereits maximales Heal")
+      SendChat("Du hast schon mehr als 100HP ich kann dich leider nicht heilen!")
 }
 return
 
