@@ -34,7 +34,7 @@ Carheal:
     return
 }
 
-Playerheal:
+Playerheal_ausgeschalten:
 {
     IfWinNotActive, GTA:SA:MP
     {

@@ -10,7 +10,7 @@ IfNotExist, %MainDir%
 
 Settimer, Zollsystem, 100
 Settimer, CarHeal, 1000
-Settimer, Playerheal, 1000
+;Settimer, Playerheal, 1000
 Settimer, Speedo, 200
 Freigabe := 1
 heal := -1
@@ -76,9 +76,8 @@ return
 ; Bei enterdruck wird das ganze dann wieder Aufgehoben..
 ~NumpadEnter::
 ~Enter::
-Suspend Permit ; Unterbricht die Subroutine, damit diese nicht unterbrochen wird
+Suspend Permit ; Unterbricht die Subroutine, damit diese nicht unterbrochen wirD
 Suspend Off
-;SendInput {Enter}
 Hotkey, t, On
 Hotkey, Enter, Off
 Hotkey, Escape, Off
@@ -116,6 +115,8 @@ return
 
 :?:/atvoff::
 Suspend Permit
+SendChat("/atvoff")
+Sleep, 200
 SendChat("/togphone")
 Suspend Off
 return
