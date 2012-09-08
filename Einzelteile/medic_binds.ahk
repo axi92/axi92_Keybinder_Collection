@@ -131,3 +131,14 @@ Sleep, 100
 SendChat("/h")
 Suspend Off
 return
+
+h::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend Permit
+SendChat("/sirene")
+SendChat("/sireneb")
+Suspend Off
+return

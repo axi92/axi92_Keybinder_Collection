@@ -11,6 +11,7 @@ IfNotExist, %MainDir%
 Settimer, Zollsystem, 100
 Settimer, CarHeal, 1000
 ;Settimer, Playerheal, 1000
+SetTimer, Callback_Check_Vehicle, 100
 Settimer, Speedo, 200
 Freigabe := 1
 heal := -1
@@ -100,15 +101,18 @@ return
 #Include Einzelteile/heal_hud.ahk
 
 Motor1:
-SendChat("/motor a")
+SendChat("/motor 1")
+;AddChatMessage(0xFF3333, "1")
 return
 
 Motor2:
-SendChat("/motor b")
+SendChat("/motor   2")
+;AddChatMessage(0xFF3333, "2")
 return
 
 Motor3:
-SendChat("/motor c")
+SendChat("/motor       3")
+;AddChatMessage(0xFF3333, "3")
 return
 
 #Include Einzelteile/zoll.ahk
@@ -118,6 +122,12 @@ Suspend Permit
 SendChat("/atvoff")
 Sleep, 200
 SendChat("/togphone")
+Suspend Off
+return
+
+:?:/mute axi92::
+Suspend Permit
+SendChat("/mute axi92")
 Suspend Off
 return
 
