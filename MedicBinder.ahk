@@ -117,14 +117,6 @@ return
 
 #Include Einzelteile/zoll.ahk
 
-:?:/atvoff::
-Suspend Permit
-SendChat("/atvoff")
-Sleep, 200
-SendChat("/togphone")
-Suspend Off
-return
-
 :?:/mute axi92::
 Suspend Permit
 SendChat("/mute axi92")

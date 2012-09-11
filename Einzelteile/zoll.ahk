@@ -251,7 +251,7 @@ If (Freigabe = 1)
 		Settimer, Zähler, 1000
 		Var :=0
 	}
-	else If(IsPlayerInRangeOfPoint(1181.3202,-900.6298,43.2939, 3)) ;rgopen am KH
+	else If(IsPlayerInRangeOfPoint(1214.4122,-904.2389,42.6923, 3)) ;BSN Drivein
 	{
 		if(GetPlayerHealth() < 90)
 		{

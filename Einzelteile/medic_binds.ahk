@@ -140,5 +140,8 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 Suspend Permit
 SendChat("/sirene")
 SendChat("/sireneb")
+Send {h down}
+Sleep, 300
+Send {h up}
 Suspend Off
 return
