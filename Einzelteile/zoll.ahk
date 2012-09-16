@@ -1,278 +1,142 @@
 Zollsystem:
-#IfWinActive, GTA:SA:MP
-SetWorkingDir %A_ScriptDir%
-SetPrivileg()
-exe := OpenMemoryFromProcess("gta_sa.exe")
-carpoint:=ReadMemory(exe, 0x00B6F3B8)
-carpopoint:=ReadMemory(exe, carpoint+20)
-XPOS:=ReadMemory(exe, carpopoint+48, "float", 4)
-YPOS:=ReadMemory(exe, carpopoint+52, "float", 4)
-CloseMemory(exe)
-If (Freigabe = 1)
-{
-	If(XPOS>=1008.6192-8&&XPOS<=1000.3409+8) && (YPOS>=-942.3373-4&&YPOS<=-938.2012+4) || IsPlayerInRangeOfPoint(-2407.561, 976.198, 45.424, 5) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
+IfWinNotActive, GTA:SA:MP
+	return
+if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and GetVehicleSpeed() == 0) { 
+	if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-2685.3379,1269.1921,55.1729, 15)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-1400.1925,820.0132,47.1255, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-965.3771,-349.0418,35.8518, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-70.2457,-888.9332,15.2655, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-153.6138,409.8117,11.7411, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(529.0931,468.0032,18.6355, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(1718.1021,450.4043,30.4709, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-964.4408,-347.4845,35.7946, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(96.0385,-1255.0643,14.2856, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(96.2837,-1276.7212,13.8286, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(-484.1187,1054.2291,10.9083, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
+	} else if (IsPlayerInRangeOfPoint(1706.0099,466.7729,30.4966, 10)) {
+		SendChat("/zoll")
+		Sleep, 7000
 	}
-	Else If(XPOS>=70.1259-33&&XPOS<=37.3281+33) && (YPOS>=-1545.1461-26&&YPOS<=-1519.6512+26)
-	{
-	SendChat("/Zoll")
-	Freigabe :=0
-	Settimer, Zähler, 1000
-	Var :=0
-	}
-	Else If(XPOS>=-94.9821&&XPOS<=-88.0944) && (YPOS>=-1173.7999&&YPOS<=-1165.8394) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else If(XPOS>=-83.2967&&XPOS<=-58.1733) && (YPOS>=-898.8355&&YPOS<=-865.1906)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-979.1202&&XPOS<=-956.4673) && (YPOS>=-356.9077&&YPOS<=-325.9717)
-	{	
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-167.9368-18&&XPOS<=-149.5927+18) && (YPOS>=421.8792-34&&YPOS<=387.0945+34)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=534.9904-26&&XPOS<=508.3791+26) && (YPOS>=487.7328-21&&YPOS<=455.0245+21)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=658.7794&&XPOS<=653.0157) && (YPOS>=-568.6906&&YPOS<=-560.7563) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else If(XPOS>=1736.5436-31&&XPOS<=1694.8757+31) && (YPOS>=476.8202-36&&YPOS<=436.7576+36)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else if(XPOS>=853.3868-8&&XPOS<=845.1692+8) && (YPOS>=-1231.5667-3&&YPOS<=-1227.4775+3) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else if(XPOS>=1943.6532-2&&XPOS<=1946.0018+2) && (YPOS>=-1769.7651-5&&YPOS<=-1775.5492+5) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else if(XPOS>=1519.1462-2&&XPOS<=1524.9775+2) && (YPOS>=-1765.2529-5&&YPOS<=-1765.2268+5) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-			SendChat("/fill")
-			;SendChat("/get fuel")
-			Freigabe := 0
-			SetTimer, Zähler, 1000
-			Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else if(XPOS>=609.7499&&XPOS<=614.7625) && (YPOS>=1692.1746&&YPOS<=1697.033) && IsPlayerDriver() == true
-	{
-		AddChatMessage(0xFF3333, "Möchtest du dein Fahrzeug jetzt betanken?[mit 'X' bestätigen]")
-		Keywait, X, D, T10
-		if !errorLevel
-		{
-		SendChat("/fill")
-		;SendChat("/get fuel")
-		Freigabe := 0
-		SetTimer, Zähler, 1000
-		Var := 0
-		}
-		else
-		{
-			Freigabe := 1
-		}
-	}
-	else If(XPOS>=-440.0085-34&&XPOS<=-475.7770+34) && (YPOS>=565.1243-29&&YPOS<=595.5687+29)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-462.8708-32&&XPOS<=-496.6786+32) && (YPOS>=1043.2327-24&&YPOS<=1068.5634+24)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-878.0748-34&&XPOS<=-841.5696+34) && (YPOS>=2023.6145-34&&YPOS<=1986.1008+34)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-942.4183-32&&XPOS<=-974.5173+32) && (YPOS>=2709.3718-14&&YPOS<=2726.5793+14)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-2697.3562-31&&XPOS<=-2665.7051+31) && (YPOS>=1291.1976-29&&YPOS<=1260.2534+29)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(XPOS>=-1418.1459-40&&XPOS<=-1376.7649+40) && (YPOS>=849.8669-41&&YPOS<=807.6863+41)
-	{
-		SendChat("/Zoll")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(IsPlayerInRangeOfPoint(1138.201, -1290.213, 13.6807, 10)) ;KH in SF
-	{
-		SendChat("/mopen")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(IsPlayerInRangeOfPoint(2778.198, -1623.240, 10.921, 7)) ;Rgopen in der Base
-	{
-		SendChat("/rgopen")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(IsPlayerInRangeOfPoint(61.8802, -251.8676, 1.5781, 3)) ;Truckerdepot
-	{
-		if(GetVehicleModel() = 515) && IsPlayerDriver() == true
-		{
-			SendChat("/sellimport 1000")
-			Freigabe :=0
-			Settimer, Zähler, 5000
-			Var :=0
-		}
-	}
-	else If(IsPlayerInRangeOfPoint(2827.5278,-1568.4065,10.9219, 5)) ;Mopen in der Medic Base
-	{
-		SendChat("/mopen")
-		Freigabe :=0
-		Settimer, Zähler, 500
-		Var :=0
-	}
-	else If(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 3)) ;rgopen am KH
-	{
-		SendChat("/rgopen")
-		Freigabe :=0
-		Settimer, Zähler, 1000
-		Var :=0
-	}
-	else If(IsPlayerInRangeOfPoint(1214.4122,-904.2389,42.6923, 3)) ;BSN Drivein
-	{
-		if(GetPlayerHealth() < 90)
-		{
-			SendChat("/drivein")
-			Sleep, 500
-			Send {DOWN 2}
-			Sleep, 200
-			Send {ENTER}
-			Freigabe :=0
-			Settimer, Zähler, 1000
-			Var :=0
-		}
-	}	
+	return
 }
-return
 
-Zähler:
-Var++
-If (Var = 7)
-{
-	Settimer, Zähler, Off
-	Freigabe := 1
+SpeedCheck := GetVehicleSpeed()
+Veh := GetVehicleModel()
+if(IsPlayerInRangeOfPoint(1004.6254,-938.9807,42.1797, 10)) { 
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	} 
+} else if(IsPlayerInRangeOfPoint(1945.7217,-1774.2180,13.1371, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(-90.6616,-1169.0371,2.0611, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(-2023.2351,157.0318,28.5009, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(1944.5728,-1774.1672,13.0434, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(1522.1304,-1765.2944,13.1989, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(653.5302,-566.3133,15.9926, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(2116.1995,920.4470,10.4730, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(2202.2512,2474.2932,10.4737, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(611.9389,1693.9803,6.6466, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(70.5710,1219.2673,18.4766, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(-2406.2439,975.3732,44.9537, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+} else if(IsPlayerInRangeOfPoint(-1676.2783,414.4357,6.8339, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+}  else if(IsPlayerInRangeOfPoint(851.4495,-1228.6320,15.3722, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+}  else if(IsPlayerInRangeOfPoint(2640.4282,1105.5919,10.3840, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+}  else if(IsPlayerInRangeOfPoint(1146.9020,-1306.9731,13.8208, 10)) {
+	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and SpeedCheck == 0 && Veh != 515) {
+		SendChat("/fill")
+		Sleep, 15000
+	}
+	return
 }
+
+if(IsPlayerInRangeOfPoint(1179.1005,-900.1792,43.0248, 10) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 10)) { 
+	if(IsPlayerInAnyVehicle() == 1 && GetPlayerHealth() < 80 && GetVehicleSpeed() == 0) {
+		SendChat("/drivein")
+		Sleep, 300
+		SendInput {DOWN 2}
+		Sleep, 300
+		SendInput {Enter}
+	} 
+} 
 return

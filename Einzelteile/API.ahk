@@ -1,5 +1,3 @@
-#NoEnv
-
 ; Declars
 PLAYER_STATE_LEAVING_VEHICLE := 0
 PLAYER_STATE_NORMAL := 1
@@ -804,7 +802,4 @@ UnregisterTextBind(TextBindId)
 	return Result
 }
 
-; Alle existierende Overlay Elemente löschen,
-; damit sich das Overlay nicht überlappt.
-; ---
 DestroyAllVisual()
