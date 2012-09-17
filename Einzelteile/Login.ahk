@@ -1,13 +1,18 @@
-﻿SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
-LoginUrl := "http://www.axi92.at/samp/accountcheck.php"
-OnlineCheck := Ping("axi92.at")
+﻿SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini" ;Bitte anpassen
+LoginUrl := "http://www.axi92.at/samp/accountcheck.php" ;Bitte anpassen
+if(Speicherdatei == A_MyDocuments . "\MedicKeybinder\Datei.ini" || LoginUrl == "http://www.axi92.at/samp/accountcheck.php") {
+	MsgBox, 16, FEHLER, Grundeinstellungen nicht getroffen!
+	ExitApp
+}
+OnlineCheck := Ping("www.axi92.at")
 IniRead, LoginSpeichern, %SpeicherDatei%, Login, Loginspeichern, 0
 IniRead, LoginName, %SpeicherDatei%, Login, LoginName, Dein Name
 IniRead, LoginPasswd, %SpeicherDatei%, Login, LoginPasswort, Dein Passwd
 
 Login:
 if(OnlineCheck == 0){
-	goto, Main
+	;goto, Main
+	ExitApp
 	return
 }
 if(LoginSpeichern != 1){
@@ -35,8 +40,8 @@ if(LoginSpeichern == 1){
 	IniWrite, %LoginPasswd%, %SpeicherDatei%, Login, LoginPasswort
 }
 if(NewAcc == 1){
-	RegisterTrue := HttpDownload("http://gbebinder.funpic.de/Duxi2/login/admincheck.php?useradd=" Loginname "&passwd=" LoginPasswd "&level=1")
-	if not InStr(RegisterTrue, "wurde erfolgreich angelegt"){
+	RegisterTrue := HttpDownload("http://www.axi92.at/samp/admincheck.php?name=&pass=&useradd=" Loginname "&passwd=" LoginPasswd "&level=1")
+	if not InStr(RegisterTrue, "Der Account wurde erfolgreich erstellt"){
 		MsgBox, 20, Fehler,  Die Accounterstellung war nicht erfolgreich`, folgender Fehler trat auf `n`n%RegisterTrue%`n`nErneut versuchen?
 		IfMsgBox, Yes
 			Goto, Login

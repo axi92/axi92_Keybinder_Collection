@@ -1,26 +1,26 @@
-#SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schlie‡†¥ sich die alte. (Reload)
-#Persistent
 #UseHook
-#NoEnv
+#SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schlieﬂt sich die alte. (Reload)
+#Persistent
+#Include Einzelteile/memlib.ahk
 
-IfNotExist, %MainDir%
-	FileCreateDir, %MainDir%
 MainDir := A_MyDocuments "\MedicKeybinder"
 SetWorkingDir, %MainDir%
+IfNotExist, %MainDir%
+	FileCreateDir, %MainDir%
 
-Settimer, Zollsystem, 250
+Settimer, Zollsystem, 100
 Settimer, CarHeal, 1000
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 100
-Settimer, Speedo, 250
+Settimer, Speedo, 200
 Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.0
+version := 1.1
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
-FileRead, newver, %MainDir%\version.txt
+FileRead, newver, version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
@@ -29,21 +29,25 @@ if (version < newver)
 	BatchFile=n
 	(
 		Ping 127.0.0.1
-		Del "%A_ScriptName%"
-		Rename "%A_ScriptName%.new" "%A_ScriptName%"
+		Del "%MainDir%\%A_ScriptName%"
+		Rename "%MainDir%\%A_ScriptName%.new" "%MainDir%\%A_ScriptName%"
 		cd "%A_ScriptFullPath%"
-		%A_ScriptName%"
+		"%MainDir%\%A_ScriptName%"
 		Del Update.bat
 	)
 	FileDelete,update.bat
 	FileAppend,%BatchFile%,update.bat
 	Run,update.bat,,hide
+	FileCreateShortcut, %MainDir%\MedicKeybinder.exe, %A_Desktop%\MedicKeybinder.lnk
 	ExitApp
 }
 FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/Login.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
+Gui,Add,text,cblack x350 y220  +backgroundtrans
+Gui,1: Show,,
+return
 
 #Include Einzelteile/pause.ahk ;Pause Funktion
 
@@ -51,6 +55,8 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 GUIclose:
 ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geˆffnet ist
+#UseHook
+#SingleInstance, Force
 
 Hotkey, Enter, Off
 Hotkey, Escape, Off
@@ -87,10 +93,12 @@ Hotkey, Escape, Off
 return
 
 #Include Einzelteile/motor.ahk
+
 #Include Einzelteile/medic_binds.ahk
+
 #Include Einzelteile/tacho.ahk
+
 #Include Einzelteile/heal_hud.ahk
-#Include Einzelteile/zoll.ahk
 
 Motor1:
 SendChat("/motor 1")
@@ -106,6 +114,8 @@ Motor3:
 SendChat("/motor       3")
 ;AddChatMessage(0xFF3333, "3")
 return
+
+#Include Einzelteile/zoll.ahk
 
 :?:/mute axi92::
 Suspend Permit
