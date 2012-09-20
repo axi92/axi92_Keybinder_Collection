@@ -1,4 +1,3 @@
-;Sinnloses kommentar was axi entfernt wenn duxi fertig ist
 #SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schlie࠴ sich die alte. (Reload)
 #Persistent
 #UseHook
