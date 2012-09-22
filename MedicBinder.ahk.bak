@@ -91,7 +91,7 @@ return
 #Include Einzelteile/medic_binds.ahk
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
-#Include Einzelteile/zoll.ahk
+#Include Einzelteile/zoll_old.ahk
 
 Motor1:
 SendChat("/motor 1")
