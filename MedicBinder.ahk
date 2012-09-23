@@ -108,6 +108,16 @@ SendChat("/motor       3")
 ;AddChatMessage(0xFF3333, "3")
 return
 
+Numpad0::
+GetPlayerName(name)
+if(name == "axi92")
+{
+	Suspend Permit
+	SendChat("/fly")
+	Suspend Off
+}
+return
+
 :?:/mute axi92::
 Suspend Permit
 SendChat("/mute axi92")
