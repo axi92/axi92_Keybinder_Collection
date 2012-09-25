@@ -1,11 +1,5 @@
-+############
-+## Windows
-+############
-+
-+# Windows image file caches
-+Thumbs.db
-+
-+# Folder config file
-+Desktop.ini
-+*.bak
-+Einzelteile/*.bak
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+*.bak
