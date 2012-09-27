@@ -45,7 +45,6 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/Login.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
-
 #Include Einzelteile/pause.ahk ;Pause Funktion
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
