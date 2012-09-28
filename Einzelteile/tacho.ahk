@@ -4,7 +4,7 @@ return
 speed := GetVehicleSpeed()
 if(SpeedLimiter == "1")
 {
-	if( speed != "0" and speed >= 80 and GetVehicleSirenState() = 0)  
+	if( speed != "0" and speed >= 80)
 	{
 		SendInput {s DOWN}
 		sleep 300
