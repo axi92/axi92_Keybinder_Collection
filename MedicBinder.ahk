@@ -18,7 +18,7 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.0
+version := 2.1
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt
@@ -108,6 +108,10 @@ SendChat("/motor       3")
 return
 
 Numpad0::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 GetPlayerName(name)
 if(name == "axi92")
 {
