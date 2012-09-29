@@ -103,6 +103,7 @@ return
 
 :?:/kbhelp::
 Suspend Permit
+AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
 AddChatMessage(0xFFFFFF, "Linke Strg = Motor")
 AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
@@ -117,6 +118,8 @@ AddChatMessage(0xFFFFFF, "Punkt (.) = /revival")
 AddChatMessage(0xFFFFFF, "Ende = Heal")
 AddChatMessage(0xFFFFFF, "/tempomat")
 AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
+AddChatMessage(0xFFFFFF, "B = Sirene und Sireneb")
+AddChatMessage(0xFF3366, "_____________________________________________")
 Suspend Off
 return
 
@@ -132,7 +135,7 @@ SendChat("/h")
 Suspend Off
 return
 
-h::
+b::
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -140,8 +143,5 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 Suspend Permit
 SendChat("/sirene")
 SendChat("/sireneb")
-Send {h down}
-Sleep, 300
-Send {h up}
 Suspend Off
 return

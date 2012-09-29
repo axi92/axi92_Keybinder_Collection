@@ -13,7 +13,7 @@ Settimer, Zollsystem, 250
 Settimer, CarHeal, 1000
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 100
-Settimer, Speedo, 250
+Settimer, Speedo, 150
 Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
