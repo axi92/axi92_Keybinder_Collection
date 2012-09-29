@@ -126,11 +126,11 @@ return
 :?:/ab::
 Suspend Permit
 SendChat("/p")
-Sleep, 100
+Sleep, 300
 SendChat("Ich bin derzeit schwer beschäftigt und kann desswegen nicht reden,")
-Sleep, 100
+Sleep, 200
 SendChat("bitte schreibe eine SMS!")
-Sleep, 100
+Sleep, 200
 SendChat("/h")
 Suspend Off
 return
