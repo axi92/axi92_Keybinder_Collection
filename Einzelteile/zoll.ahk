@@ -138,7 +138,10 @@ if(IsPlayerInRangeOfPoint(1004.6254,-938.9807,42.1797, 3)) {
 		Sleep, 15000
 }  else if(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 3)) { ;rgopen am KH
 		SendChat("/rgopen")
-		Sleep, 15000
+		Sleep, 6000
+}  else if(IsPlayerInRangeOfPoint(1524.8226,-1699.1726,15.3828, 4)) { ;oparkig am PD
+		SendChat("/oparking")
+		Sleep, 6000
 }  else if(IsPlayerInRangeOfPoint(-2407.5435,976.3857,45.2969, 5)) { ;Medic Tanke
 	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 GetVehicleModel() != 515) {
 		Sleep, 500
