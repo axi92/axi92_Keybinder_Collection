@@ -19,7 +19,7 @@ if(LoginSpeichern != 1){
 	Gui, Login:Add, CheckBox, x142 y112 w210 h20 vNewAcc, Registrieren
 	Gui, Login:Add, Button, x22 y142 w90 h20 gLoginCheck, Login
 	Gui, Login:Add, Button, x142 y142 w90 h20 gCallback_OnExit, Abbruch
-	Gui, Login:Show, w259 h181, Login
+	Gui, Login:Show, w259 h181, MedicLogin
 	return
 } else {
 	goto, LoginCheck
@@ -29,6 +29,11 @@ return
 Enter::
 NumpadEnter::
 LoginCheck:
+IfWinNotActive, MedicLogin
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 Gui, Login:Submit, NoHide
 Gui, Login:Destroy
 IniWrite, %LoginSpeichern%, %SpeicherDatei%, Login, Loginspeichern
