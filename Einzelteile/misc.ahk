@@ -4,6 +4,6 @@ SendChat("/accept refill")
 Sleep, 300
 SendChat("/accept repair")
 Sleep, 300
-SendChat("/accept lesson")
+SendChat("/accept hotdog")
 Suspend Off
 return
