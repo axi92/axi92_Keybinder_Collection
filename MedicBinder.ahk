@@ -18,7 +18,7 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.1
+version := 2.2
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt

@@ -14,11 +14,11 @@ if(LoginSpeichern != 1){
 	Gui, Login:Add, Text, x22 y12 w210 h20 , Dein Login Name
 	Gui, Login:Add, Text, x22 y62 w210 h20 , Dein Login Passwort
 	Gui, Login:Add, Edit, x22 y32 w210 h20 vLoginName, %LoginName%
-	Gui, Login:Add, Edit, x22 y82 w210 h20 vLoginPasswd, %LoginPasswd%
+	Gui, Login:Add, Edit, x22 y82 w210 h20 vLoginPasswd Password, %LoginPasswd%
 	Gui, Login:Add, CheckBox, x22 y112 w100 h20 Checked%LoginSpeichern% vLoginSpeichern, Speichern
 	Gui, Login:Add, CheckBox, x142 y112 w210 h20 vNewAcc, Registrieren
 	Gui, Login:Add, Button, x22 y142 w90 h20 gLoginCheck, Login
-	Gui, Login:Add, Button, x142 y142 w90 h20 gLoginAbbruch, Abbruch
+	Gui, Login:Add, Button, x142 y142 w90 h20 gCallback_OnExit, Abbruch
 	Gui, Login:Show, w259 h181, Login
 	return
 } else {
@@ -26,6 +26,8 @@ if(LoginSpeichern != 1){
 }
 return
 
+Enter::
+NumpadEnter::
 LoginCheck:
 Gui, Login:Submit, NoHide
 Gui, Login:Destroy
@@ -66,7 +68,6 @@ if InStr(LoginTrue, "Erfolgreich eingeloggt"){
 	}
 	ExitApp
 }
-
 return
 LoginAbbruch:
 ExitApp
