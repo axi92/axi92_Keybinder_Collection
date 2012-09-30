@@ -69,7 +69,7 @@ SendChat("/medicport base")
 return
 
 .::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVehicleModel() == 520) {
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -118,7 +118,7 @@ AddChatMessage(0xFFFFFF, "Punkt (.) = /revival")
 AddChatMessage(0xFFFFFF, "Ende = Heal")
 AddChatMessage(0xFFFFFF, "/tempomat")
 AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
-AddChatMessage(0xFFFFFF, "2 = Sirene und Sireneb")
+AddChatMessage(0xFFFFFF, "3 = Sirene und Sireneb")
 AddChatMessage(0xFF3366, "_____________________________________________")
 Suspend Off
 return
@@ -135,8 +135,8 @@ SendChat("/h")
 Suspend Off
 return
 
-2::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+3::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVehicleModel() == 520) {
    SendInput, {%A_ThisHotkey%}
    return
 }
