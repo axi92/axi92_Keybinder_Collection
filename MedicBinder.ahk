@@ -25,7 +25,7 @@ FileRead, newver, %MainDir%\version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
-	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver%. Es wird geupdated
+	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver% es wird geupdated
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %MainDir%\%A_ScriptName%.new
 	BatchFile=n
 	(
