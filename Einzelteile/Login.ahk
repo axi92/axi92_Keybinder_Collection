@@ -26,14 +26,7 @@ if(LoginSpeichern != 1){
 }
 return
 
-Enter::
-NumpadEnter::
 LoginCheck:
-IfWinNotActive, MedicLogin
-{
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 Gui, Login:Submit, NoHide
 Gui, Login:Destroy
 IniWrite, %LoginSpeichern%, %SpeicherDatei%, Login, Loginspeichern
