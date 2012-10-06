@@ -110,7 +110,7 @@ SendChat("/motor       3")
 return
 
 Numpad0::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
 }
