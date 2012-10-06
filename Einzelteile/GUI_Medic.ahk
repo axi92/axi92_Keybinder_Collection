@@ -16,8 +16,9 @@ Gui, 1:Add,   text,   cblack x230 y60  +backgroundtrans, Ende = Heal
 Gui, 1:Add,   text,   cblack x230 y80  +backgroundtrans, /tempomat
 Gui, 1:Add,   text,   cblack x230 y100 +backgroundtrans, /kbhelp = Auflistung der Befehle
 Gui, 1:Add,   text,   cblack x230 y120 +backgroundtrans, /ab = Anrufabsage, verweis auf SMS
+Gui, 1:Add,   text,   cblack x230 y140 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x380 y200 +BackgroundTrans, %version%
-Gui, 1:Add, Button,          x230 y140 w180 h25 gSampbutton, BE-Quickjoin
+Gui, 1:Add, Button,          x230 y160 w180 h25 gSampbutton, BE-Quickjoin
 Gui, 1:Show,,
 return
 

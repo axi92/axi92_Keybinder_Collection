@@ -119,6 +119,7 @@ AddChatMessage(0xFFFFFF, "Ende = Heal")
 AddChatMessage(0xFFFFFF, "/tempomat")
 AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
 AddChatMessage(0xFFFFFF, "3 = Sirene und Sireneb")
+AddChatMessage(0xFFFFFF, "/lgc = /listgangcars")
 AddChatMessage(0xFF3366, "_____________________________________________")
 Suspend Off
 return
@@ -143,5 +144,11 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVe
 Suspend Permit
 SendChat("/sirene")
 SendChat("/sireneb")
+Suspend Off
+return
+
+:?:/lgc::
+Suspend Permit
+SendChat("/listgangcars")
 Suspend Off
 return
