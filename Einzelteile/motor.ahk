@@ -58,4 +58,16 @@ OnPlayerExitVehicle()
 			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 		}
 	}
+	;Settimer, Carheal, Off
 }
+return
+
+;~ OnPlayerEnterVehicle()
+;~ {
+	;~ ;if (Overlay == 1)
+	;~ ;{
+		;~ Settimer, Carheal, 500
+		;~ ;Settimer, CarHeal, On
+	;~ ;}
+;~ }
+;~ return

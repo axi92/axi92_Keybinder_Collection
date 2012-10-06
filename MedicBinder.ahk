@@ -9,11 +9,11 @@ MainDir := A_MyDocuments "\MedicKeybinder"
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 
-Settimer, Zollsystem, 250
-Settimer, CarHeal, 1000
+Settimer, Carheal, 500
+Settimer, Zollsystem, 100
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 100
-Settimer, Speedo, 150
+Settimer, Speedo, 100
 Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
@@ -51,6 +51,8 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
+Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
+IniWrite, %Overlay%, %SpeicherDatei%, Einstellung, Overlay
 ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
 
@@ -92,6 +94,15 @@ return
 #Include Einzelteile/medic_binds.ahk
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
+;~ if Overlay == 1
+;~ {
+	;~ Settimer, CarHeal, 500
+	;~ Settimer, CarHeal, On
+;~ }
+;~ else
+;~ {
+	;~ Settimer, CarHeal, Off
+;~ }
 #Include Einzelteile/zoll.ahk
 
 Motor1:
