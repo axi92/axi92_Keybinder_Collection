@@ -18,7 +18,7 @@ Gui, 1:Add,   text,   cblack x230 y80  +backgroundtrans, /tempomat
 Gui, 1:Add,   text,   cblack x230 y100 +backgroundtrans, /kbhelp = Auflistung der Befehle
 Gui, 1:Add,   text,   cblack x230 y120 +backgroundtrans, /ab = Anrufabsage, verweis auf SMS
 Gui, 1:Add,   text,   cblack x230 y140 +backgroundtrans, /lgc = /listgangcars
-;Gui, 1:Add, Checkbox,        x230 y220 Checked%Overlay% vOverlay, Overlay ein?
+Gui, 1:Add, Checkbox, x230 y220 Checked%Overlay% vOverlay gOverHealChange, Overlay ein?
 Gui, 1:Add,   text,   cblack x380 y220 +BackgroundTrans, %version%
 Gui, 1:Add, Button,          x230 y160 w180 h25 gSampbutton, BE-Quickjoin
 Gui, 1:Show,,

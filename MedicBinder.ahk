@@ -94,15 +94,13 @@ return
 #Include Einzelteile/medic_binds.ahk
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
-;~ if Overlay == 1
-;~ {
-	;~ Settimer, CarHeal, 500
-	;~ Settimer, CarHeal, On
-;~ }
-;~ else
-;~ {
-	;~ Settimer, CarHeal, Off
-;~ }
+OverHealChange:
+if (Overlay == 1) {
+	Settimer, CarHeal, 500
+} else {
+	Settimer, CarHeal, Off
+}
+return
 #Include Einzelteile/zoll.ahk
 
 Motor1:
