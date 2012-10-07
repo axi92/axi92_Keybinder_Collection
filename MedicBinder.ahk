@@ -95,6 +95,7 @@ return
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
 OverHealChange:
+Gui 1:Submit, NoHide
 if (Overlay == 1) {
 	Settimer, CarHeal, 500
 } else {
