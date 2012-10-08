@@ -136,6 +136,22 @@ SendChat("/h")
 Suspend Off
 return
 
+1::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || !IsPlayerInAnyVehicle() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend Permit
+SendChat("/m [EINSATZ] Bitte räumen sie SOFORT die Straße")
+Suspend Off
+return
+
+:?:/lgc::
+Suspend Permit
+SendChat("/listgangcars")
+Suspend Off
+return
+
 3::
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVehicleModel() == 520) {
    SendInput, {%A_ThisHotkey%}
@@ -144,11 +160,5 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVe
 Suspend Permit
 SendChat("/sirene")
 SendChat("/sireneb")
-Suspend Off
-return
-
-:?:/lgc::
-Suspend Permit
-SendChat("/listgangcars")
 Suspend Off
 return
