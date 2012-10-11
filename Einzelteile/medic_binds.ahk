@@ -106,6 +106,7 @@ Suspend Permit
 AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
 AddChatMessage(0xFFFFFF, "Linke Strg = Motor")
+AddChatMessage(0xFFFFFF, "Num(-) = /duty +Showme")
 AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
 AddChatMessage(0xFFFFFF, "F3 = /anrufliste")
 AddChatMessage(0xFFFFFF, "F5 = Für Heilung bitte mit G einsteigen!")
@@ -161,5 +162,41 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVe
 Suspend Permit
 SendChat("/sirene")
 SendChat("/sireneb")
+Suspend Off
+return
+
+NumpadSub::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend Permit
+SendChat("/duty")
+Sleep, 200
+GetChatLine(0, str0)
+GetChatLine(1, str1)
+GetChatLine(2, str2)
+GetChatLine(3, str3)
+GetChatLine(4, str4)
+dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
+   if InStr(str0, dutystr) || InStr(str1, dutystr) || InStr(str2, dutystr) || InStr(str3, dutystr) || InStr(str4, dutystr)
+   {
+      SendChat("/showme")
+      ;~ if (IsDialogOpen() == 1)
+      ;~ {
+         Sleep, 300
+         Send {DOWN 5}
+         Sleep, 300
+         Send {ENTER}
+      ;~ } 
+   }  
+   else
+   {
+      SendChat("/showme")
+      Sleep, 300
+      Send {DOWN 6}
+      Sleep, 300
+      Send {ENTER}
+   }
 Suspend Off
 return
