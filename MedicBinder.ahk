@@ -9,6 +9,7 @@ MainDir := A_MyDocuments "\MedicKeybinder"
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 
+Settimer, Logbackup, 1000
 Settimer, Carheal, 500
 Settimer, Zollsystem, 100
 ;Settimer, Playerheal, 1000
@@ -18,7 +19,7 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.6
+version := 2.7
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt
@@ -142,4 +143,14 @@ return
 Callback_OnExit:
 DestroyAllVisual()
 ExitApp
+return
+
+:?:/q::
+Logbackup:
+WinWait, GTA:SA:MP
+WinWaitClose, GTA:SA:MP
+FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
+FormatTime, datum, %A_Now%, dd.MM.yyyy
+FormatTime, zeit, %A_Now%, HH-mm-ss
+FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 return
