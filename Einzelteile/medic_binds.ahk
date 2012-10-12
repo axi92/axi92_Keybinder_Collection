@@ -182,21 +182,46 @@ dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
    if InStr(str0, dutystr) || InStr(str1, dutystr) || InStr(str2, dutystr) || InStr(str3, dutystr) || InStr(str4, dutystr)
    {
       SendChat("/showme")
-      ;~ if (IsDialogOpen() == 1)
-      ;~ {
-         Sleep, 300
+      Loopstart1:
+      if (IsDialogOpen() != 1)
+      {
+         Sleep, 500
+         Goto, Loopstart1
+      }
+      else
+      {
+         Sleep, 100
          Send {DOWN 5}
-         Sleep, 300
+         Sleep, 100
          Send {ENTER}
-      ;~ } 
+      }
    }  
    else
    {
       SendChat("/showme")
-      Sleep, 300
-      Send {DOWN 6}
-      Sleep, 300
-      Send {ENTER}
-   }
+      Loopstart2:
+      if (IsDialogOpen() != 1)
+      {
+         Sleep, 500
+         Goto, Loopstart2
+      }
+      else
+      {
+         Sleep, 100
+         Send {DOWN 6}
+         Sleep, 100
+         Send {ENTER}
+      }
+   }  
+Sleep, 300
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
+AddChatMessage(0xFF3366, "                                             ")
 Suspend Off
 return
