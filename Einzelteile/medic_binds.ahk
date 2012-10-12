@@ -172,7 +172,7 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 Suspend Permit
 SendChat("/duty")
-Sleep, 200
+Sleep, 500
 GetChatLine(0, str0)
 GetChatLine(1, str1)
 GetChatLine(2, str2)
