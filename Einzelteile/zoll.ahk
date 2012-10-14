@@ -1,49 +1,54 @@
 Zollsystem:
 IfWinNotActive, GTA:SA:MP
-	return
-if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 and GetVehicleSpeed() == 0) { 
-	if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-2685.3379,1269.1921,55.1729, 15)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-1400.1925,820.0132,47.1255, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-965.3771,-349.0418,35.8518, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-70.2457,-888.9332,15.2655, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-153.6138,409.8117,11.7411, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(529.0931,468.0032,18.6355, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(1718.1021,450.4043,30.4709, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-964.4408,-347.4845,35.7946, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(96.0385,-1255.0643,14.2856, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(96.2837,-1276.7212,13.8286, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(-484.1187,1054.2291,10.9083, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	} else if (IsPlayerInRangeOfPoint(1706.0099,466.7729,30.4966, 10)) {
-		SendChat("/zoll")
-		Sleep, 5000
-	}
-	return
+return
+ 
+if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-2685.3379,1269.1921,55.1729, 15)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-1400.1925,820.0132,47.1255, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-965.3771,-349.0418,35.8518, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-70.2457,-888.9332,15.2655, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-153.6138,409.8117,11.7411, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(529.0931,468.0032,18.6355, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(1718.1021,450.4043,30.4709, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-964.4408,-347.4845,35.7946, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(96.0385,-1255.0643,14.2856, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(96.2837,-1276.7212,13.8286, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-484.1187,1054.2291,10.9083, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(1706.0099,466.7729,30.4966, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-959.3175,2722.3157,47.1700, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-957.8547,2713.4761,47.1746, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
 }
+return
 
 SpeedCheck := GetVehicleSpeed()
 Veh := GetVehicleModel()
@@ -136,15 +141,15 @@ if(IsPlayerInRangeOfPoint(1004.6254,-938.9807,42.1797, 3)) {
 }  else if(IsPlayerInRangeOfPoint(2827.5278,-1568.4065,10.9219, 5)) { ;Mopen Medic BASE
 		SendChat("/mopen")
 		Sleep, 7000
-}  else if(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 3)) { ;rgopen am KH
+}  else if(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 5)) { ;rgopen am KH
 		SendChat("/rgopen")
 		Sleep, 6000
-}  else if(IsPlayerInRangeOfPoint(1524.8226,-1699.1726,15.3828, 4)) { ;oparkig am PD
+}  else if(IsPlayerInRangeOfPoint(1524.8226,-1699.1726,15.3828, 6)) { ;oparkig am PD
 		SendChat("/oparking")
 		Sleep, 6000
-}  else if(IsPlayerInRangeOfPoint(-2407.5435,976.3857,45.2969, 5)) { ;Medic Tanke
+}  else if(IsPlayerInRangeOfPoint(-2407.4712,976.3237,45.2969, 6)) { ;Medic Tanke
 	if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 GetVehicleModel() != 515) {
-		Sleep, 500
+		Sleep, 300
 		SendChat("/fill")
 		Sleep, 5000
 	}
