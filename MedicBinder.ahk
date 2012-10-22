@@ -2,10 +2,13 @@
 #Persistent
 #UseHook
 #NoEnv
-
+MainDir := A_MyDocuments "\MedicKeybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
-MainDir := A_MyDocuments "\MedicKeybinder"
+IfNotExist, %MainDir% "\heal.wav"
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/heal.wav, %MainDir%\heal.wav
+IfNotExist, %MainDir% "\tot.wav"
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 
@@ -19,7 +22,7 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.8
+version := 2.9
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt
@@ -49,6 +52,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/anwalt.ahk
 #Include Einzelteile/misc.ahk
+#Include Einzelteile/sound_system.ahk
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
