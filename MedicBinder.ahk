@@ -11,6 +11,7 @@ IfNotExist, %MainDir% "\tot.wav"
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
+SoundSetWaveVolume, 50 
 
 Settimer, Logbackup, 1000
 Settimer, Carheal, 500

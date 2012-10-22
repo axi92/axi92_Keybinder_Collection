@@ -47,13 +47,10 @@ if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) {
 } else if (IsPlayerInRangeOfPoint(-957.8547,2713.4761,47.1746, 10)) {
 	SendChat("/zoll")
 	Sleep, 5000
-} else if (IsPlayerInRangeOfPoint(-158.1780,393.6036,11.7829, 3)) {
+} else if (IsPlayerInRangeOfPoint(158.1780,393.6036,11.7829, 3)) {
 	SendChat("/zoll")
 	Sleep, 5000
 }
-
-
-158.1780,393.6036,11.7829
 ;return
 
 SpeedCheck := GetVehicleSpeed()
