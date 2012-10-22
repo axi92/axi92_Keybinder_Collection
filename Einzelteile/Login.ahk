@@ -35,7 +35,7 @@ if(LoginSpeichern == 1){
 	IniWrite, %LoginPasswd%, %SpeicherDatei%, Login, LoginPasswort
 }
 if(NewAcc == 1){
-	RegisterTrue := HttpDownload("http://gbebinder.funpic.de/Duxi2/login/admincheck.php?useradd=" Loginname "&passwd=" LoginPasswd "&level=1")
+	RegisterTrue := HttpDownload("http://www.axi92.de/samp/admincheck.php?useradd=" Loginname "&passwd=" LoginPasswd "&level=1")
 	if not InStr(RegisterTrue, "wurde erfolgreich angelegt"){
 		MsgBox, 20, Fehler,  Die Accounterstellung war nicht erfolgreich`, folgender Fehler trat auf `n`n%RegisterTrue%`n`nErneut versuchen?
 		IfMsgBox, Yes
