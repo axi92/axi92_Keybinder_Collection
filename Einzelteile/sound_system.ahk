@@ -30,6 +30,7 @@ if InStr(Str, service)
 {
 	;MsgBox % "heal.wav würde nun spielen"
 	SoundPlay, %MainDir%\heal.wav
+	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Heal")
 	return
 }
@@ -37,6 +38,7 @@ else if InStr(Str, revival)
 {
 	;MsgBox % "tot.wav würde nun spielen"
 	SoundPlay, %MainDir%\tot.wav
+	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Tot")
 }
 return
