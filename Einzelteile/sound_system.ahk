@@ -2,7 +2,7 @@
 Suspend Permit
 Sound := !Sound
 SoundStatus := (Sound) ? "An" : "Aus"
-AddChatMessage(0xFFFFF, "Soundnotification: " SoundStatus)
+AddChatMessage(0xFFFFF, "Sound: " SoundStatus)
 ;MsgBox, Soundnotification: %SoundStatus% ;Sollte ausgebaut werden
 if (Sound = 1)
 {
