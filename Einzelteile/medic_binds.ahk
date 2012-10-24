@@ -122,6 +122,8 @@ AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
 AddChatMessage(0xFFFFFF, "1 = [EINSATZ] Bitte räumen sie SOFORT die Straße")
 AddChatMessage(0xFFFFFF, "3 = Sirene und Sireneb")
 AddChatMessage(0xFFFFFF, "/lgc = /listgangcars")
+AddChatMessage(0xFFFFFF, "/sound")
+AddChatMessage(0xFFFFFF, "/overlay")
 AddChatMessage(0xFF3366, "_____________________________________________")
 Suspend Off
 return
