@@ -1,3 +1,21 @@
+:?:/overlay::
+Suspend Permit
+Overlay := !Overlay
+SoundStatus := (Overlay) ? "An" : "Aus"
+AddChatMessage(0xFFFFF, "Overlay: " SoundStatus)
+;MsgBox, Soundnotification: %SoundStatus% ;Sollte ausgebaut werden
+if (Overlay = 1)
+{
+	SetTimer, Carheal, 500
+}
+else
+{
+	SetTimer, Carheal, Off
+    TextHide(Carheal)
+}
+Suspend Off
+return
+
 Carheal:
 IfWinNotActive, GTA:SA:MP
 {
