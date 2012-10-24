@@ -11,11 +11,11 @@ IfNotExist, %MainDir% "\tot.wav"
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
-SoundSetWaveVolume, 30 
+SoundSetWaveVolume, 10 
 
 Settimer, Logbackup, 1000
-Settimer, Carheal, 500
 Settimer, Zollsystem, 100
+SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Speedo, 100
@@ -23,7 +23,7 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-version := 2.9
+version := 3.0
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt
