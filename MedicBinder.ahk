@@ -126,20 +126,6 @@ SendChat("/motor       3")
 ;AddChatMessage(0xFF3333, "3")
 return
 
-Numpad0::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-GetPlayerName(name)
-if(name == "axi92")
-{
-	Suspend Permit
-	SendChat("/fly")
-	Suspend Off
-}
-return
-
 Callback_OnExit:
 DestroyAllVisual()
 ExitApp
