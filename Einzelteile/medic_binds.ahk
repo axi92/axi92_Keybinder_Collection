@@ -1,4 +1,4 @@
-F2::
+﻿F2::
 Suspend, Permit
 Send t/acceptrevival{space}
 Suspend, Off
