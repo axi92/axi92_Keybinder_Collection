@@ -30,7 +30,7 @@ FileRead, newver, %MainDir%\version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
-	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver% es wird geupdated
+	MsgBox,0,, Es ist eine neue Version verfï¿½gbar, v%newver% es wird geupdated
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/MedicKeybinder.exe, %MainDir%\%A_ScriptName%.new
 	BatchFile=n
 	(
@@ -60,7 +60,7 @@ GUIclose:
 Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
 IniWrite, %Overlay%, %SpeicherDatei%, Einstellung, Overlay
 ExitApp
-#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geöffnet ist
+#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP geï¿½ffnet ist
 
 Hotkey, Enter, Off
 Hotkey, Escape, Off
@@ -75,7 +75,7 @@ Hotkey, Enter, On
 Hotkey, Escape, On
 Hotkey, t, Off
 return
-; Hier wird bestimmt, das wenn ihr im Spiel T drückt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
+; Hier wird bestimmt, das wenn ihr im Spiel T drï¿½ckt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
 
 
 ; Bei enterdruck wird das ganze dann wieder Aufgehoben..
@@ -137,12 +137,6 @@ if(name == "axi92")
 	SendChat("/fly")
 	Suspend Off
 }
-return
-
-:?:/mute axi92::
-Suspend Permit
-SendChat("/mute axi92")
-Suspend Off
 return
 
 Callback_OnExit:
