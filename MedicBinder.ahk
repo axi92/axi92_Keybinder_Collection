@@ -1,4 +1,4 @@
-#SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schlie࠴ sich die alte. (Reload)
+﻿#SingleInstance, Force ; Es darf nur eine Instanz von dem Programm vorhanden sein, wird eine neue gestartet, schlie࠴ sich die alte. (Reload)
 #Persistent
 #UseHook
 #NoEnv
@@ -17,7 +17,7 @@ version := 3.1
 
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
-SetTimer, Sound, 200
+;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Speedo, 100
@@ -35,20 +35,27 @@ overlay := 1
 motor := 1
 medic := 1
 
-RechteURL := "http://www.axi92.at/samp/rank.php"
-
-Rechte := HttpDownload(RechteURL "?name=" Loginname)
-if InStr(Rechte, Loginname){
-    RegExMatch(Rechte, "Tempomat: (.*)",tempomat)
-    RegExMatch(Rechte, "Zoll: (.*)",zoll)
-    RegExMatch(Rechte, "Admin: (.*)",admin)
-    RegExMatch(Rechte, "BSN: (.*)",bsn)
-    RegExMatch(Rechte, "Overlay: (.*)",overlay)
-    RegExMatch(Rechte, "Motor: (.*)",motor)
-    RegExMatch(Rechte, "Medic: (.*)",medic)
-    MsgBox, Tempomat wurden folgende Werte zugewiesen:`nTempomat: %tempomat`nZoll: %zoll%`nAdmin: %admin"`nBSN: %bsn"`nOverlay: %overlay%`nMotor: %motor%`nMedic: %medic%
+SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
+IniRead, LoginName, %SpeicherDatei%, Login, LoginName, Dein Name
+RechteURL := "http://www.axi92.at/samp/rank.php?name="
+RechteDL := RechteURL LoginName
+;URLDownloadToFile, RechteURL LoginName , text.txt
+;MsgBox, %RechteDL%
+URLDownloadToFile, RechteDL, text.txt
+FileRead, Rechte, text1.txt
+MsgBox, %Rechte%
+if InStr(Rechte, LoginName)
+{
+    RegExMatch(Rechte, "Tempomat: (\d)",tempomat)
+    RegExMatch(Rechte, "Zoll: (\d)",zoll)
+    RegExMatch(Rechte, "Admin: (\d)",admin)
+    RegExMatch(Rechte, "BSN: (\d)",bsn)
+    RegExMatch(Rechte, "Overlay: (\d)",overlay)
+    RegExMatch(Rechte, "Motor: (\d)",motor)
+    RegExMatch(Rechte, "Medic: (\d)",medic)
+	MsgBox, Tempomat wurden folgende Werte zugewiesen:`nName: %LoginName%`nTempomat: %tempomat1%`nZoll: %zoll1%`nAdmin: %admin1%`nBSN: %bsn1%`nOverlay: %overlay1%`nMotor: %motor1%`nMedic: %medic1%
 } else {
-	MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben`n`n%LoginTrue%
+	MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben:`n`n%Rechte%
 	ExitApp
 }
 ; Gruppensystem Ende -----------------------------------------------------------------------
