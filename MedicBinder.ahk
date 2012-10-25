@@ -13,6 +13,8 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
+version := 3.0
+
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
 SetTimer, Sound, 200
@@ -24,14 +26,31 @@ heal := -1
 OnExit, Callback_OnExit
 
 ; Gruppensystem Anfang ---------------------------------------------------------------------
-Tempomat := 1
-Zoll := 1
-Admin := 1
-BSN := 1
-Overlay := 1
-; Gruppensystem Ende -----------------------------------------------------------------------
+tempomat := 1
+zoll := 1
+admin := 1
+bsn := 1
+overlay := 1
+motor := 1
+medic := 1
 
-version := 3.0
+RechteURL := "http://www.axi92.at/samp/rank.php"
+
+Rechte := HttpDownload(RechteURL "?name=" Loginname)
+if InStr(Rechte, Loginname){
+    RegExMatch(Rechte, "Tempomat: (.*)",tempomat)
+    RegExMatch(Rechte, "Zoll: (.*)",zoll)
+    RegExMatch(Rechte, "Admin: (.*)",admin)
+    RegExMatch(Rechte, "BSN: (.*)",bsn)
+    RegExMatch(Rechte, "Overlay: (.*)",overlay)
+    RegExMatch(Rechte, "Motor: (.*)",motor)
+    RegExMatch(Rechte, "Medic: (.*)",medic)
+    MsgBox, Tempomat wurden folgende Werte zugewiesen:`nTempomat: %tempomat`nZoll: %zoll%`nAdmin: %admin"`nBSN: %bsn"`nOverlay: %overlay%`nMotor: %motor%`nMedic: %medic%
+} else {
+	MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben`n`n%LoginTrue%
+	ExitApp
+}
+; Gruppensystem Ende -----------------------------------------------------------------------
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
 FileRead, newver, %MainDir%\version.txt
@@ -90,7 +109,7 @@ return
 ; Bei enterdruck wird das ganze dann wieder Aufgehoben..
 ~NumpadEnter::
 ~Enter::
-Suspend Permit ; Unterbricht die Subroutine, damit diese nicht unterbrochen wirD
+Suspend Permit ; Unterbricht die Subroutine, damit diese nicht unterbrochen wird
 Suspend Off
 Hotkey, t, On
 Hotkey, Enter, Off
@@ -105,18 +124,26 @@ Hotkey, Enter, Off
 Hotkey, Escape, Off
 return
 
-#Include Einzelteile/motor.ahk
-#Include Einzelteile/medic_binds.ahk
-#Include Einzelteile/tacho.ahk
-#Include Einzelteile/heal_hud.ahk
-OverHealChange:
-Gui 1:Submit, NoHide
-if (Overlay == 1) {
-	Settimer, CarHeal, 500
-} else {
-	Settimer, CarHeal, Off
+if (medic == 1)
+{
+    #Include Einzelteile/medic_binds.ahk
 }
-return
+
+if (motor == 1)
+{
+    #Include Einzelteile/motor.ahk
+}
+
+If (tempomat == 1)
+{
+    #Include Einzelteile/tacho.ahk
+}
+
+if (overlay == 1)
+{
+    #Include Einzelteile/heal_hud.ahk
+}
+
 #Include Einzelteile/zoll.ahk
 
 Motor1:

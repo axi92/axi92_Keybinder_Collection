@@ -1,4 +1,4 @@
-﻿SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
+SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
 LoginUrl := "http://www.axi92.at/samp/accountcheck.php"
 OnlineCheck := Ping("axi92.at")
 IniRead, LoginSpeichern, %SpeicherDatei%, Login, Loginspeichern, 0
@@ -7,7 +7,7 @@ IniRead, LoginPasswd, %SpeicherDatei%, Login, LoginPasswort, Dein Passwd
 
 Login:
 if(OnlineCheck == 0){
-	goto, Main
+    goto, Main
 	return
 }
 if(LoginSpeichern != 1){
