@@ -54,6 +54,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/anwalt.ahk
 #Include Einzelteile/misc.ahk
 #Include Einzelteile/sound_system.ahk
+#Include Einzelteile/admin.ahk
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
