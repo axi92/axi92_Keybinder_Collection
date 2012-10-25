@@ -23,6 +23,14 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
+; Gruppensystem Anfang ---------------------------------------------------------------------
+Tempomat := 1
+Zoll := 1
+Admin := 1
+BSN := 1
+Overlay := 1
+; Gruppensystem Ende -----------------------------------------------------------------------
+
 version := 3.0
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
