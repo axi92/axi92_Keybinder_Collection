@@ -1,4 +1,4 @@
-﻿F2::
+F2::
 Suspend, Permit
 Send t/acceptrevival{space}
 Suspend, Off
@@ -131,11 +131,11 @@ return
 :?:/ab::
 Suspend Permit
 SendChat("/p")
-Sleep, 300
+Sleep, 500
 SendChat("Ich bin derzeit schwer beschäftigt und kann desswegen nicht reden,")
-Sleep, 200
+Sleep, 500
 SendChat("bitte schreibe eine SMS!")
-Sleep, 200
+Sleep, 500
 SendChat("/h")
 Suspend Off
 return
