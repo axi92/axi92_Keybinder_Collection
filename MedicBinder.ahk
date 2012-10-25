@@ -84,10 +84,10 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
 #Include Einzelteile/pause.ahk ;Pause Funktion
-#Include Einzelteile/anwalt.ahk
 #Include Einzelteile/misc.ahk
 If (medic == 1)
 {
+	#Include Einzelteile/medic_binds.ahk
     #Include Einzelteile/sound_system.ahk
 }
 
@@ -136,11 +136,6 @@ Hotkey, t, On
 Hotkey, Enter, Off
 Hotkey, Escape, Off
 return
-
-if (medic == 1)
-{
-    #Include Einzelteile/medic_binds.ahk
-}
 
 if (motor == 1)
 {
