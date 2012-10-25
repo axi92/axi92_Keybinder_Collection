@@ -26,6 +26,7 @@ heal := -1
 OnExit, Callback_OnExit
 
 ; Gruppensystem Anfang ---------------------------------------------------------------------
+; Zum Testen erstmal alle Veriablen auf 1 gesetzt
 tempomat := 1
 zoll := 1
 admin := 1
@@ -80,8 +81,15 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/anwalt.ahk
 #Include Einzelteile/misc.ahk
-#Include Einzelteile/sound_system.ahk
+If (medic == 1)
+{
+    #Include Einzelteile/sound_system.ahk
+}
+
+If (admin == 1)
+{
 #Include Einzelteile/admin.ahk
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
