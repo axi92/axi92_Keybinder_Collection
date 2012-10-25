@@ -13,7 +13,7 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
-version := 3.0
+version := 3.1
 
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
