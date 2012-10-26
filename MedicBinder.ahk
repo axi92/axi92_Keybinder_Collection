@@ -27,13 +27,13 @@ OnExit, Callback_OnExit
 
 ; Gruppensystem Anfang ---------------------------------------------------------------------
 ; Zum Testen erstmal alle Veriablen auf 1 gesetzt
-tempomat := 1
-zoll := 1
-admin := 1
-bsn := 1
-overlay := 1
-motor := 1
-medic := 1
+recht_tempomat := 1
+recht_zoll := 1
+recht_admin := 1
+recht_bsn := 1
+recht_overlay := 1
+recht_motor := 1
+recht_medic := 1
 
 SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
 IniRead, LoginName, %SpeicherDatei%, Login, LoginName, Dein Name
@@ -85,13 +85,13 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/GUI_Medic.ahk
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
-If (medic == 1)
+If (recht_medic == 1)
 {
 	#Include Einzelteile/medic_binds.ahk
     #Include Einzelteile/sound_system.ahk
 }
 
-If (admin == 1)
+If (recht_admin == 1)
 {
 #Include Einzelteile/admin.ahk
 }
@@ -137,17 +137,17 @@ Hotkey, Enter, Off
 Hotkey, Escape, Off
 return
 
-if (motor == 1)
+if (recht_motor == 1)
 {
     #Include Einzelteile/motor.ahk
 }
 
-If (tempomat == 1)
+If (recht_tempomat == 1)
 {
     #Include Einzelteile/tacho.ahk
 }
 
-if (overlay == 1)
+if (recht_overlay == 1)
 {
     #Include Einzelteile/heal_hud.ahk
 }

@@ -1,4 +1,4 @@
-:?:/aa::
+﻿:?:/aa::
 Suspend Permit
 SendChat("/accept refill")
 Sleep, 300
