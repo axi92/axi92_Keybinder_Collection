@@ -1,10 +1,26 @@
-﻿F2::
+﻿IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+    return
+}
+
+F2::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 Suspend, Permit
 Send t/acceptrevival{space}
 Suspend, Off
 return
 
 F3::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -13,6 +29,11 @@ SendChat("/anrufliste")
 return
 
 F4::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -21,6 +42,11 @@ SendChat("/s 100l Benzin = 500$; Reparieren = 100$")
 return
 
 F5::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -29,6 +55,11 @@ SendChat("/m Für Heilung bitte mit `G einsteigen!")
 return
 
 F10::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -37,6 +68,11 @@ SendChat("/m Bitte umfahren Sie die Unfallstelle")
 return
 
 Numpad7::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+    return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -45,6 +81,11 @@ SendChat("/medicport ls")
 return
 
 Numpad8::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -53,6 +94,11 @@ SendChat("/medicport sf")
 return
 
 Numpad9::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -61,6 +107,11 @@ SendChat("/medicport lv")
 return
 
 NumpadAdd::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -69,6 +120,11 @@ SendChat("/medicport base")
 return
 
 .::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -78,6 +134,11 @@ SendChat("/revival")
 return
 
 ,::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -86,6 +147,11 @@ SendChat("/me prüft den Puls des Patienten")
 return
 
 End::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 Suspend On
 Hotkey, Enter, On
 Hotkey, Escape, On
@@ -141,6 +207,11 @@ Suspend Off
 return
 
 1::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || !IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -151,12 +222,21 @@ Suspend Off
 return
 
 :?:/lgc::
+IfWinNotActive, GTA:SA:MP
+{
+    return
+}
 Suspend Permit
 SendChat("/listgangcars")
 Suspend Off
 return
 
 3::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || GetVehicleModel() == 519 || GetVehicleModel() == 520) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -168,6 +248,11 @@ Suspend Off
 return
 
 NumpadSub::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
