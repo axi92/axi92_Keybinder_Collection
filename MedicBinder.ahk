@@ -39,23 +39,23 @@ SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
 IniRead, LoginName, %SpeicherDatei%, Login, LoginName, Dein Name
 RechteURL := "http://www.axi92.at/samp/rank.php?name="
 RechteDL := RechteURL LoginName
-URLDownloadToFile, %RechteDL%, text.txt
-FileRead, Rechte, text.txt
-FileDelete, text.txt
-if InStr(Rechte, LoginName)
-{
-    RegExMatch(Rechte, "Tempomat: (\d)",tempomat)
-    RegExMatch(Rechte, "Zoll: (\d)",zoll)
-    RegExMatch(Rechte, "Admin: (\d)",admin)
-    RegExMatch(Rechte, "BSN: (\d)",bsn)
-    RegExMatch(Rechte, "Overlay: (\d)",overlay)
-    RegExMatch(Rechte, "Motor: (\d)",motor)
-    RegExMatch(Rechte, "Medic: (\d)",medic)
-	;MsgBox, Tempomat wurden folgende Werte zugewiesen:`nName: %LoginName%`nTempomat: %tempomat1%`nZoll: %zoll1%`nAdmin: %admin1%`nBSN: %bsn1%`nOverlay: %overlay1%`nMotor: %motor1%`nMedic: %medic1%
-} else {
-	MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben:`n`n%Rechte%
-	ExitApp
-}
+;~ URLDownloadToFile, %RechteDL%, text.txt
+;~ FileRead, Rechte, text.txt
+;~ FileDelete, text.txt
+;~ if InStr(Rechte, LoginName)
+;~ {
+    ;~ RegExMatch(Rechte, "Tempomat: (\d)",tempomat)
+    ;~ RegExMatch(Rechte, "Zoll: (\d)",zoll)
+    ;~ RegExMatch(Rechte, "Admin: (\d)",admin)
+    ;~ RegExMatch(Rechte, "BSN: (\d)",bsn)
+    ;~ RegExMatch(Rechte, "Overlay: (\d)",overlay)
+    ;~ RegExMatch(Rechte, "Motor: (\d)",motor)
+    ;~ RegExMatch(Rechte, "Medic: (\d)",medic)
+	;~ ;MsgBox, Tempomat wurden folgende Werte zugewiesen:`nName: %LoginName%`nTempomat: %tempomat1%`nZoll: %zoll1%`nAdmin: %admin1%`nBSN: %bsn1%`nOverlay: %overlay1%`nMotor: %motor1%`nMedic: %medic1%
+;~ } else {
+	;~ MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben:`n`n%Rechte%
+	;~ ExitApp
+;~ }
 ; Gruppensystem Ende -----------------------------------------------------------------------
 
 UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
