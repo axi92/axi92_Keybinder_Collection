@@ -1,3 +1,6 @@
+IfWinNotActive, GTA:SA:MP
+return
+
 Speedo:
 if(IsPlayerInAnyVehicle() == 0 || IsPlayerDriver() == 0 || GetVehicleEngineState() == 0)
 return
