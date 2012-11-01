@@ -1,3 +1,6 @@
+IfWinNotActive, GTA:SA:MP
+return
+
 :?:/overlay::
 Suspend Permit
 Overlay := !Overlay
