@@ -360,6 +360,9 @@ If (Freigabe = 1)
 	}  else if(IsPlayerInRangeOfPoint(1524.8226,-1699.1726,15.3828, 6)) { ;oparkig am PD
 			SendChat("/oparking")
 			Sleep, 6000
+	}  else if(IsPlayerInRangeOfPoint(1149.8187,-1216.7172,18.2932, 6) || IsPlayerInRangeOfPoint(1152.8413,-1229.0538,17.0482, 6)) { ;nropen
+			SendChat("/nropen")
+			Sleep, 6000
 	}  else if(IsPlayerInRangeOfPoint(-2407.4712,976.3237,45.2969, 6)) { ;Medic Tanke
 		if(IsPlayerInAnyVehicle() == 1 and IsPlayerDriver() == 1 GetVehicleModel() != 515) 
 		{
