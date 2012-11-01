@@ -1,4 +1,7 @@
-﻿:?:/aa::
+﻿IfWinNotActive, GTA:SA:MP
+return
+
+:?:/aa::
 Suspend Permit
 SendChat("/accept refill")
 Sleep, 300
