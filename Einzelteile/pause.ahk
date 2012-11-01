@@ -1,3 +1,6 @@
+IfWinNotActive, GTA:SA:MP
+return
+
 !P::
 Pause::
 Suspend, Toggle 
