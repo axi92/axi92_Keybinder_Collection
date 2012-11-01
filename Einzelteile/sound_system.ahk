@@ -1,3 +1,6 @@
+IfWinNotActive, GTA:SA:MP
+return
+
 :?:/sound::
 Suspend Permit
 Sound := !Sound
@@ -17,8 +20,11 @@ return
  
  
  
- 
+
 Sound:
+IfWinNotActive, GTA:SA:MP
+return
+
 GetChatLine(0, Str)
 ;Sollte ausgebaut werden von hier -->
 ; Such Strings Anfang----------------------------------
