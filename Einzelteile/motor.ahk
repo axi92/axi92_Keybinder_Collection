@@ -1,3 +1,6 @@
+IfWinNotActive, GTA:SA:MP
+return
+
 LCtrl::
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
@@ -27,6 +30,10 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 return
 
 Callback_Check_Vehicle:
+
+IfWinNotActive, GTA:SA:MP
+return
+
 if(DoOnce == 0)
 {
 	OldState := GetPlayerState()
@@ -51,7 +58,7 @@ OnPlayerExitVehicle()
 		Random, Zufall, 1, 2, 3
 		GoSub, Motor%Zufall%
 		;SendChat("/motor")
-		if (GetVehicleLightState() == 1)
+		if (GetVehicleLightState() == 1 &&  IsPlayerDriver() == true )
 		{
 			SendChat("/licht")
 			;SendChat("/me schaltet seinen Wagen aus")
