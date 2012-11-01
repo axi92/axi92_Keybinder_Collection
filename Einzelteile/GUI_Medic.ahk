@@ -1,4 +1,4 @@
-IniRead, Overlay, %SpeicherDatei%, Einstellung, Overlay
+﻿IniRead, Overlay, %SpeicherDatei%, Einstellung, Overlay
 Gui, 1:Add,   text,   cred   x10  y1   +backgroundtrans, Pause = Keybinder pausieren
 Gui, 1:Add,   text,   cblack x10  y20  +backgroundtrans, Tastenbelegung:
 Gui, 1:Add,   text,   cblack x10  y40  +backgroundtrans, Linke Strg = Motor
