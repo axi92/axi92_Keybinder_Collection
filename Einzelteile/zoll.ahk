@@ -47,6 +47,9 @@ if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) {
 } else if (IsPlayerInRangeOfPoint(-957.8547,2713.4761,47.1746, 10)) {
 	SendChat("/zoll")
 	Sleep, 5000
+} else if (IsPlayerInRangeOfPoint(-970.5025,-335.1562,36.4611, 10)) {
+	SendChat("/zoll")
+	Sleep, 5000
 } else if (IsPlayerInRangeOfPoint(158.1780,393.6036,11.7829, 3)) {
 	SendChat("/zoll")
 	Sleep, 5000
@@ -382,7 +385,7 @@ If (Freigabe = 1)
 			}
 		}
 	}
-	else if(IsPlayerInRangeOfPoint(1179.1005,-900.1792,43.0248, 10) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 10)) { 
+	else if(IsPlayerInRangeOfPoint(1214.1261,-904.1393,42.9721, 10) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 10)) { 
 		if(IsPlayerInAnyVehicle() == 1 && GetPlayerHealth() < 80 && GetVehicleSpeed() == 0) {
 			SendChat("/drivein")
 			Sleep, 300
