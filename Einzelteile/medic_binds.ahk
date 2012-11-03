@@ -222,10 +222,6 @@ Suspend Off
 return
 
 :?:/lgc::
-IfWinNotActive, GTA:SA:MP
-{
-    return
-}
 Suspend Permit
 SendChat("/listgangcars")
 Suspend Off
