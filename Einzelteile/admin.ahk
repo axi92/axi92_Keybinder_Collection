@@ -1,4 +1,9 @@
 ﻿Numpad0::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
