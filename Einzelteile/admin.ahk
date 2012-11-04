@@ -25,6 +25,7 @@ Suspend, Off
 return
 
 :?:/acab::
+:?:/beleidigung::
 Suspend, Permit
 Sleep, 500
 ShowDialog(0, ">>Sanktionen<<", "§4.1 Schwache Beleidigungen:`nZu den schwachen Beleidigungen zählen Wörter wie:`n'Arschloch', 'Penner', 'Assi', 'Spasti', ggf. 'ACAB'.`nBestraft werden diese mit einer Stunde Prison.", "Beenden")
