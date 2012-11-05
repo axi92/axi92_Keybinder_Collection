@@ -9,7 +9,7 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
    return
 }
 GetPlayerName(name)
-if(name == "axi92")
+if(name == "axi92" || name == "Rahul.van.Buuren")
 {
     Suspend Permit
 	SendChat("/fly")
