@@ -19,3 +19,21 @@ SendChat("/s Benötigt jemand einen Anwalt?")
 SendChat("/s Bitte die ID sagen für einen Kostenvoranschlag!")
 Suspend Off
 return
+
+MButton::
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if (IsPlayerInAnyVehicle() != 1)
+{
+  if (IsPlayerInAnyInterior() == 1)
+	{
+		SendChat("/exit")
+	}
+	else
+	{
+		SendChat("/enter")
+	}
+}
+return
