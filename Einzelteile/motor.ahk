@@ -4,6 +4,8 @@ return
 LCtrl::
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
+	Loop, read, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt
+	LastLine := A_LoopReadLine
 	if (GetVehicleEngineState() == 1)
 	{
 		Random, Zufall, 1, 2, 3
@@ -15,16 +17,33 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 			;SendChat("/me schaltet seinen Wagen aus")
 			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 		}
-	} else if (GetVehicleEngineState() == 0){
+		IfInString, LastLine, Du musst
+		{
+			Send, {n down}
+			Sleep 30
+			Send, {n up}
+			AddChatMessage(0xFF3333, "Handbremse betätigt")
+		}
+	} 
+	else if (GetVehicleEngineState() == 0)
+	{
 		if (GetVehicleLightState() == 0)
 		{
 			SendChat("/licht")
 		}
-			Random, Zufall, 1, 2
+		Random, Zufall, 1, 2
+		GoSub, Motor%Zufall%
+		IfInString, LastLine, Du musst
+		{
+			Send, {n down}
+			Sleep 30
+			Send, {n up}
+			AddChatMessage(0xFF3333, "Handbremse betätigt")
 			GoSub, Motor%Zufall%
-			;SendChat("/motor")
-			;SendChat("/me startet seinen Wagen")
-			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AN{FFFFFF}.")		
+		}
+		;SendChat("/motor")
+		;SendChat("/me startet seinen Wagen")
+		;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AN{FFFFFF}.")		
 	}
 }
 return
