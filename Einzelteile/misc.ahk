@@ -32,13 +32,24 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 if (IsPlayerInAnyVehicle() != 1)
 {
-  if (IsPlayerInAnyInterior() == 1)
+	SetPrivileg()
+	exe := OpenMemoryFromProcess("gta_sa.exe")
+	pointer:=ReadMemory(exe, 0x00B6F5F0) 
+	loc := ReadMemory(exe, pointer+47) 
+	if(loc > 0)
 	{
-		SendChat("/exit")
+    	SendChat("Sie Befinden sich in einem Gebäude. (" loc ")")
+    	sleep 250
+    	SendChat("/exit")
+    	sleep 100
 	}
-	else
+	if(loc = 0)
 	{
-		SendChat("/enter")
+    	SendChat("Sie Befinden sich Außerhalb eines Gebäudes. (" loc ")")
+    	SendChat("/enter")
+    	sleep 100
 	}
+	CloseMemory(exe)
+return
 }
 return
