@@ -1,4 +1,3 @@
-﻿IniRead, Overlay, %SpeicherDatei%, Einstellung, Overlay
 Gui, 1:Add,   text,   cred   x10  y1   +backgroundtrans, Pause = Keybinder pausieren
 Gui, 1:Add,   text,   cblack x10  y20  +backgroundtrans, Tastenbelegung:
 Gui, 1:Add,   text,   cblack x10  y40  +backgroundtrans, Linke Strg = Motor
@@ -19,7 +18,6 @@ Gui, 1:Add,   text,   cblack x230 y100 +backgroundtrans, /kbhelp = Auflistung de
 Gui, 1:Add,   text,   cblack x230 y120 +backgroundtrans, /ab = Anrufabsage, verweis auf SMS
 Gui, 1:Add,   text,   cblack x230 y140 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x230 y160 +backgroundtrans, Num(-) = /duty
-;Gui, 1:Add, Checkbox, x230 y220 Checked%Overlay% vOverlay gOverHealChange, Overlay ein?
 Gui, 1:Add,   text,   cblack x380 y220 +BackgroundTrans, %version%
 Gui, 1:Add, Button,          x230 y180 w180 h25 gSampbutton, BE-Quickjoin
 Gui, 1:Show,,
