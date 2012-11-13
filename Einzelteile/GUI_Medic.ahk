@@ -26,7 +26,7 @@ Gui, 1:Add,   text,   cblack x%x2% y145 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x%x2% y165 +backgroundtrans, Num(-) = /duty
 
 Gui, Tab, San News ;SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN
-Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausieren
+Gui, 1:Add,   text,   cred   x%x1%  y5 +backgroundtrans, Pause = Keybinder pausieren
 Gui, 1:Add, Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 Gui, 1:Show,,Version: %version%
 return
