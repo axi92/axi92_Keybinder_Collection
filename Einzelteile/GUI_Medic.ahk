@@ -30,8 +30,7 @@ Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausier
 Gui, 1:Add, Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 
 Gui, 1:Add,   text,   cblack x%x1%  y45 +backgroundtrans, Werbung Text1:
-Gui, 1:Add, Edit, Limit50 -WantReturn vNewstext1 x15 y65 w410, Test
-
+Gui, 1:Add, Edit, Limit190 -WantReturn vNewstext1 x15 y65 w410, Test
 
 Gui, 1:Show,,Version: %version%
 return
