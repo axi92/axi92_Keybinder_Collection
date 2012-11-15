@@ -4,6 +4,7 @@ Version 3.2:
 + + News System angefangen
 + + Tabs eingebaut
 + ~ PLANUNG: Timer für Autonews
+
 Version 3.1:
 + + Gruppensystem angefangen
 + + Admin Sanktionenliste 
