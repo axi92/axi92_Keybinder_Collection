@@ -6,6 +6,9 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 {
 	Loop, read, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt
 	LastLine := A_LoopReadLine
+	handbremsefix := "lösen um den Motor zu starten"
+	motor_an := "Du musst den Motor ausschalten um die Handbremse"
+	SendChat(LastLine)
 	if (GetVehicleEngineState() == 1)
 	{
 		Random, Zufall, 1, 2, 3
@@ -17,12 +20,12 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 			;SendChat("/me schaltet seinen Wagen aus")
 			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 		}
-		IfInString, LastLine, Du musst
+		IfInString, LastLine, %stringhb%
 		{
 			Send, {n down}
 			Sleep 30
 			Send, {n up}
-			AddChatMessage(0xFF3333, "Handbremse betätigt")
+			AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
 		}
 	} 
 	else if (GetVehicleEngineState() == 0)
@@ -33,12 +36,15 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		}
 		Random, Zufall, 1, 2
 		GoSub, Motor%Zufall%
-		IfInString, LastLine, Du musst
+		Loop, read, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt
+		LastLine := A_LoopReadLine
+		SendChat("vor handbremsefix")
+		IfInString, LastLine, %handbremsefix%
 		{
 			Send, {n down}
 			Sleep 30
 			Send, {n up}
-			AddChatMessage(0xFF3333, "Handbremse betätigt")
+			AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
 			GoSub, Motor%Zufall%
 		}
 		;SendChat("/motor")

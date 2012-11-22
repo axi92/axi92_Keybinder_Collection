@@ -38,14 +38,14 @@ if (IsPlayerInAnyVehicle() != 1)
 	loc := ReadMemory(exe, pointer+47) 
 	if(loc > 0)
 	{
-    	SendChat("Sie Befinden sich in einem Gebäude. (" loc ")")
+    	;SendChat("Sie Befinden sich in einem Gebäude. (" loc ")")
     	sleep 250
     	SendChat("/exit")
     	sleep 100
 	}
 	if(loc = 0)
 	{
-    	SendChat("Sie Befinden sich Außerhalb eines Gebäudes. (" loc ")")
+    	;SendChat("Sie Befinden sich Außerhalb eines Gebäudes. (" loc ")")
     	SendChat("/enter")
     	sleep 100
 	}

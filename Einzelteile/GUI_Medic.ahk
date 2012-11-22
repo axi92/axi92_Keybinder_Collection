@@ -1,4 +1,4 @@
-x_quickjoin:=250
+﻿x_quickjoin:=250
 y_quickjoin:=5
 x1:=15
 x2:=230
