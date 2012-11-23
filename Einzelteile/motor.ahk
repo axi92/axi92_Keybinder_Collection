@@ -4,29 +4,16 @@ return
 LCtrl::
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
-	Loop, read, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt
-	LastLine := A_LoopReadLine
-	handbremsefix := "lösen um den Motor zu starten"
-	motor_an := "Du musst den Motor ausschalten um die Handbremse"
-	SendChat(LastLine)
 	if (GetVehicleEngineState() == 1)
 	{
 		Random, Zufall, 1, 2, 3
 		GoSub, Motor%Zufall%
-		;SendChat("/motor")
 		if (GetVehicleLightState() == 1)
-		{
-			SendChat("/licht")
-			;SendChat("/me schaltet seinen Wagen aus")
-			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
-		}
-		IfInString, LastLine, %stringhb%
-		{
-			Send, {n down}
-			Sleep 30
-			Send, {n up}
-			AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
-		}
+		SendChat("/licht")
+		Send, {n down}
+		Sleep 30
+		Send, {n up}
+		AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
 	} 
 	else if (GetVehicleEngineState() == 0)
 	{
@@ -36,10 +23,10 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		}
 		Random, Zufall, 1, 2
 		GoSub, Motor%Zufall%
-		Loop, read, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt
-		LastLine := A_LoopReadLine
-		SendChat("vor handbremsefix")
-		IfInString, LastLine, %handbremsefix%
+		GetChatLine(0, Str)
+		;SendChat("vor handbremsefix")
+		Sleep, 200
+		IfInString, Str, "lösen um den Motor zu starten"
 		{
 			Send, {n down}
 			Sleep 30
@@ -47,18 +34,21 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 			AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
 			GoSub, Motor%Zufall%
 		}
-		;SendChat("/motor")
-		;SendChat("/me startet seinen Wagen")
-		;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AN{FFFFFF}.")		
 	}
 }
 return
 
-Callback_Check_Vehicle:
-
+:?:/h::
 IfWinNotActive, GTA:SA:MP
 return
+Send, {n down}
+Sleep 30
+Send, {n up}
+return
 
+Callback_Check_Vehicle:
+IfWinNotActive, GTA:SA:MP
+return
 if(DoOnce == 0)
 {
 	OldState := GetPlayerState()
