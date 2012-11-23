@@ -3,6 +3,8 @@ Version 3.3:
 + ~ PLANUNG: Eventbroadcast Texte
 
 Version 3.2:
++ + Loginsystem entfernt
++ + Gruppensystem auf Eis gelegt
 + + News System angefangen
 + + Tabs eingebaut
 + ~ PLANUNG: Timer für Autonews
