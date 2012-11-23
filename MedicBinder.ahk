@@ -10,7 +10,9 @@ IfNotExist, %MainDir%\heal.wav
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/heal.wav, %MainDir%\heal.wav
 }
 IfNotExist, %MainDir%\tot.wav
+{
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
+}
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
@@ -59,8 +61,12 @@ RechteDL := RechteURL LoginName
 	;~ ExitApp
 ;~ }
 ; Gruppensystem Ende -----------------------------------------------------------------------
-
-UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
+#Include Einzelteile/ping.ahk
+OnlineCheck := Ping("axi92.at")
+if(OnlineCheck == 1)
+{
+    UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
+}
 FileRead, newver, %MainDir%\version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver)
@@ -119,7 +125,7 @@ Hotkey, Enter, On
 Hotkey, Escape, On
 Hotkey, t, Off
 return
-; Hier wird bestimmt, das wenn ihr im Spiel T dr�ckt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
+; Hier wird bestimmt, das wenn ihr im Spiel T drückt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
 
 
 ; Bei enterdruck wird das ganze dann wieder Aufgehoben..
