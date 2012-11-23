@@ -1,9 +1,10 @@
-IfWinNotActive, GTA:SA:MP
+﻿IfWinNotActive, GTA:SA:MP
 return
 
 LCtrl::
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
+	handbremse := "[Taste:N]"
 	if (GetVehicleEngineState() == 1)
 	{
 		Random, Zufall, 1, 2, 3
@@ -13,7 +14,7 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		Send, {n down}
 		Sleep 30
 		Send, {n up}
-		AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
+		;AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
 	} 
 	else if (GetVehicleEngineState() == 0)
 	{
@@ -23,15 +24,17 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		}
 		Random, Zufall, 1, 2
 		GoSub, Motor%Zufall%
+		Sleep, 100
 		GetChatLine(0, Str)
+		AddChatMessage(0xFF3333, Str)
 		;SendChat("vor handbremsefix")
 		Sleep, 200
-		IfInString, Str, "lösen um den Motor zu starten"
+		IfInString, Str, %handbremse%
 		{
 			Send, {n down}
 			Sleep 30
 			Send, {n up}
-			AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
+			;AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
 			GoSub, Motor%Zufall%
 		}
 	}
