@@ -1,4 +1,6 @@
 Changelog:
+Version 3.3:
++ ~ PLANUNG: Eventbroadcast Texte
 
 Version 3.2:
 + + News System angefangen
