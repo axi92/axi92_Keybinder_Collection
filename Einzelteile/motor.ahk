@@ -26,7 +26,7 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		GoSub, Motor%Zufall%
 		Sleep, 100
 		GetChatLine(0, Str)
-		AddChatMessage(0xFF3333, Str)
+		;AddChatMessage(0xFF3333, Str)
 		;SendChat("vor handbremsefix")
 		Sleep, 200
 		IfInString, Str, %handbremse%
