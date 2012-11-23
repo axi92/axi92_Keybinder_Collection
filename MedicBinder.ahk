@@ -5,9 +5,11 @@
 MainDir := A_MyDocuments "\MedicKeybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
-IfNotExist, %MainDir% "\heal.wav"
+IfNotExist, %MainDir%\heal.wav
+{
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/heal.wav, %MainDir%\heal.wav
-IfNotExist, %MainDir% "\tot.wav"
+}
+IfNotExist, %MainDir%\tot.wav
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
