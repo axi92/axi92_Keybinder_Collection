@@ -41,17 +41,11 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 }
 return
 
-:?:/h::
-IfWinNotActive, GTA:SA:MP
-return
-Send, {n down}
-Sleep 30
-Send, {n up}
-return
-
 Callback_Check_Vehicle:
 IfWinNotActive, GTA:SA:MP
-return
+{
+	return
+}
 if(DoOnce == 0)
 {
 	OldState := GetPlayerState()
