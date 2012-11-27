@@ -1,6 +1,7 @@
 Changelog:
 Version 3.3:
 + ~ PLANUNG: Eventbroadcast Texte
++ ~ PLANUNG: /me ein/ausschaltbar machen
 
 Version 3.2:
 + + Loginsystem entfernt
