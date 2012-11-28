@@ -32,7 +32,7 @@ Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutto
 Gui, 1:Add,   Text,   cblack x%x1%  y45 +backgroundtrans, Werbung Text1:
 Gui, 1:Add,   Edit, Limit190 -WantReturn vNewstext1 x%x1% r4 y65 w410, Test
 Gui, 1:Add,   Text, x300 y45, Wiederholungen:
-Gui, 1:Add,   Edit, vRepeat1 x390 y43, 1
+Gui, 1:Add,   Edit, vRepeat1 x390 y43, %adrepeat1%
 Gui, 1:Add,   UpDown, Range0-100 gTabcheck +AltSubmit, 1
 
 Gui, 1:Show,,Version: %version%
