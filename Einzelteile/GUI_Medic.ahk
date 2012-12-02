@@ -30,10 +30,10 @@ Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausier
 Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 
 Gui, 1:Add,   Text,   cblack x%x1%  y45 +backgroundtrans, Werbung Text1:
-Gui, 1:Add,   Edit, Limit190 -WantReturn vNewstext1 x%x1% r4 y65 w410, Test
+Gui, 1:Add,   Edit, Limit190 gTabcheck -WantReturn vNewstext1 x%x1% r4 y65 w410, Test
 Gui, 1:Add,   Text, x300 y45, Wiederholungen:
-Gui, 1:Add,   Edit, vRepeat1 x390 y43, %adrepeat1%
-Gui, 1:Add,   UpDown, Range0-100 gTabcheck +AltSubmit, 1
+Gui, 1:Add,   Edit, x390 y43 w35 gTabcheck vadrepeat1, 1
+Gui, 1:Add,   UpDown, Range0-99 gTabcheck +AltSubmit, 1
 
 Gui, 1:Show,,Version: %version%
 return
@@ -46,6 +46,10 @@ return
 
 Tabcheck:
 Gui 1:Submit, NoHide
+;~ if (adrepeat1 > 0)
+;~ {
+	;~ MsgBox %adrepeat1%
+;~ }
 return
 
 
