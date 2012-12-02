@@ -8,7 +8,7 @@ Version 3.2:
 + + Gruppensystem auf Eis gelegt
 + + News System angefangen
 + + Tabs eingebaut
-+ ~ PLANUNG: Timer für Autonews
++ + Timer für Autonews
 
 Version 3.1:
 + + Gruppensystem angefangen
