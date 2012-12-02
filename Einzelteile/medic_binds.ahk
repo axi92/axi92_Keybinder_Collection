@@ -167,7 +167,7 @@ if !errorLevel
 }
 return
 
-:?:/kbhelp::
+:?:/medichelp::
 Suspend Permit
 AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
