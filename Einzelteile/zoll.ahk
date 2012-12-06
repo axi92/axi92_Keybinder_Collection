@@ -488,3 +488,10 @@ If (Var = 7)
 	Freigabe := 1
 }
 return
+
+:?:/zoll::
+Suspend Permit
+SendChat("/zoll")
+Suspend Off
+Settimer, Zollsystem, On
+return
