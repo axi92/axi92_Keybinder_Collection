@@ -53,3 +53,14 @@ if (IsPlayerInAnyVehicle() != 1)
 return
 }
 return
+
+:?:/timer::
+IfWinNotActive, GTA:SA:MP
+{
+	SendInput, {%A_ThisHotkey%}
+	return
+}
+SetTimer, Callback_Check_Vehicle, 100
+Settimer, Logbackup, 1000
+Settimer, Zollsystem, 100
+return
