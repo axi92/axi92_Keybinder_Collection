@@ -187,6 +187,14 @@ return
 :?:/q::
 Logbackup:
 ;WinWait, GTA:SA:MP
+;////////////////////////
+Settimer, Logbackup, Off
+Settimer, Zollsystem, Off
+SetTimer, Sound, Off
+SetTimer, Callback_Check_Vehicle, Off
+Settimer, Speedo, Off
+DestroyAllVisual()
+;////////////////////////
 WinWaitClose, GTA:SA:MP
 {
 	FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
