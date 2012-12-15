@@ -128,7 +128,6 @@ Hotkey, t, Off
 return
 ; Hier wird bestimmt, das wenn ihr im Spiel T drückt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
 
-
 ; Bei enterdruck wird das ganze dann wieder Aufgehoben..
 ~NumpadEnter::
 ~Enter::

@@ -50,15 +50,6 @@ if (IsPlayerInAnyVehicle() != 1)
     	sleep 100
 	}
 	CloseMemory(exe)
-return
-}
-return
-
-:?:/timer::
-IfWinNotActive, GTA:SA:MP
-{
-	SendInput, {%A_ThisHotkey%}
-	return
 }
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Logbackup, 1000

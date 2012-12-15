@@ -5,6 +5,7 @@ return
 SpeedCheck := GetVehicleSpeed()
 Veh := GetVehicleModel()
 
+;AddChatMessage(0xFF3333, "Zollsystem")
 if(IsPlayerInRangeOfPoint(54.2541,-1531.9141,9.8567, 10)) 
 {
 	SendChat("/zoll")
@@ -93,6 +94,7 @@ else if (IsPlayerInRangeOfPoint(158.1780,393.6036,11.7829, 3))
 else if(IsPlayerInRangeOfPoint(1149.8187,-1216.7172,18.2932, 6) || IsPlayerInRangeOfPoint(1152.8413,-1229.0538,17.0482, 6)) ;nropen
 { 
 	SendChat("/nropen")
+	AddChatMessage(0xFF3333, "Newstor offen")
 	Sleep, 5000
 }
 else if(IsPlayerInRangeOfPoint(2778.198, -1623.240, 10.921, 5)) ;RG OPEN BASE
