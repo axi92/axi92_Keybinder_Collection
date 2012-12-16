@@ -24,7 +24,6 @@ return
 Sound:
 IfWinNotActive, GTA:SA:MP
 return
-
 GetChatLine(0, Str)
 ;Sollte ausgebaut werden von hier -->
 ; Such Strings Anfang----------------------------------
@@ -44,6 +43,13 @@ else if InStr(Str, revival)
 {
 	;MsgBox % "tot.wav würde nun spielen"
 	SoundPlay, %MainDir%\tot.wav
+	Sleep, 5000
+	;AddChatMessage(0xFFFFF, "Sound play Tot")
+}
+else if InStr(Str, ticket)
+{
+	;MsgBox % "tot.wav würde nun spielen"
+	SoundPlay, %MainDir%\beep.wav
 	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Tot")
 }

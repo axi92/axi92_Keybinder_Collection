@@ -13,6 +13,10 @@ IfNotExist, %MainDir%\tot.wav
 {
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/tot.wav, %MainDir%\tot.wav
 }
+IfNotExist, %MainDir%\beep.wav
+{
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/beep.wav, %MainDir%\beep.wav
+}
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 

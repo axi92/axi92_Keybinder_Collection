@@ -54,4 +54,8 @@ if (IsPlayerInAnyVehicle() != 1)
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
+If(Sound = 1)
+{
+	SoundPlay, %MainDir%\beep.wav
+}
 return
