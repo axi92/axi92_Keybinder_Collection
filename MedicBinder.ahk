@@ -99,6 +99,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/news_binds.ahk
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
+#Include Einzelteile/gk.ahk
 If (recht_medic == 1)
 {
 	#Include Einzelteile/medic_binds.ahk
