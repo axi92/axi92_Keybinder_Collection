@@ -56,6 +56,6 @@ Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
 If(Sound = 1)
 {
-	SoundPlay, %MainDir%\beep.wav
+	;SoundPlay, %MainDir%\beep.wav
 }
 return
