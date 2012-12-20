@@ -1,4 +1,5 @@
-﻿Zollsystem:
+﻿MButton::
+Zollsystem:
 IfWinNotActive, GTA:SA:MP
 return
 
@@ -126,9 +127,9 @@ else if(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 5)) ;rgopen am KH
 	SendChat("/rgopen")
 	Sleep, 6000
 } 
-	else if(IsPlayerInRangeOfPoint(1214.1261,-904.1393,42.9721, 10) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 10)) 
+	else if(IsPlayerInRangeOfPoint(1214.1261,-904.1393,42.9721, 3) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 3)) 
 	{ 
-		if(IsPlayerInAnyVehicle() == 1 && GetPlayerHealth() < 80 && GetVehicleSpeed() == 0) 
+		if(IsPlayerInAnyVehicle() == 1 && GetPlayerHealth() < 99 && GetVehicleSpeed() == 0) 
 		{
 			SendChat("/drivein")
 			Sleep, 300
