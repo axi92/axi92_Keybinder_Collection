@@ -96,19 +96,21 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
-#Include Einzelteile/news_binds.ahk
+if (tabnummer == 2)
+{
+	#Include Einzelteile/news_binds.ahk
+}
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
 #Include Einzelteile/gk.ahk
-If (recht_medic == 1)
+If (tabnummer == 1)
 {
 	#Include Einzelteile/medic_binds.ahk
-    #Include Einzelteile/sound_system.ahk
-}
-
+}	
+#Include Einzelteile/sound_system.ahk
 If (recht_admin == 1)
 {
-#Include Einzelteile/admin.ahk
+	#Include Einzelteile/admin.ahk
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
