@@ -1,6 +1,11 @@
 ﻿IfWinNotActive, GTA:SA:MP
 return
 
+if(Tabnummer != 2)
+{	
+	return
+}
+
 :?:/versteigerung::
 Suspend Permit
 SendChat("/n - Versteigerung -")
