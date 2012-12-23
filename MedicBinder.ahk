@@ -2,6 +2,7 @@
 #Persistent
 #UseHook
 #NoEnv
+#Hotstring EndChars `n
 MainDir := A_MyDocuments "\MedicKeybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
@@ -96,22 +97,19 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
-if (tabnummer == 2)
-{
+if(Tabnummer == 1)
+{	
 	#Include Einzelteile/news_binds.ahk
 }
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
 #Include Einzelteile/gk.ahk
-If (tabnummer == 1)
-{
-	#Include Einzelteile/medic_binds.ahk
-}	
-#Include Einzelteile/sound_system.ahk
-If (recht_admin == 1)
-{
-	#Include Einzelteile/admin.ahk
+if(Tabnummer == 1)
+{	
+   #Include Einzelteile/medic_binds.ahk
 }
+#Include Einzelteile/sound_system.ahk
+#Include Einzelteile/admin.ahk
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
@@ -119,12 +117,9 @@ Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
 IniWrite, %Overlay%, %SpeicherDatei%, Einstellung, Overlay
 ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
-
 Hotkey, Enter, Off
 Hotkey, Escape, Off
-
 ; Von hier bis....
-
 
 +T::
 ~t::
@@ -157,17 +152,14 @@ if (recht_motor == 1)
 {
     #Include Einzelteile/motor.ahk
 }
-
 If (recht_tempomat == 1)
 {
     #Include Einzelteile/tacho.ahk
 }
-
 if (recht_overlay == 1)
 {
     #Include Einzelteile/heal_hud.ahk
 }
-
 #Include Einzelteile/zoll.ahk
 
 Motor1:
