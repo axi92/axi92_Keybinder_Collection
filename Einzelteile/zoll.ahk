@@ -1,4 +1,4 @@
-﻿MButton::
+﻿RButton::
 Zollsystem:
 IfWinNotActive, GTA:SA:MP
 return
@@ -490,11 +490,4 @@ If (Var = 7)
 	Settimer, Zähler, Off
 	Freigabe := 1
 }
-return
-
-:?:/zoll::
-Suspend Permit
-SendChat("/zoll")
-Suspend Off
-Settimer, Zollsystem, On
 return
