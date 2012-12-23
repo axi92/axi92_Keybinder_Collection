@@ -20,6 +20,10 @@ SendChat("/s Bitte die ID sagen für einen Kostenvoranschlag!")
 Suspend Off
 return
 
+:?:/tabnummer?::
+Suspend Permit
+AddChatMessage(0xFFFFFF, "Tabnumber: " Tabnummer)
+
 MButton::
 IfWinNotActive, GTA:SA:MP
 {
