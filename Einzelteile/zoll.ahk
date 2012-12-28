@@ -1,5 +1,4 @@
-﻿RButton::
-Zollsystem:
+﻿Zollsystem:
 IfWinNotActive, GTA:SA:MP
 return
 
