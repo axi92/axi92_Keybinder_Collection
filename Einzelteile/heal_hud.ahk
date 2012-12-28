@@ -10,11 +10,14 @@ AddChatMessage(0xFFFFF, "Overlay: " SoundStatus)
 if (Overlay = 1)
 {
 	SetTimer, Carheal, 500
+    Settimer, Playerheal, 500
 }
 else
 {
 	SetTimer, Carheal, Off
+    Settimer, Playerheal, Off
     TextHide(Carheal)
+    TextHide(heal)
 }
 Suspend Off
 return
@@ -39,7 +42,9 @@ if ( IsPlayerInAnyVehicle() == true )
         GetZoneName(zone)
         TextSetString(Carheal, "Fahrzeug Health: " . GetVehicleHealth() . "`nStandort: " . city . " - " . zone . "" )
     }
-} else {
+} 
+else 
+{
     if ( Carheal != -1)
     {
         TextHide(Carheal)
@@ -50,7 +55,7 @@ if ( IsPlayerInAnyVehicle() == true )
 return
 
 
-Playerheal_ausgeschalten:
+Playerheal:
 IfWinNotActive, GTA:SA:MP
 {
     return
