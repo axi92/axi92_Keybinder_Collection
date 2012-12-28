@@ -108,6 +108,10 @@ if(Tabnummer == 1)
 {	
    #Include Einzelteile/medic_binds.ahk
 }
+if(Tabnummer == 3)
+{	
+   #Include Einzelteile/pd.ahk
+}
 #Include Einzelteile/sound_system.ahk
 #Include Einzelteile/admin.ahk
 

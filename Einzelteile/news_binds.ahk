@@ -7,6 +7,10 @@ if(Tabnummer != 2)
 }
 
 :?:/versteigerung::
+if(Tabnummer != 2)
+{	
+	return
+}
 Suspend Permit
 SendChat("/n - Versteigerung -")
 Sleep, 500
@@ -26,6 +30,10 @@ return
 
 adstart1:
 :?:/adstart1::
+if(Tabnummer != 2)
+{	
+	return
+}
 Suspend Permit
 AddChatMessage(0xFF3333, "Werbung 1")
 if (adrepeat1 > 0)
@@ -42,6 +50,10 @@ Suspend Off
 return
 
 :?:/adstop1::
+if(Tabnummer != 2)
+{	
+	return
+}
 Suspend Permit
 Settimer, ad1, Off
 AddChatMessage(0xFF3333, "Werbung 1 Ende")
@@ -54,6 +66,10 @@ goto, adstart1
 return
 
 :?:/newshelp::
+if(Tabnummer != 2)
+{	
+	return
+}
 Suspend Permit
 AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
