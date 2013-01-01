@@ -64,3 +64,15 @@ If(Sound = 1)
 	;SoundPlay, %MainDir%\beep.wav
 }
 return
+
+:?:/ab::
+Suspend Permit
+SendChat("/p")
+Sleep, 500
+SendChat("Ich bin derzeit schwer beschäftigt und kann desswegen nicht reden,")
+Sleep, 500
+SendChat("bitte schreibe eine SMS!")
+Sleep, 500
+SendChat("/h")
+Suspend Off
+return
