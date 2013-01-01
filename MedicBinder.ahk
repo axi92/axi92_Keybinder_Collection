@@ -2,7 +2,7 @@
 #Persistent
 #UseHook
 #NoEnv
-#Hotstring EndChars `n
+#Hotstring EndChars `n ` 
 MainDir := A_MyDocuments "\MedicKeybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
@@ -110,7 +110,7 @@ if(Tabnummer == 1)
 }
 if(Tabnummer == 3)
 {	
-   #Include Einzelteile/pd.ahk
+;   #Include Einzelteile/pd.ahk
 }
 #Include Einzelteile/sound_system.ahk
 #Include Einzelteile/admin.ahk
