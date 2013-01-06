@@ -55,7 +55,7 @@ Gui 1:Submit, NoHide
 ;~ {
 	;~ MsgBox %adrepeat1%
 ;~ }
-;Msgbox %Tabnummer%
+;Msgbox %Newstext1%
 return
 
 
