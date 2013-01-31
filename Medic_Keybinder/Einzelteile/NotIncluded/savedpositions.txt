@@ -1,0 +1,19 @@
+AddStaticVehicle(582,-970.5025,-335.1562,36.4611,167.5793,0,6); // Zoll
+AddStaticVehicle(582,1214.1261,-904.1393,42.9721,7.2139,0,6); // BSN
+AddStaticVehicle(582,-971.2258,-336.2356,36.4838,168.8870,0,6); // Zoll1
+AddStaticVehicle(542,59.0163,-1525.5455,4.7105,84.1369,3,59); // zoll
+AddPlayerClass(228,2232.2974,-1160.0493,25.8906,185.9909,0,0,0,0,0,0); // Leaderverwaltung
+AddPlayerClass(58,-2546.2134,2285.2031,4.8359,270.3662,0,0,0,0,0,0); // Disco alterbeschrenkung
+AddPlayerClass(58,366.0341,175.6768,1008.3828,290.9538,0,0,0,0,0,0); // Arbeitslosengeld beantragen geht nicht (..., du hast keinen Job!)
+AddPlayerClass(58,363.4901,174.7708,1008.3828,110.6405,0,0,0,0,0,0); // Jobs kann man nicht auswählen
+AddStaticVehicle(589,-2337.8848,2362.0046,5.1119,232.3364,0,255); // Pfandflaschen begrenzung
+AddPlayerClass(58,-2417.2627,2329.5950,4.9921,106.9879,0,0,0,0,0,0); // Driveinbug - Zu wenig geld -> nochmal -> hol deine bestellung ab
+AddPlayerClass(58,-2443.7524,2324.9849,4.9844,357.8018,0,0,0,0,0,0); // Freie zimmer bug 8v8 frei aber keins mietbar
+AddPlayerClass(58,-2445.7551,2349.0872,4.9947,214.7760,0,0,0,0,0,0); // Jeder kann in die Feuerwache
+AddPlayerClass(58,-2365.6716,2377.0291,10.5693,54.6847,0,0,0,0,0,0); // Geldbug, geld wird gelöscht
+AddStaticVehicle(560,968.9838,-1033.4351,29.7969,33.0664,0,0); // 209.12 RM Base
+AddStaticVehicle(560,1352.6958,-1048.4801,26.2300,176.1556,0,0); // Gebäudekomplex 9.1 Ammunation
+AddStaticVehicle(596,-287.3328,-2807.4348,53.9467,74.2698,79,1); // wanted bei hacker
+AddStaticVehicle(596,1544.3206,-1610.3981,13.1013,91.4711,79,1); // fill
+AddStaticVehicle(411,1283.8221,-1713.1975,13.1083,137.3632,3,3); // drecksopfer, opfer, schwanzlutscher
+AddStaticVehicle(541,1545.0154,-1610.0618,13.0077,85.9778,0,0); // /fill
