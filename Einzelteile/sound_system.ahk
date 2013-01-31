@@ -9,7 +9,7 @@ AddChatMessage(0xFFFFF, "Sound: " SoundStatus)
 ;MsgBox, Soundnotification: %SoundStatus% ;Sollte ausgebaut werden
 if (Sound = 1)
 {
-	SetTimer, Sound, 200
+	SetTimer, Sound, 100
 }
 else
 {
@@ -18,31 +18,28 @@ else
 Suspend Off
 return
  
- 
- 
-
 Sound:
 IfWinNotActive, GTA:SA:MP
 return
 GetChatLine(0, Str)
 ;Sollte ausgebaut werden von hier -->
 ; Such Strings Anfang----------------------------------
-service := "Benutze /anrufliste"
-revival := "Wiederbelebt werden! Benutze: /acceptrevival"
+bankrob := "raubt die Bank in"
+fahrzeugklau := "hat einen Versuch ein"
 ticket := "hat ein Support Ticket erstellt"
 ; Such Strings Ende------------------------------------
-if InStr(Str, service)
+if InStr(Str, bankrob)
 {
 	;MsgBox % "heal.wav würde nun spielen"
-	SoundPlay, %MainDir%\heal.wav
+	SoundPlay, %MainDir%\heal.wav ;Bankrobsound
 	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Heal")
 	return
 }
-else if InStr(Str, revival)
+else if InStr(Str, fahrzeugklau)
 {
 	;MsgBox % "tot.wav würde nun spielen"
-	SoundPlay, %MainDir%\tot.wav
+	SoundPlay, %MainDir%\tot.wav ;Fahrzeugklau
 	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Tot")
 }

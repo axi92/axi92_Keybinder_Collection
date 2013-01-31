@@ -1,7 +1,8 @@
 ﻿IfWinNotActive, GTA:SA:MP
 return
 
-LCtrl::
+!E::
+^::
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
 	handbremse := "[Taste:N]"
