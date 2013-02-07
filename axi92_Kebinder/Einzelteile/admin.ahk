@@ -12,7 +12,7 @@ GetPlayerName(name)
 if(name == "axi92")
 {
     Suspend Permit
-	SendChat("/fly")
+	SendChat("/givejetpack")
 	Suspend Off
 }
 return
@@ -51,16 +51,16 @@ return
 
 :?:/ocountdown::
 Suspend, Permit
-SendChat("/o 5")
+SendChat("/s 5")
 Sleep, 1000
-SendChat("/o 4")
+SendChat("/s 4")
 Sleep, 1000
-SendChat("/o 3")
+SendChat("/s 3")
 Sleep, 1000
-SendChat("/o 2")
+SendChat("/s 2")
 Sleep, 1000
-SendChat("/o 1")
+SendChat("/s 1")
 Sleep, 1000
-SendChat("/o GO!")
+SendChat("/s GO!")
 Suspend, Off
 return
