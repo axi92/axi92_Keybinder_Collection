@@ -22,7 +22,7 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
-version := 3.3
+version := 3.4
 
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
@@ -92,29 +92,18 @@ if (version < newver)
 	Run,update.bat,,hide
 	ExitApp
 }
-FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
-;#Include Einzelteile/Login.ahk
+FileInstall, Einzelteile/API.dll, %MainDir%\API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_Medic.ahk
-if(Tabnummer == 1)
-{	
-	#Include Einzelteile/news_binds.ahk
-}
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
-#Include Einzelteile/gk.ahk
-if(Tabnummer == 1)
-{	
-   #Include Einzelteile/medic_binds.ahk
-}
-if(Tabnummer == 3)
-{	
-;   #Include Einzelteile/pd.ahk
-}
+#Include Einzelteile/medic_binds.ahk
 #Include Einzelteile/sound_system.ahk
-#Include Einzelteile/admin.ahk
-
+#Include Einzelteile/motor.ahk
+#Include Einzelteile/tacho.ahk
+#Include Einzelteile/heal_hud.ahk
+#Include Einzelteile/zoll.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
 Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
@@ -151,20 +140,6 @@ Hotkey, t, On
 Hotkey, Enter, Off
 Hotkey, Escape, Off
 return
-
-if (recht_motor == 1)
-{
-    #Include Einzelteile/motor.ahk
-}
-If (recht_tempomat == 1)
-{
-    #Include Einzelteile/tacho.ahk
-}
-if (recht_overlay == 1)
-{
-    #Include Einzelteile/heal_hud.ahk
-}
-#Include Einzelteile/zoll.ahk
 
 Motor1:
 SendChat("/motor 1")
