@@ -19,14 +19,15 @@ RegisterTextBind("/zoll", 96.0385,-1255.0643,14.2856, 10, 1, 5100)
 RegisterTextBind("/zoll", 96.2837,-1276.7212,13.8286, 10, 1, 5100)
 RegisterTextBind("/zoll", -484.1187,1054.2291,10.9083, 10, 1, 5100)
 RegisterTextBind("/zoll", 1706.0099,466.7729,30.4966, 10, 1, 5100)
-RegisterTextBind("/zoll", -959.3175,2722.3157,47.1700, 10, 1, 5100)
 RegisterTextBind("/zoll", -957.8547,2713.4761,47.1746, 10, 1, 5100)
 RegisterTextBind("/zoll", -970.5025,-335.1562,36.4611, 10, 1, 5100)
 RegisterTextBind("/zoll", 158.1780,393.6036,11.7829, 10, 1, 5100)
+RegisterTextBind("/zoll", -450.7132,587.8832,16.9099, 10, 1, 5100)
+RegisterTextBind("/zoll", 516.1174,471.6942,18.6420, 10, 1, 5100)
+
 
 ;// Newsreporter Open - Haupttor \\
 RegisterTextBind("/nropen", 1149.8187,-1216.7172,18.2932, 10, 1, 5100)
-RegisterTextBind("/nropen", 1152.8413,-1229.0538,17.0482, 10, 1, 5100)
 
 ;// Respawn Garage Open \\
 RegisterTextBind("/rgopen", 1141.9224,-1342.4720,13.7853, 10, 1, 5100) ;//Medic
@@ -34,13 +35,10 @@ RegisterTextBind("/rgopen", 1141.9224,-1342.4720,13.7853, 10, 1, 5100) ;//Medic
 ;// Medic Open (mopen) \\
 RegisterTextBind("/mopen", 1138.201, -1290.213, 13.6807, 10, 1, 5100) ;KH SF Mopen
 RegisterTextBind("/mopen", 2827.5278,-1568.4065,10.9219, 10, 1, 5100)
-RegisterTextBind("/mopen", 2842.8477,-1571.4430,10.7038, 10, 1, 5100)
-RegisterTextBind("/mopen", 2822.7876,-1588.4723,10.9255, 10, 1, 5100)
-RegisterTextBind("/mopen", 2832.2361,-1593.4301,10.9219, 10, 1, 5100)
-RegisterTextBind("/mopen", 2834.2930,-1569.9448,10.9219, 10, 1, 5100)
+
 
 ;// Oparking \\
-RegisterTextBind("/oparking", 1524.8226,-1699.1726,15.3828, 10, 1, 5100) ;PD Oparking
+RegisterTextBind("/oparking", 1524.8226,-1699.1726,15.3828, 3, 1, 5100) ;PD Oparking
 
 ;// Trucker \\
 RegisterTextBind("repairtruck", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
