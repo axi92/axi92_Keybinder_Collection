@@ -3,8 +3,8 @@ y_quickjoin:=5
 x1:=15
 x2:=230
 
-Gui, 1:Add,   Tab2, gTabcheck +AltSubmit vTabnummer Choose%tabnummer% y20 w420, Medic|San News|PD
-Gui, Tab,    Medic ; Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic
+;~ Gui, 1:Add,   Tab2, gTabcheck +AltSubmit vTabnummer Choose%tabnummer% y20 w420, Medic|San News|PD
+;~ Gui, Tab,    Medic ; Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic Medic
 Gui, 1:Add,   text,   cred   x%x1%  y5 +backgroundtrans, Pause = Keybinder pausieren
 Gui, 1:Add,   Button,        x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 Gui, 1:Add,   text,   cblack x%x1%  y45  +backgroundtrans, Linke Strg = Motor
@@ -25,19 +25,19 @@ Gui, 1:Add,   text,   cblack x%x2% y125 +backgroundtrans, /ab = Anrufabsage, ver
 Gui, 1:Add,   text,   cblack x%x2% y145 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x%x2% y165 +backgroundtrans, Num(-) = /duty
 
-Gui,   Tab,   San News ;SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN
-Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausieren
-Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
+;~ Gui,   Tab,   San News ;SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN SN
+;~ Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausieren
+;~ Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 
-Gui, 1:Add,   Text,   cblack x%x1%  y45 +backgroundtrans, Werbung Text1:
-Gui, 1:Add,   Edit, Limit190 gTabcheck -WantReturn vNewstext1 x%x1% r4 y65 w410, Test
-Gui, 1:Add,   Text, x300 y45, Wiederholungen:
-Gui, 1:Add,   Edit, x390 y43 w35 gTabcheck vadrepeat1, 1
-Gui, 1:Add,   UpDown, Range0-99 gTabcheck +AltSubmit, 1
+;~ Gui, 1:Add,   Text,   cblack x%x1%  y45 +backgroundtrans, Werbung Text1:
+;~ Gui, 1:Add,   Edit, Limit190 gTabcheck -WantReturn vNewstext1 x%x1% r4 y65 w410, Test
+;~ Gui, 1:Add,   Text, x300 y45, Wiederholungen:
+;~ Gui, 1:Add,   Edit, x390 y43 w35 gTabcheck vadrepeat1, 1
+;~ Gui, 1:Add,   UpDown, Range0-99 gTabcheck +AltSubmit, 1
 
-Gui,   Tab,   PD ;PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD 
-Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausieren
-Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
+;~ Gui,   Tab,   PD ;PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD PD 
+;~ Gui, 1:Add,   text,   cred   x15  y5 +backgroundtrans, Pause = Keybinder pausieren
+;~ Gui, 1:Add,   Button,          x%x_quickjoin% y%y_quickjoin% w180 h25 gSampbutton, BE-Quickjoin
 
 
 Gui, 1:Show,,Version: %version%
