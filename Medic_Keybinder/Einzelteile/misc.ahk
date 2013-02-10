@@ -24,7 +24,6 @@ return
 Suspend Permit
 AddChatMessage(0xFFFFFF, "Tabnumber: " Tabnummer)
 
-F2::
 MButton::
 IfWinNotActive, GTA:SA:MP
 {
