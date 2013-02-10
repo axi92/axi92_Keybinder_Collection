@@ -10,7 +10,7 @@ PLAYER_STATE_DEAD 				:= 55
 
 
 ; Script Entry
-hModule := DllCall("LoadLibrary", Str, A_ScriptDir . "\API.dll")
+hModule := DllCall("LoadLibrary", Str, MainDir . "\API.dll")
 if(hModule == -1 || hModule == 0)
 {
 	MsgBox, 48, API - Fehler, Die API.dll konnte nicht gefunden werden.`nDer Keybinder wird nun beendet.
