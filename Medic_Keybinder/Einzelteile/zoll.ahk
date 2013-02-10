@@ -104,7 +104,7 @@ else if(IsPlayerInRangeOfPoint(2778.198, -1623.240, 10.921, 5)) ;RG OPEN BASE
 }
 else if(IsPlayerInRangeOfPoint(1138.201, -1290.213, 13.6807, 10)) ;KH SF MOPEN
 { 
-	SendChat("/mopen")
+	SendChat("/tor")
 	Sleep, 5000
 }  
 else if(IsPlayerInRangeOfPoint(2778.198, -1623.240, 10.921, 5)) { ;RG OPEN BASE
@@ -118,7 +118,7 @@ else if(IsPlayerInRangeOfPoint(1524.8226,-1699.1726,15.3828, 6)) ;oparkig am PD
 }
 else if(IsPlayerInRangeOfPoint(2827.5278,-1568.4065,10.9219, 5) || IsPlayerInRangeOfPoint(2842.8477,-1571.4430,10.7038, 5) || IsPlayerInRangeOfPoint(2822.7876,-1588.4723,10.9255, 5) || IsPlayerInRangeOfPoint(2832.2361,-1593.4301,10.9219, 5) || IsPlayerInRangeOfPoint(2834.2930,-1569.9448,10.9219, 5)) ;Mopen Medic BASE
 { 
-	SendChat("/mopen")
+	SendChat("/tor")
 	Sleep, 7000
 }  
 else if(IsPlayerInRangeOfPoint(1141.9224,-1342.4720,13.7853, 5)) ;rgopen am KH
