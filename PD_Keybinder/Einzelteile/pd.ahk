@@ -630,7 +630,7 @@ return
 :?:/hacker::
 Suspend Permit
 SendInput tID: {Space}
-Input,aufnahme_hacker,V I M T5,{ENTER}
+Input,aufnahme_hacker,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/su " aufnahme_hacker " Illegales Eindringen in den Polizeicomputer")
@@ -1241,8 +1241,8 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
-Input,aufnahme_gpfalsche,V I M T5,{ENTER}
+SendInput ID:{Space}
+Input,aufnahme_gpfalsche,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpfalsche " 10000 Fahren auf Falscher Straßenseite")
@@ -1268,8 +1268,8 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
-Input,aufnahme_gpabseits,V I M T5,{ENTER}
+SendInput ID:{Space}
+Input,aufnahme_gpabseits,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpabseits " 5000 Fahren Abseits der Straße")
@@ -1296,7 +1296,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikeabseits,V I M T5,{ENTER}
+Input,aufnahme_gpbikeabseits,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikeabseits " 5000 Fahren Abseits der Straße")
@@ -1323,7 +1323,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwabseits,V I M T5,{ENTER}
+Input,aufnahme_gplkwabseits,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwabseits " 5000 Fahren Abseits der Straße")
@@ -1350,7 +1350,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikefalsche,V I M T5,{ENTER}
+Input,aufnahme_gpbikefalsche,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikefalsche " 10000 Fahren auf Falscher Straßenseite")
@@ -1377,7 +1377,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwfalsche,V I M T5,{ENTER}
+Input,aufnahme_gplkwfalsche,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwfalsche " 10000 Fahren auf Falscher Straßenseite")
@@ -1405,7 +1405,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpsach,V I M T5,{ENTER}
+Input,aufnahme_gpsach,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpsach " 10000 Sachbeschädigung")
@@ -1432,7 +1432,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikesach,V I M T5,{ENTER}
+Input,aufnahme_gpbikesach,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikesach " 10000 Sachbeschädigung")
@@ -1459,7 +1459,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwsach,V I M T5,{ENTER}
+Input,aufnahme_gplkwsach,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwsach " 10000 Sachbeschädigung")
@@ -1487,7 +1487,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpunfall,V I M T5,{ENTER}
+Input,aufnahme_gpunfall,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpunfall " 6000 Verursachen eines Unfalls")
@@ -1514,7 +1514,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikeunfall,V I M T5,{ENTER}
+Input,aufnahme_gpbikeunfall,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpunfall " 6000 Verursachen eines Unfalls")
@@ -1541,7 +1541,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwunfall,V I M T5,{ENTER}
+Input,aufnahme_gplkwunfall,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwunfall " 6000 Verursachen eines Unfalls")
@@ -1568,7 +1568,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpramm,V I M T5,{ENTER}
+Input,aufnahme_gpramm,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpramm " 10000 Verursachen eines Unfalls")
@@ -1595,7 +1595,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikeramm,V I M T5,{ENTER}
+Input,aufnahme_gpbikeramm,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikeramm " 10000 Verursachen eines Unfalls")
@@ -1622,7 +1622,7 @@ SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwramm,V I M T5,{ENTER}
+Input,aufnahme_gplkwramm,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwramm " 10000 Verursachen eines Unfalls")
@@ -1649,7 +1649,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_tiefflug,V I M T5,{ENTER}
+Input,aufnahme_tiefflug,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_tiefflug " 30000 Tiefflug")
@@ -1676,7 +1676,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplicht,V I M T5,{ENTER}
+Input,aufnahme_gplicht,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplicht " 2000 Fahren ohne Licht bei schlechten Wetterverhältnissen")
@@ -1703,7 +1703,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikelicht,V I M T5,{ENTER}
+Input,aufnahme_gpbikelicht,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikelicht " 2000 Fahren ohne Licht bei schlechten Wetterverhältnissen")
@@ -1730,7 +1730,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwlicht,V I M T5,{ENTER}
+Input,aufnahme_gplkwlicht,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwlicht " 2000 Fahren ohne Licht bei schlechten Wetterverhältnissen")
@@ -1757,7 +1757,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpblock,V I M T5,{ENTER}
+Input,aufnahme_gpblock,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpblock " 3000 Blockieren eines Einsatzfahrzeuges")
@@ -1784,7 +1784,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikeblock,V I M T5,{ENTER}
+Input,aufnahme_gpbikeblock,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikeblock " 3000 Blockieren eines Einsatzfahrzeuges")
@@ -1811,7 +1811,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwblock,V I M T5,{ENTER}
+Input,aufnahme_gplkwblock,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwblock " 3000 Blockieren eines Einsatzfahrzeuges")
@@ -1839,7 +1839,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gprechts,V I M T5,{ENTER}
+Input,aufnahme_gprechts,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gprechts " 3000 Missachtung von Rechts vor Links")
@@ -1866,7 +1866,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikerechts,V I M T5,{ENTER}
+Input,aufnahme_gpbikerechts,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikerechts " 2000 Missachtung von Rechts vor Links")
@@ -1893,7 +1893,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gplkwrechts,V I M T5,{ENTER}
+Input,aufnahme_gplkwrechts,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwrechts " 2000 Missachtung von Rechts vor Links")
@@ -1916,7 +1916,7 @@ SendChat("Das kostet Sie ein Bußgeld von 2.000$")
 sleep 200
 suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpnos,V I M T5,{ENTER}
+Input,aufnahme_gpnos,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpnos " 2000 Nitro im Öffentlichen Straßenverkehr")   
@@ -1937,7 +1937,7 @@ SendChat("Dies kostet Sie ein Bußgeld von 2.000$")
 sleep 200
 suspend off
 SendInput tID:{Space}
-Input,aufnahme_gplkwnos,V I M T5,{ENTER}
+Input,aufnahme_gplkwnos,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gplkwnos " 2000 Nitro im Öffentlichen Straßenverkehr")   
@@ -1963,7 +1963,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpburn,V I M T5,{ENTER}
+Input,aufnahme_gpburn,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpburn " 1000 Burnouts im Öffentlichen Straßenverkehr")
@@ -1990,7 +1990,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpbikeburn,V I M T5,{ENTER}
+Input,aufnahme_gpbikeburn,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpbikeburn " 1000 Burnouts im Öffentlichen Straßenverkehr")
@@ -2017,7 +2017,7 @@ SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
 SendInput tID:{Space}
-Input,aufnahme_gpwheely,V I M T5,{ENTER}
+Input,aufnahme_gpwheely,V I M,{ENTER}
 If !ErrorLevel
 {
    SendChat("/sz " aufnahme_gpwheely " 1000 Burnouts im Öffentlichen Straßenverkehr")
