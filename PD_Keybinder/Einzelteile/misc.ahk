@@ -46,7 +46,7 @@ if (IsPlayerInAnyVehicle() != 1)
     	;SendChat("Sie Befinden sich in einem Gebäude. (" loc ")")
     	sleep 250
     	SendChat("/exit")
-    	sleep 100
+    	sleep 500
 	}
 	if(loc = 0)
 	{
@@ -54,7 +54,7 @@ if (IsPlayerInAnyVehicle() != 1)
 		SendChat("/ram")
     	sleep 100
     	SendChat("/enter")
-    	sleep 100
+    	sleep 500
 	}
 	CloseMemory(exe)
 }
