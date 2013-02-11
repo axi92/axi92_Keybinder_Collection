@@ -1295,7 +1295,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikeabseits,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1322,7 +1322,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwabseits,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1349,7 +1349,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikefalsche,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1376,7 +1376,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwfalsche,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1404,7 +1404,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpsach,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1431,7 +1431,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikesach,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1458,7 +1458,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwsach,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1486,7 +1486,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpunfall,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1513,7 +1513,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikeunfall,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1540,7 +1540,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwunfall,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1567,7 +1567,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpramm,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1594,7 +1594,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikeramm,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1621,7 +1621,7 @@ sleep 200
 SendChat("Ihre aktuellen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwramm,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1648,7 +1648,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_tiefflug,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1675,7 +1675,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplicht,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1702,7 +1702,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikelicht,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1729,7 +1729,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwlicht,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1756,7 +1756,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpblock,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1783,7 +1783,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikeblock,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1810,7 +1810,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwblock,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1838,7 +1838,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gprechts,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1865,7 +1865,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikerechts,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1892,7 +1892,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwrechts,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1915,7 +1915,7 @@ sleep 200
 SendChat("Das kostet Sie ein Bußgeld von 2.000$")
 sleep 200
 suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpnos,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1936,7 +1936,7 @@ sleep 200
 SendChat("Dies kostet Sie ein Bußgeld von 2.000$")
 sleep 200
 suspend off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gplkwnos,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1962,7 +1962,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpburn,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -1989,7 +1989,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpbikeburn,V I M,{ENTER}
 If !ErrorLevel
 {
@@ -2016,7 +2016,7 @@ sleep 200
 SendChat("Ihre vorhandenen Strafpunkte können Sie unter /scheine einsehen.")
 sleep 200
 Suspend Off
-SendInput tID:{Space}
+SendInput ID:{Space}
 Input,aufnahme_gpwheely,V I M,{ENTER}
 If !ErrorLevel
 {
