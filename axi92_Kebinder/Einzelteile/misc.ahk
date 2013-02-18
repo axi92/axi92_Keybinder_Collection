@@ -58,6 +58,22 @@ SendChat("/accept repair")
 Suspend Off
 return
 
+RButton::
+IfWinNotActive, GTA:SA:MP
+{
+	SendInput, {%A_ThisHotkey%}
+	return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if (IsPlayerInAnyVehicle() == 1)
+{
+	SendChat("/zoll")
+}
+return
+	
 MButton::
 IfWinNotActive, GTA:SA:MP
 {
