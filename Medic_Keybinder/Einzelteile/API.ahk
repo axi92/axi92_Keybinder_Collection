@@ -126,6 +126,10 @@ UnloadOverlay_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_UnloadO
 UnregisterAllTextBinds_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_UnregisterAllTextBinds")
 UnregisterTextBind_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_UnregisterTextBind")
 
+; - tmp -
+GetMaterials_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetMaterialsGRP")
+; -------
+
 AddChatMessage(Color, Text)
 {
 	global AddChatMessage_func
@@ -834,6 +838,15 @@ UnregisterTextBind(TextBindId)
 	Result := DllCall(UnregisterTextBind_func, Int, TextBindId)
 	return Result
 }
+
+; - tmp -
+GetMaterials()
+{
+	global GetMaterials_func
+	Result := DllCall(GetMaterials_func)
+	return Result
+}
+; -------
 
 ; Alle existierende Overlay Elemente löschen,
 ; damit sich das Overlay nicht überlappt.
