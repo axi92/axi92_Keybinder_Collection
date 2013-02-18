@@ -31,7 +31,7 @@ return
 Sampbutton:
 RegRead GTA_SA_EXE, HKEY_CURRENT_USER, Software\SAMP, gta_sa_exe
 SplitPath, GTA_SA_EXE,, PFAD
-Run %Pfad%\samp.exe 46.251.236.250:7777, %PFAD%
+Run %Pfad%\samp.exe 84.200.78.200:7777, %PFAD%
 return
 
 pwsave:
