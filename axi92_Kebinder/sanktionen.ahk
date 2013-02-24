@@ -25,3 +25,10 @@ Sleep, 500
 ShowDialog(0, ">>Sanktionen<<", "§4.1 Schwache Beleidigungen:`nZu den schwachen Beleidigungen zählen Wörter wie:`n'Arschloch', 'Penner', 'Assi', 'Spasti', ggf. 'ACAB'.`nBestraft werden diese mit einer Stunde Prison.", "Beenden")
 Suspend, Off
 return
+
+:?:/jude::
+Suspend, Permit
+Sleep, 500
+ShowDialog(0, ">>Sanktionen<<", "§4.3 Schwache Beleidigungen:`nZu den schweren Beleidigungen zählen vorallem Wörter , die nicht auf die Person selber, sondern auf deren Religion, soziales Umfeld, Familie und andere Dinge bezogen sind ('Hurensohn', 'Bastard','Jude')`nStrafe ist ein Permban, der durch eine mündliche Entschuldigung + das Aktzeptieren dieser durch den Betroffenen unter Aufsicht eines Admins wieder Rückgängig gemacht werden kann.", "Beenden")
+Suspend, Off
+return
