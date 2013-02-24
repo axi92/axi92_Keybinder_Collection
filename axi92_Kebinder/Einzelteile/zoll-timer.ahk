@@ -24,6 +24,8 @@ RegisterTextBind("/zoll", -970.5025,-335.1562,36.4611, 10, 1, 5100)
 RegisterTextBind("/zoll", 158.1780,393.6036,11.7829, 10, 1, 5100)
 RegisterTextBind("/zoll", -450.7132,587.8832,16.9099, 10, 1, 5100)
 RegisterTextBind("/zoll", 516.1174,471.6942,18.6420, 10, 1, 5100)
+RegisterTextBind("/zoll", -864.1130,2013.0059,60.1875, 6, 1, 5100)
+RegisterTextBind("/zoll", -854.8092,1997.8442,61.4949, 6, 1, 5100)
 
 
 ;// Newsreporter Open - Haupttor \\
