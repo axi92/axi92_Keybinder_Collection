@@ -22,7 +22,7 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
-version := 0.5
+version := 0.6
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
 Settimer, Zollsystem, 100
