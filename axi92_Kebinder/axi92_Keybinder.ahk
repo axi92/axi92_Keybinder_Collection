@@ -150,6 +150,7 @@ return
 DestroyAllVisual()
 ;////////////////////////
 Logbackup:
+WinWait, GTA:SA:MP
 WinWaitClose, GTA:SA:MP
 {
 	FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
