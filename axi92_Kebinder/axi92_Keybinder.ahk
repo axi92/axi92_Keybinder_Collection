@@ -28,8 +28,9 @@ ini := "Datei.ini"
 Settimer, Zollsystem, 100
 ;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
-SetTimer, Callback_Check_Vehicle, 50
+SetTimer, Callback_Check_Vehicle, 30
 ;Settimer, PressedEnter 500
+TextBindTimer(50)
 Freigabe := 1
 heal := -1
 Sound := 1
@@ -153,9 +154,9 @@ Logbackup:
 WinWait, GTA:SA:MP
 WinWaitClose, GTA:SA:MP
 {
-	FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
-	FormatTime, datum, %A_Now%, dd.MM.yyyy
-	FormatTime, zeit, %A_Now%, HH-mm-ss
-	FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
+FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
+FormatTime, datum, %A_Now%, dd.MM.yyyy
+FormatTime, zeit, %A_Now%, HH-mm-ss
+FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 }
 return
