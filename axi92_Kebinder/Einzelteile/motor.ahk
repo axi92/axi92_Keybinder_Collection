@@ -75,7 +75,7 @@ OnPlayerExitVehicle()
 		{
 			SendChat("/licht")
 			;SendChat("/me schaltet seinen Wagen aus")
-			;AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
+			AddChatMessage(0xFF3333, "Motor ist nun {FFA000}AUS{FFFFFF}.")
 		}
 	}
 	;Settimer, Carheal, Off
