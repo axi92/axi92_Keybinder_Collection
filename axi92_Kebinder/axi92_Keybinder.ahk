@@ -81,6 +81,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
 #Include Einzelteile/zoll-timer.ahk
+#Include Einzelteile/beschwerden.ahk
 #Include sanktionen.ahk
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
