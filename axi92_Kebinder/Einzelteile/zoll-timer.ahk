@@ -35,8 +35,8 @@ RegisterTextBind("/nropen", 1149.8187,-1216.7172,18.2932, 10, 1, 5100)
 RegisterTextBind("/rgopen", 1141.9224,-1342.4720,13.7853, 10, 1, 5100) ;//Medic
 
 ;// Medic Open (mopen) \\
-RegisterTextBind("/mopen", 1138.201, -1290.213, 13.6807, 10, 1, 5100) ;KH SF Mopen
-RegisterTextBind("/mopen", 2827.5278,-1568.4065,10.9219, 10, 1, 5100)
+RegisterTextBind("/tor", 1138.201, -1290.213, 13.6807, 10, 1, 5100) ;KH SF Mopen
+RegisterTextBind("/tor", 2827.5278,-1568.4065,10.9219, 10, 1, 5100)
 
 
 ;// Oparking \\
