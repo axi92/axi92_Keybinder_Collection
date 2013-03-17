@@ -3,15 +3,17 @@ return
 
 :?:/beschwerde::
 Suspend Permit
-SendChat("/prison ________ 60 Beschwerde")
+SendChat("/prison _______ 120 Beschwerde")
+;~ Sleep, 500
+;~ SendChat("/mark")
+;~ Sleep, 500
+;~ SendChat("/goto Chester.Silva")
+;~ Sleep, 1000
+;~ SendChat("/take Waffenschein Chester.Silva")
+;~ Sleep, 500
+;~ SendChat("/gotomark")
 Sleep, 500
-SendChat("/mark")
-Sleep, 500
-SendChat("/goto ________")
-;Sleep, 500
-SendChat("/take Motorradschein ________")
-Sleep, 500
-SendChat("/gotomark")
+SendChat("/warn _______ Offlinefluch")
 Suspend Off
 return
 
