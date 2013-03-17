@@ -105,6 +105,14 @@ if (IsPlayerInAnyVehicle() != 1)
 	}
 	CloseMemory(exe)
 }
+if(IsPlayerInRangeOfPoint(-1113.3613,-1620.7018,76.3739, 2)) 
+{
+		SendChat("/materials get 10")
+}
+if(IsPlayerInRangeOfPoint(2142.3821,2836.0293,10.8203, 2)) 
+{
+		SendChat("/materials deliver 10")
+}
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Logbackup, 1000
 Settimer, Zollsystem, 100
