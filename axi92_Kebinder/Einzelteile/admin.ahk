@@ -36,12 +36,6 @@ ShowDialog(0, ">>Sanktionen<<", "§4.1 Schwache Beleidigungen:`nZu den schwachen
 Suspend, Off
 return
 
-:?:/ddo::
-Suspend, Permit
-SendChat("/destroydynamicobject")
-Suspend, Off
-return
-
 :?:/ct::
 Suspend, Permit
 SendChat("/ct")
@@ -49,7 +43,7 @@ SendChat("/tickets")
 Suspend, Off
 return
 
-:?:/ocountdown::
+:?:/scountdown::
 Suspend, Permit
 SendChat("/s 5")
 Sleep, 1000
