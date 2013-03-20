@@ -145,3 +145,17 @@ SendChat("/pspawn Klaus_Wales")
 SendChat("/pspawn Georg_Wales")
 Suspend Off
 return
+
+F10::
+IfWinNotActive, GTA:SA:MP 
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) 
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+SendInput t{up}{space}{enter}
+return
