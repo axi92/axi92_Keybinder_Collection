@@ -58,3 +58,31 @@ Sleep, 1000
 SendChat("/s GO!")
 Suspend, Off
 return
+
+:?:/save-all::
+Suspend, Permit
+SendChat("/o Speicherung wird durchgeführt, dies kann zu Laggs führen!")
+Sleep, 1000
+SendChat("/saveall")
+Sleep, 1000
+SendChat("/o Speicherung erfolgreich!")
+Suspend, Off
+return
+
+:?:/gotooamt::
+Suspend, Permit
+SendChat("/gotocoords 932.7,-1220.4,16.9")
+Suspend, Off
+return
+
+:?:/gotokh::
+Suspend, Permit
+SendChat("/gotocoords 1190.8,-1327.3,13.4")
+Suspend, Off
+return
+
+:?:/schanzencar::
+Suspend, Permit
+SendChat("/attachobjecttovehicle 980 0 3 1 70 90 0 ")
+Suspend, Off
+return
