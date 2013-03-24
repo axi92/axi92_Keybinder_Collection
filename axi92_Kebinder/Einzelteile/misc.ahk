@@ -124,6 +124,7 @@ If(IsPlayerInRangeOfPoint(1004.6254,-938.9807,42.1797, 3) || IsPlayerInRangeOfPo
 {
     SendChat("/fill")    
 }
+SendChat("/pickupgun")
 return
 
 :?:/ab::
@@ -132,7 +133,9 @@ SendChat("/p")
 Sleep, 500
 SendChat("Ich bin derzeit schwer beschäftigt und kann desswegen nicht reden,")
 Sleep, 500
-SendChat("bitte schreibe eine SMS!")
+SendChat("benötigst du Support benutze /sup")
+Sleep, 500
+SendChat("sonst schreibe eine SMS")
 Sleep, 500
 SendChat("/h")
 Suspend Off
