@@ -73,11 +73,11 @@ return
 
 :?:/save-all::
 Suspend, Permit
-SendChat("/o Speicherung wird durchgeführt, dies kann zu Laggs führen!")
+SendChat("/cnnn 3 ~n~~n~~r~Speicherung! Kann zu laggs fuehren!")
 Sleep, 1000
 SendChat("/saveall")
 Sleep, 1000
-SendChat("/o Speicherung erfolgreich!")
+SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
 Suspend, Off
 return
 
@@ -102,5 +102,33 @@ return
 :?:/schanzencar::
 Suspend, Permit
 SendChat("/attachobjecttovehicle 980 0 3 1 70 90 0 ")
+Suspend, Off
+return
+
+:?:/auc::
+Suspend, Permit
+if(IsPlayerInAnyVehicle() == 1)
+{
+   if(GetVehicleModel() == 429) ;banshee
+   {
+      SendChat("/attachobjecttovehicle 19419 0 -1.28 0.55 0 0 0")
+   }
+   if(GetVehicleModel() == 480) ;comet
+   {
+      SendChat("/attachobjecttovehicle 19419 0 -0.96 0.68 0 0 0")
+   }
+   if(GetVehicleModel() == 482) ;burrito
+   {
+      SendChat("/attachobjecttovehicle 19419 0 1 0.9 0 0 0")
+   }
+   if(GetVehicleModel() == 579) ;huntley
+   {
+      SendChat("/attachobjecttovehicle 19419 0 0 1.2 0 0 0")
+   }  
+   if(GetVehicleModel() == 515) ;truck
+   {
+      SendChat("/attachobjecttovehicle 19419 0 1.5 1.3 0 0 0")
+   }  
+}
 Suspend, Off
 return
