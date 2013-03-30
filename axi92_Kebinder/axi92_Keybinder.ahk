@@ -43,7 +43,7 @@ OnExit, Callback_OnExit
 IniRead, pw, %ini%, Einstellungen, IGPasswort
 
 #Include Einzelteile/ping.ahk
-OnlineCheck := Ping("axi92.at")
+OnlineCheck := 0 ;Ping("axi92.at")
 if(OnlineCheck == 1)
 {
     UrlDownloadToFile, http://www.axi92.at/download/keybinder/pd/version.txt, %MainDir%\version.txt
