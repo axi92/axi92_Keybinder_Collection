@@ -43,9 +43,9 @@ RegisterTextBind("/tor", 2827.5278,-1568.4065,10.9219, 10, 1, 5100)
 RegisterTextBind("/oparking", 1524.8226,-1699.1726,15.3828, 3, 1, 5100) ;PD Oparking
 
 ;// Trucker \\
-RegisterTextBind("repairtruck", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
-;RegisterTextBind("/loadimport 1000", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
-;RegisterTextBind("/loadprods 150", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
+;RegisterTextBind("/repairtruck", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
+RegisterTextBind("/loadimport 1000", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
+RegisterTextBind("/loadprods 150", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
 
 
 
