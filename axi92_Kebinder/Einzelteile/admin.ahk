@@ -93,6 +93,18 @@ SendChat("/gotocoords 1190.8,-1327.3,13.4")
 Suspend, Off
 return
 
+:?:/gotohafen::
+Suspend, Permit
+SendChat("/gotocoords 2469.9,-2460.8,28.4")
+Suspend, Off
+return
+
+:?:/gotoziel::
+Suspend, Permit
+SendChat("/gotocoords 1571.2,-1246.7,330")
+Suspend, Off
+return
+
 :?:/gotoleader::
 Suspend, Permit
 SendChat("/gotocoords 1190.8,-1327.3,13.4")
@@ -128,7 +140,15 @@ if(IsPlayerInAnyVehicle() == 1)
    if(GetVehicleModel() == 515) ;truck
    {
       SendChat("/attachobjecttovehicle 19419 0 1.5 1.3 0 0 0")
-   }  
+   } 
+   if(GetVehicleModel() == 411) ;infi
+   {
+      SendChat("/attachobjecttovehicle 19419 0 0 0.7 0 0 0")
+   }
+   if(GetVehicleModel() == 431) ;bus
+   {
+      SendChat("/attachobjecttovehicle 19419 0 5 2.2 0 0 0")
+   }    
 }
 Suspend, Off
 return
