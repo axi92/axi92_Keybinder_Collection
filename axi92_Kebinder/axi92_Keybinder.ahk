@@ -22,7 +22,7 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
-version := 0.4
+version := 0.5
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
 Settimer, Zollsystem, 100
@@ -30,7 +30,7 @@ Settimer, Zollsystem, 100
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 30
 ;Settimer, PressedEnter 500
-TextBindTimer(50)
+TextBindTimer(200)
 Freigabe := 1
 heal := -1
 Sound := 1
@@ -43,17 +43,17 @@ OnExit, Callback_OnExit
 IniRead, pw, %ini%, Einstellungen, IGPasswort
 
 #Include Einzelteile/ping.ahk
-OnlineCheck := 0 ;Ping("axi92.at")
+OnlineCheck := Ping("axi92.at")
 if(OnlineCheck == 1)
 {
-    UrlDownloadToFile, http://www.axi92.at/download/keybinder/pd/version.txt, %MainDir%\version.txt
+    UrlDownloadToFile, http://www.axi92.at/download/keybinder/axi92/version.txt, %MainDir%\version.txt
 }
 FileRead, newver, %MainDir%\version.txt
 FileDelete, %MainDir%\version.txt
 if (version < newver AND update == true)
 {
 	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver% es wird geupdated
-	UrlDownloadToFile, http://www.axi92.at/download/keybinder/pd/PD_Keybinder.exe, %MainDir%\%A_ScriptName%.new
+	UrlDownloadToFile, http://www.axi92.at/download/keybinder/axi92/axi92.at.exe, %MainDir%\%A_ScriptName%.new
 	BatchFile=n
 	(
 		Ping 127.0.0.1

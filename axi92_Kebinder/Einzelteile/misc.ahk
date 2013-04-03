@@ -125,6 +125,7 @@ If(IsPlayerInRangeOfPoint(1004.6254,-938.9807,42.1797, 3) || IsPlayerInRangeOfPo
     SendChat("/fill")    
 }
 SendChat("/pickupgun")
+SendChat("/anos")
 return
 
 :?:/ab::
