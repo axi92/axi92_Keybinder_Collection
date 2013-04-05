@@ -119,7 +119,7 @@ return
 
 :?:/gotoleader::
 Suspend, Permit
-SendChat("/gotocoords 1190.8,-1327.3,13.4")
+SendChat("/gotocoords 2218.5,-1165.6,29.8")
 Suspend, Off
 return
 
