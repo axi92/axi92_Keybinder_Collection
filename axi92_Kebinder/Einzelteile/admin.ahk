@@ -177,6 +177,10 @@ if(IsPlayerInAnyVehicle() == 1)
    {
       SendChat("/attachobjecttovehicle 19419 0 -0.3 0.58 0 0 0")
    }      
+   if(GetVehicleModel() == 438) ;turi
+   {
+      SendChat("/attachobjecttovehicle 19419 0 0.7 0.8 0 0 0")
+   }     
 }
 Suspend, Off
 return

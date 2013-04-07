@@ -3,21 +3,20 @@ return
 
 :?:/beschwerde::
 Suspend Permit
-opfer := "test"
-prisontime := "1"
-grund := "test"
-;~ SendChat("prison %opfer% %prisontime% %grund%")
-SendChat("/prison " opfer " " prisontime " " grund)
+;~ opfer := "SeaN_LopeZ"
+;~ prisontime := "180"
+;~ grund := "SDM"
+;~ SendChat("/prison " opfer " " prisontime " " grund)
 ;~ Sleep, 500
 ;~ SendChat("/mark")
 ;~ Sleep, 500
-;~ SendChat("/goto Sean_Connor")
+;~ SendChat("/goto " opfer)
 ;~ Sleep, 1000
-;~ SendChat("/take Waffenschein Sean_Connor")
+;~ SendChat("/take Waffenschein " opfer)
 ;~ Sleep, 500
 ;~ SendChat("/gotomark")
 ;~ Sleep, 500
-;~ SendChat("/warn Sean_Connor Beschwerde(SDM)")
+;~ SendChat("/warn " opfer " " grund)
 Suspend Off
 return
 
