@@ -50,7 +50,7 @@ IfWinNotActive, GTA:SA:MP
 }
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nFahrzeug reparieren im Kampf -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskfluch -> 1 Warn + 120 min Prison`nOfflineflucht -> 1 Warn + 60 min Prison`nRelogbuguse -> 90 min Prison`nBuguse (SAMP Bug) -> 120 min Prison`nBeleidigung schwach -> 60 min Prison`nBeleidigung mittel -> 1 Warn + 5d Timeban + 120 min Prison`nBeleidigung schwer -> Ban`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nCheaten -> Ban`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nBunnyhop bei Gefahr -> 90min Prison`nNO-DM Flucht -> 60min Prison`nG-Buguse -> Prison 60 + Warn`nUmgangston -> Prison 30", "Beenden")
+ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nFahrzeug reparieren im Kampf -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskfluch -> 1 Warn + 120 min Prison`nOfflineflucht -> 1 Warn + 60 min Prison`nRelogbuguse -> 90 min Prison`nBuguse (SAMP Bug) -> 120 min Prison`nBeleidigung schwach -> 60 min Prison`nBeleidigung mittel -> 1 Warn + 5d Timeban + 120 min Prison`nBeleidigung schwer -> Ban`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nCheaten -> Ban`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nBunnyhop bei Gefahr -> 90min Prison`nNO-DM Flucht -> 60min Prison`nG-Buguse -> Prison 60 + Warn`nUmgangston -> Prison 30`nSchiessen in No-DM -> 45 Prison", "Beenden")
 Suspend, Off
 return
 
@@ -177,10 +177,18 @@ if(IsPlayerInAnyVehicle() == 1)
    {
       SendChat("/attachobjecttovehicle 19419 0 -0.3 0.58 0 0 0")
    }      
-   if(GetVehicleModel() == 438) ;turi
+   if(GetVehicleModel() == 438)
    {
       SendChat("/attachobjecttovehicle 19419 0 0.7 0.8 0 0 0")
    }     
 }
+Suspend, Off
+return
+
+:?:/gotobsnn::
+Suspend, Permit
+SendChat("/gotocoords 1212.9,-881.5,55.5")
+SendChat("/setvirtualworld 0")
+SendChat("/setint 0")
 Suspend, Off
 return
