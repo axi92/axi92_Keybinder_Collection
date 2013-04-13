@@ -153,7 +153,7 @@ SendChat("/pspawn Georg_Wales")
 Suspend Off
 return
 
-F10::
+v::
 IfWinNotActive, GTA:SA:MP 
 {
    SendInput, {%A_ThisHotkey%}
