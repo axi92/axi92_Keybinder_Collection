@@ -32,6 +32,13 @@ ShowDialog(0, ">>Jobs<<", "ID1: Detektiv`nID2: Anwalt`nID3: Hure`nID4: Drogendea
 Suspend, Off
 return
 
+:?:/frakid::
+Suspend, Permit
+Sleep, 500
+ShowDialog(0, ">>Jobs<<", "ID1: Detektiv`nID2: Anwalt`nID3: Hure`nID4: Drogendealer`nID5: Autodieb`nID6: Wanted-Hacker`nID7: Mechaniker`nID8: Bodyguard`nID9: Waffendealer`nID10: Bauer`nID:11: Hotdog-Verkäufer`nID12: Arbeitslos`nID13: Arbeitslos`nID:14: Tuner`nID15: Arbeitslos`nID16: Trucker`nID17: Taschendieb`nID18: Holzfäller", "Beenden")
+Suspend, Off
+return
+
 :?:/carsa::
 IfWinNotActive, GTA:SA:MP
 {
@@ -185,10 +192,39 @@ if(IsPlayerInAnyVehicle() == 1)
 Suspend, Off
 return
 
-:?:/gotobsnn::
+:?:/gotob::
 Suspend, Permit
 SendChat("/gotocoords 1212.9,-881.5,55.5")
 SendChat("/setvirtualworld 0")
 SendChat("/setint 0")
+Suspend, Off
+return
+
+Acolorcar:
+Random, acolorcar1 , 0, 255
+Random, acolorcar2 , 0, 255
+SendChat("/acolorcar " acolorcar1 " " acolorcar2)
+SendChat("/licht")
+return
+
+:?:/funcar::
+Suspend, Toggle 
+;~ acolorcar_status := acolorcar_status ? "Funcar AN" : "Funcar AUS"
+acolorcar_status := !acolorcar_status
+AddChatMessage(0xFF0000, "Info: {FFFFFF}" acolorcar_status)
+if(acolorcar_status == true)
+{
+   SetTimer, Acolorcar, 100
+}
+else
+{
+   SetTimer, Acolorcar, Off
+}
+return
+
+:?:/flip::
+Suspend, Permit
+SendChat("/flip")
+SendChat("/fixveh")
 Suspend, Off
 return

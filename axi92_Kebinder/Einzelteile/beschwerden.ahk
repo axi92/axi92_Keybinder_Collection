@@ -1,9 +1,9 @@
 IfWinNotActive, GTA:SA:MP
 return
 
-:?:/beschwerde::
-Suspend Permit
-;~ opfer := "Sissy"
+;~ :?:/beschwerde::
+;~ Suspend Permit
+;~ opfer := "Takito_Kobayashi"
 ;~ prisontime := "180"
 ;~ grund := "SDM"
 ;~ SendChat("/prison " opfer " " prisontime " " grund)
@@ -17,8 +17,8 @@ Suspend Permit
 ;~ SendChat("/gotomark")
 ;~ Sleep, 500
 ;~ SendChat("/warn " opfer " " grund)
-Suspend Off
-return
+;~ Suspend Off
+;~ return
 
 ;~ :?:/beschwerde::
 ;~ Suspend Permit

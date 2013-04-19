@@ -34,6 +34,7 @@ TextBindTimer(200)
 Freigabe := 1
 heal := -1
 Sound := 1
+acolorcar_status := false
 update := false
 SetTimer, Sound, 100
 Sleep, 500
