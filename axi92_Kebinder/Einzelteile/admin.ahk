@@ -102,11 +102,11 @@ SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
 Suspend, Off
 return
 
-:?:/gotooamt::
-Suspend, Permit
-SendChat("/gotocoords 2220.86,-1163.61,25.73")
-Suspend, Off
-return
+;~ :?:/gotooamt::
+;~ Suspend, Permit
+;~ SendChat("/gotocoords 2220.86,-1163.61,25.73") ; Buggy coords
+;~ Suspend, Off
+;~ return
 
 :?:/gotokh::
 Suspend, Permit
@@ -188,6 +188,10 @@ if(IsPlayerInAnyVehicle() == 1)
    {
       SendChat("/attachobjecttovehicle 19419 0 0.7 0.8 0 0 0")
    }     
+   if(GetVehicleModel() == 544)
+   {
+      SendChat("/attachobjecttovehicle 19419 0 2.8 1.45 0 0 0")
+   }     
 }
 Suspend, Off
 return
@@ -226,5 +230,43 @@ return
 Suspend, Permit
 SendChat("/flip")
 SendChat("/fixveh")
+Suspend, Off
+return
+
+:?:/gotolsap::
+Suspend, Permit
+SendChat("/gotocoords 1904,-2453,21")
+Suspend, Off
+return
+
+:?:/event1::
+Suspend, Permit
+SendChat("/o Event: Massive Rampage wurde eröffnet!")
+Sleep, 1000
+SendChat("/event")
+Sleep, 1000
+SendChat("/o 10")
+Sleep, 1000
+SendChat("/o 9")
+Sleep, 1000
+SendChat("/o 8")
+Sleep, 1000
+SendChat("/o 7")
+Sleep, 1000
+SendChat("/o 6")
+Sleep, 1000
+SendChat("/o 5")
+Sleep, 1000
+SendChat("/o 4")
+Sleep, 1000
+SendChat("/o 3")
+Sleep, 1000
+SendChat("/o 2")
+Sleep, 1000
+SendChat("/o 1")
+Sleep, 1000
+SendChat("/o Eventport Geschlossen!")
+Sleep, 1000
+SendChat("/event")
 Suspend, Off
 return
