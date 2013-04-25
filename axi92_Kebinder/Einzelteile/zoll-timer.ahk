@@ -1,11 +1,4 @@
-﻿Zollsystem:
-IfWinNotActive, GTA:SA:MP
-return
-SpeedCheck := GetVehicleSpeed()
-Veh := GetVehicleModel()
-
-;// Zoll \\
-
+﻿;// Zoll \\
 RegisterTextBind("/zoll", 54.2541,-1531.9141,9.8567, 10, 1, 5100)
 RegisterTextBind("/zoll", -2685.3379,1269.1921,55.1729, 10, 1, 5100)
 RegisterTextBind("/zoll", -1400.1925,820.0132,47.1255, 10, 1, 5100)
@@ -26,22 +19,15 @@ RegisterTextBind("/zoll", -450.7132,587.8832,16.9099, 10, 1, 5100)
 RegisterTextBind("/zoll", 516.1174,471.6942,18.6420, 10, 1, 5100)
 RegisterTextBind("/zoll", -864.1130,2013.0059,60.1875, 6, 1, 5100)
 RegisterTextBind("/zoll", -854.8092,1997.8442,61.4949, 6, 1, 5100)
-
-
 ;// Newsreporter Open - Haupttor \\
 RegisterTextBind("/nropen", 1149.8187,-1216.7172,18.2932, 10, 1, 5100)
-
 ;// Respawn Garage Open \\
 RegisterTextBind("/rgopen", 1141.9224,-1342.4720,13.7853, 10, 1, 5100) ;//Medic
-
 ;// Medic Open (mopen) \\
 RegisterTextBind("/tor", 1138.201, -1290.213, 13.6807, 10, 1, 5100) ;KH SF Mopen
 RegisterTextBind("/tor", 2827.5278,-1568.4065,10.9219, 10, 1, 5100)
-
-
 ;// Oparking \\
 RegisterTextBind("/oparking", 1524.8226,-1699.1726,15.3828, 3, 1, 5100) ;PD Oparking
-
 ;// Trucker \\
 ;RegisterTextBind("/repairtruck", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
 RegisterTextBind("/loadimport 1000", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
@@ -50,7 +36,11 @@ RegisterTextBind("/loadprods 150", 2759.5576,-2453.4065,13.7049, 3, 1, 5100)
 
 
 
-
+Zollsystem:
+IfWinNotActive, GTA:SA:MP
+return
+SpeedCheck := GetVehicleSpeed()
+Veh := GetVehicleModel()
 
 
 if(IsPlayerInRangeOfPoint(1214.1261,-904.1393,42.9721, 3) || IsPlayerInRangeOfPoint(1462.7856,-1776.3501,13.5206, 3)) 
