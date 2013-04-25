@@ -3,6 +3,15 @@ return
 
 !E::
 ^::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() != 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
 if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() != 509 || GetVehicleModel() != 481 || GetVehicleModel() != 509)
 {
 	handbremse := "[Taste:N]"
