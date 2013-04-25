@@ -30,12 +30,13 @@ Settimer, Zollsystem, 100
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 30
 ;Settimer, PressedEnter 500
-TextBindTimer(200)
+TextBindTimer(50)
 Freigabe := 1
 heal := -1
 Sound := 1
 acolorcar_status := false
 update := false
+autofind_status := false
 SetTimer, Sound, 100
 Sleep, 500
 SetTimer, Logbackup, 500
@@ -44,7 +45,7 @@ OnExit, Callback_OnExit
 IniRead, pw, %ini%, Einstellungen, IGPasswort
 
 #Include Einzelteile/ping.ahk
-OnlineCheck := Ping("axi92.at")
+OnlineCheck := Ping("www.axi92.at")
 if(OnlineCheck == 1)
 {
     UrlDownloadToFile, http://www.axi92.at/download/keybinder/axi92/version.txt, %MainDir%\version.txt
@@ -73,6 +74,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_PD.ahk
+#Include Einzelteile/zoll-timer.ahk
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
 #Include Einzelteile/gk.ahk
@@ -81,10 +83,8 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/motor.ahk
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
-#Include Einzelteile/zoll-timer.ahk
 #Include Einzelteile/beschwerden.ahk
 #Include sanktionen.ahk
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
 Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
