@@ -37,6 +37,7 @@ Sound := 1
 acolorcar_status := false
 update := false
 autofind_status := false
+autofix_status := false
 SetTimer, Sound, 100
 Sleep, 500
 SetTimer, Logbackup, 500
