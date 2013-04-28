@@ -325,9 +325,32 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 Suspend, Permit
 SetTimer, Autofind, Off
+SetTimer, Autofix, Off
 Suspend, Off
 return
 
 Autofind:
 SendChat("/find " aufnahme_autofind)
+return
+
+:?:/autofix::
+Suspend Permit
+if(autofix_status == false)
+{
+   autofix_status := true
+   SetTimer, Autofix, 1500
+   AddChatMessage(0xFFFFFF, Autofix activated!)
+}
+else
+{
+   autofix_status := false
+}
+Suspend Off
+return
+
+Autofix:
+if(GetVehicleHealth() < 900)
+{
+   SendChat("/fixveh")
+}
 return
