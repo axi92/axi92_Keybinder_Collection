@@ -38,6 +38,7 @@ acolorcar_status := false
 update := false
 autofind_status := false
 autofix_status := false
+ZFreigabe := 0
 SetTimer, Sound, 100
 Sleep, 500
 SetTimer, Logbackup, 500
@@ -75,7 +76,8 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_PD.ahk
-#Include Einzelteile/zoll-timer.ahk
+;~ #Include Einzelteile/zoll-timer.ahk
+#Include Einzelteile/zoll_ghost.ahk
 #Include Einzelteile/pause.ahk ;Pause Funktion
 #Include Einzelteile/misc.ahk
 #Include Einzelteile/gk.ahk
@@ -147,7 +149,7 @@ return
 ;WinWait, GTA:SA:MP
 ;////////////////////////
 ;Settimer, Logbackup, Off
-;Settimer, Zollsystem, Off
+Settimer, Zollsystem, Off
 ;SetTimer, Sound, Off
 ;SetTimer, Callback_Check_Vehicle, Off
 ;Settimer, Speedo, Off
