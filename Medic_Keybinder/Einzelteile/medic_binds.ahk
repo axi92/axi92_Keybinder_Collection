@@ -358,3 +358,124 @@ AddChatMessage(0xFF3366, "                                             ")
 AddChatMessage(0xFF3366, "                                             ")
 Suspend Off
 return
+
+^Numpad1::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend on
+SendChat("/r >> Status 1 <<")
+Suspend off
+return
+
+^Numpad2::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+suspend on
+SendChat("/r >> Status 2 <<")
+Suspend off
+return
+
+^Numpad3::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend on
+SendChat("/r >> Status 3 <<")
+Suspend off
+return
+
+^Numpad4::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+suspend on
+SendChat("/r >> Status 4 <<")
+Suspend off
+return
+
+^Numpad5::
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend on
+SendChat("/r >> Status 5 <<")
+Suspend off
+return
+
+^Numpad6::
+If ( IsChatOpen() = 1 || IsDialogOpen() = 1 || IsMenuOpen() = 1 )
+IfWinNotActive, GTA:SA:MP
+{
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(Tabnummer != 1)
+{	
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+Suspend on
+SendChat("/r >> Status 6 <<")
+Suspend off
+return
