@@ -67,7 +67,7 @@ if (IsPlayerInAnyVehicle() != 1)
 	if(loc = 0)
 	{
     	;SendChat("Sie Befinden sich Außerhalb eines Gebäudes. (" loc ")")
-		SendChat("/ram")
+		;~ SendChat("/ram")
     	sleep 100
     	SendChat("/enter")
     	sleep 100
