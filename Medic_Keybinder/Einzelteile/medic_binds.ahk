@@ -10,6 +10,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 Suspend, Permit
 Send t/acceptrevival{space}
 Suspend, Off
@@ -19,6 +24,11 @@ F3::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -34,6 +44,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -45,6 +60,11 @@ F5::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -60,6 +80,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -73,6 +98,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
     return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -84,6 +114,11 @@ Numpad8::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -99,6 +134,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -112,6 +152,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -123,6 +168,11 @@ return
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -139,6 +189,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -150,6 +205,11 @@ End::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 Suspend On
@@ -168,6 +228,11 @@ if !errorLevel
 return
 
 :?:/medichelp::
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 Suspend Permit
 AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
@@ -200,6 +265,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || !IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -210,6 +280,11 @@ Suspend Off
 return
 
 :?:/lgc::
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 Suspend Permit
 SendChat("/listgangcars")
 Suspend Off
@@ -219,6 +294,11 @@ NumpadSub::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -283,6 +363,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -296,6 +381,11 @@ return
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -313,6 +403,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -326,6 +421,11 @@ return
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
@@ -343,6 +443,11 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -357,6 +462,11 @@ If ( IsChatOpen() = 1 || IsDialogOpen() = 1 || IsMenuOpen() = 1 )
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   return
+}
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {

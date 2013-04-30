@@ -39,9 +39,12 @@ OnlineCheck := Ping("axi92.at")
 if(OnlineCheck == 1)
 {
     UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/version.txt, %MainDir%\version.txt
+	UrlDownloadToFile, http://ucp.black-evolution.org/api.php?player_frak=axi92, %MainDir%\frak.txt
 }
 FileRead, newver, %MainDir%\version.txt
+FileRead, frakid, %MainDir%\frak.txt
 FileDelete, %MainDir%\version.txt
+FileDelete, %MainDir%\frak.txt
 if (version < newver)
 {
 	MsgBox,0,, Es ist eine neue Version verf�gbar, v%newver% es wird geupdated

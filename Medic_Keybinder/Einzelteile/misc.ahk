@@ -36,8 +36,11 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 if (IsPlayerInAnyVehicle() == 1)
 {
+	if(IsPlayerInRangeOfPoint(2836, -1580, 11, 50))
+	{
+		SendChat("/tor")
+	}
 	SendChat("/zoll")
-	SendChat("/tor")
 }
 return
 
