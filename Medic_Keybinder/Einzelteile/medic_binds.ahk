@@ -10,9 +10,10 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(frakid != 4)
+if(frakid != "4")
 {
    AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   Sleep, 100
    return
 }
 Suspend, Permit
@@ -227,36 +228,48 @@ if !errorLevel
 }
 return
 
+;~ :?:/medichelp::
+;~ if(frakid != 4)
+;~ {
+   ;~ AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   ;~ return
+;~ }
+;~ Suspend Permit
+;~ AddChatMessage(0xFF3366, "_____________________________________________")
+;~ AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
+;~ AddChatMessage(0xFFFFFF, "^ = Motor")
+;~ AddChatMessage(0xFFFFFF, "Num(-) = /duty +Showme")
+;~ AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
+;~ AddChatMessage(0xFFFFFF, "F3 = /anrufliste")
+;~ AddChatMessage(0xFFFFFF, "F5 = Für Heilung bitte mit G einsteigen!")
+;~ AddChatMessage(0xFFFFFF, "F10 = Bitte umfahren Sie die Unfallstelle")
+;~ AddChatMessage(0xFFFFFF, "Numpad7 = Medicport LS")
+;~ AddChatMessage(0xFFFFFF, "Numpad8 = Medicport SF")
+;~ AddChatMessage(0xFFFFFF, "Numpad9 = Medicport LV")
+;~ AddChatMessage(0xFFFFFF, "Numpad+ = Medicport Base")
+;~ AddChatMessage(0xFFFFFF, "Punkt (.) = /revival")
+;~ AddChatMessage(0xFFFFFF, "Ende = Heal")
+;~ AddChatMessage(0xFFFFFF, "/tempomat")
+;~ AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
+;~ AddChatMessage(0xFFFFFF, "1 = [EINSATZ] Bitte räumen sie SOFORT die Straße")
+;~ AddChatMessage(0xFFFFFF, "3 = Sirene und Sireneb")
+;~ AddChatMessage(0xFFFFFF, "/lgc = /listgangcars")
+;~ AddChatMessage(0xFFFFFF, "/sound")
+;~ AddChatMessage(0xFFFFFF, "/overlay")
+;~ AddChatMessage(0xFF3366, "_____________________________________________")
+;~ Suspend Off
+;~ return
+
 :?:/medichelp::
 if(frakid != 4)
 {
    AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
    return
 }
-Suspend Permit
-AddChatMessage(0xFF3366, "_____________________________________________")
-AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
-AddChatMessage(0xFFFFFF, "^ = Motor")
-AddChatMessage(0xFFFFFF, "Num(-) = /duty +Showme")
-AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
-AddChatMessage(0xFFFFFF, "F3 = /anrufliste")
-AddChatMessage(0xFFFFFF, "F5 = Für Heilung bitte mit G einsteigen!")
-AddChatMessage(0xFFFFFF, "F10 = Bitte umfahren Sie die Unfallstelle")
-AddChatMessage(0xFFFFFF, "Numpad7 = Medicport LS")
-AddChatMessage(0xFFFFFF, "Numpad8 = Medicport SF")
-AddChatMessage(0xFFFFFF, "Numpad9 = Medicport LV")
-AddChatMessage(0xFFFFFF, "Numpad+ = Medicport Base")
-AddChatMessage(0xFFFFFF, "Punkt (.) = /revival")
-AddChatMessage(0xFFFFFF, "Ende = Heal")
-AddChatMessage(0xFFFFFF, "/tempomat")
-AddChatMessage(0xFFFFFF, "/ab = Anrufabsage, verweis auf SMS")
-AddChatMessage(0xFFFFFF, "1 = [EINSATZ] Bitte räumen sie SOFORT die Straße")
-AddChatMessage(0xFFFFFF, "3 = Sirene und Sireneb")
-AddChatMessage(0xFFFFFF, "/lgc = /listgangcars")
-AddChatMessage(0xFFFFFF, "/sound")
-AddChatMessage(0xFFFFFF, "/overlay")
-AddChatMessage(0xFF3366, "_____________________________________________")
-Suspend Off
+Suspend, Permit
+Sleep, 500
+ShowDialog(1, ">>Medic Hilfe<<", "Pause = Keybinder pausieren`n^ = Motor`nNum(-) = /duty +Showme`nF2 = /acceptrevival`nF3 = /anrufliste`nF5 = Für Heilung bitte mit G einsteigen!`nF10 = Bitte umfahren Sie die Unfallstelle`nNumpad7 = Medicport LS`nNumpad8 = Medicport SF`nNumpad9 = Medicport LV`nNumpad+ = Medicport Base`nPunkt (.) = /revival`nEnde = Heal`n/tempomat`n/ab = Anrufabsage, verweis auf SMS`n1 = [EINSATZ] Bitte räumen sie SOFORT die Straße`n3 = Sirene und Sireneb`n/lgc = /listgangcars`n/sound`n/overlay", "Beenden")
+Suspend, Off
 return
 
 1::
