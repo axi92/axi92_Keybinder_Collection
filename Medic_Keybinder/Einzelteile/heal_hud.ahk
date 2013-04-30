@@ -10,12 +10,12 @@ AddChatMessage(0xFFFFF, "Overlay: " SoundStatus)
 if (Overlay = 1)
 {
 	SetTimer, Carheal, 500
-    Settimer, Playerheal, 500
+    ;~ Settimer, Playerheal, 500
 }
 else
 {
 	SetTimer, Carheal, Off
-    Settimer, Playerheal, Off
+    ;~ Settimer, Playerheal, Off
     TextHide(Carheal)
     TextHide(heal)
 }
@@ -31,7 +31,7 @@ if ( IsPlayerInAnyVehicle() == true )
 {
     if(Carheal == -1)
     {
-        Carheal := TextCreate("Arial", 12, true, false)
+        Carheal := TextCreate("Arial", 14, true, false)
         TextSetPos(Carheal, 600, 450)
         TextSetColor(Carheal, 0xffff0000)
         TextShow(Carheal)

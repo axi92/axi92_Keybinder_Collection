@@ -20,7 +20,7 @@ Gui, 1:Add,   text,   cblack x%x1%  y205 +backgroundtrans, Numpad+ = Medicport B
 Gui, 1:Add,   text,   cblack x%x2% y45  +backgroundtrans, Punkt (.) = /revival
 Gui, 1:Add,   text,   cblack x%x2% y65  +backgroundtrans, Ende = Heal
 Gui, 1:Add,   text,   cblack x%x2% y85  +backgroundtrans, /tempomat
-Gui, 1:Add,   text,   cblack x%x2% y105 +backgroundtrans, /kbhelp = Auflistung der Befehle
+Gui, 1:Add,   text,   cblack x%x2% y105 +backgroundtrans, /medichelp = Auflistung der Befehle
 Gui, 1:Add,   text,   cblack x%x2% y125 +backgroundtrans, /ab = Anrufabsage, verweis auf SMS
 Gui, 1:Add,   text,   cblack x%x2% y145 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x%x2% y165 +backgroundtrans, Num(-) = /duty
@@ -46,7 +46,7 @@ return
 Sampbutton:
 RegRead GTA_SA_EXE, HKEY_CURRENT_USER, Software\SAMP, gta_sa_exe
 SplitPath, GTA_SA_EXE,, PFAD
-Run %Pfad%\samp.exe 46.251.236.250:7777, %PFAD%
+Run %Pfad%\samp.exe 84.200.78.200:7777, %PFAD%
 return
 
 Tabcheck:

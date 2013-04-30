@@ -34,38 +34,6 @@ Freigabe := 1
 heal := -1
 OnExit, Callback_OnExit
 
-; Gruppensystem Anfang ---------------------------------------------------------------------
-; Zum Testen erstmal alle Veriablen auf 1 gesetzt
-recht_tempomat := 1
-recht_zoll := 1
-recht_admin := 1
-recht_bsn := 1
-recht_overlay := 1
-recht_motor := 1
-recht_medic := 1
-
-SpeicherDatei := A_MyDocuments . "\MedicKeybinder\Datei.ini"
-IniRead, LoginName, %SpeicherDatei%, Login, LoginName, Dein Name
-RechteURL := "http://www.axi92.at/samp/rank.php?name="
-RechteDL := RechteURL LoginName
-;~ URLDownloadToFile, %RechteDL%, text.txt
-;~ FileRead, Rechte, text.txt
-;~ FileDelete, text.txt
-;~ if InStr(Rechte, LoginName)
-;~ {
-    ;~ RegExMatch(Rechte, "Tempomat: (\d)",tempomat)
-    ;~ RegExMatch(Rechte, "Zoll: (\d)",zoll)
-    ;~ RegExMatch(Rechte, "Admin: (\d)",admin)
-    ;~ RegExMatch(Rechte, "BSN: (\d)",bsn)
-    ;~ RegExMatch(Rechte, "Overlay: (\d)",overlay)
-    ;~ RegExMatch(Rechte, "Motor: (\d)",motor)
-    ;~ RegExMatch(Rechte, "Medic: (\d)",medic)
-	;~ ;MsgBox, Tempomat wurden folgende Werte zugewiesen:`nName: %LoginName%`nTempomat: %tempomat1%`nZoll: %zoll1%`nAdmin: %admin1%`nBSN: %bsn1%`nOverlay: %overlay1%`nMotor: %motor1%`nMedic: %medic1%
-;~ } else {
-	;~ MsgBox, 0, Fehler, Rechte Abfrage fehlgeschlagen `nFolgenes wurde zurückgegeben:`n`n%Rechte%
-	;~ ExitApp
-;~ }
-; Gruppensystem Ende -----------------------------------------------------------------------
 #Include Einzelteile/ping.ahk
 OnlineCheck := Ping("axi92.at")
 if(OnlineCheck == 1)
@@ -103,7 +71,7 @@ FileInstall, Einzelteile/API.dll, %MainDir%\API.dll, 1
 #Include Einzelteile/motor.ahk
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
-#Include Einzelteile/zoll.ahk
+#Include Einzelteile/zoll_ghost.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
 Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es

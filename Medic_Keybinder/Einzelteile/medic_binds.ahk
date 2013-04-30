@@ -10,11 +10,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 Suspend, Permit
 Send t/acceptrevival{space}
 Suspend, Off
@@ -23,11 +18,6 @@ return
 F3::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -44,11 +34,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -59,11 +44,6 @@ return
 F5::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -80,11 +60,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -98,11 +73,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
     return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -113,11 +83,6 @@ return
 Numpad8::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -134,11 +99,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -152,11 +112,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -167,11 +122,6 @@ return
 .::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -189,11 +139,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -204,11 +149,6 @@ return
 End::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -228,14 +168,10 @@ if !errorLevel
 return
 
 :?:/medichelp::
-if(Tabnummer != 1)
-{	
-   return
-}
 Suspend Permit
 AddChatMessage(0xFF3366, "_____________________________________________")
 AddChatMessage(0xFFFFFF, "Pause = Keybinder pausieren")
-AddChatMessage(0xFFFFFF, "Linke Strg = Motor")
+AddChatMessage(0xFFFFFF, "^ = Motor")
 AddChatMessage(0xFFFFFF, "Num(-) = /duty +Showme")
 AddChatMessage(0xFFFFFF, "F2 = /acceptrevival")
 AddChatMessage(0xFFFFFF, "F3 = /anrufliste")
@@ -264,11 +200,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 || !IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -279,10 +210,6 @@ Suspend Off
 return
 
 :?:/lgc::
-if(Tabnummer != 1)
-{	
-	return
-}
 Suspend Permit
 SendChat("/listgangcars")
 Suspend Off
@@ -294,11 +221,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -307,12 +229,8 @@ Suspend Permit
 SendChat("/duty")
 Sleep, 500
 GetChatLine(0, str0)
-GetChatLine(1, str1)
-GetChatLine(2, str2)
-GetChatLine(3, str3)
-GetChatLine(4, str4)
 dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
-   if InStr(str0, dutystr) || InStr(str1, dutystr) || InStr(str2, dutystr) || InStr(str3, dutystr) || InStr(str4, dutystr)
+   if InStr(str0, dutystr)
    {
       SendChat("/showme")
       Loopstart1:
@@ -324,7 +242,7 @@ dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
       else
       {
          Sleep, 100
-         Send {DOWN 5}
+         Send {DOWN 3}
          Sleep, 100
          Send {ENTER}
       }
@@ -346,27 +264,22 @@ dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
          Send {ENTER}
       }
    }  
-Sleep, 300
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
-AddChatMessage(0xFF3366, "                                             ")
+;~ Sleep, 300
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
+;~ AddChatMessage(0xFF3366, "                                             ")
 Suspend Off
 return
 
 ^Numpad1::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -385,11 +298,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -402,11 +310,6 @@ return
 ^Numpad3::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -425,11 +328,6 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(Tabnummer != 1)
-{	
-   SendInput, {%A_ThisHotkey%}
-   return
-}
 if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
@@ -442,11 +340,6 @@ return
 ^Numpad5::
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -463,11 +356,6 @@ return
 If ( IsChatOpen() = 1 || IsDialogOpen() = 1 || IsMenuOpen() = 1 )
 IfWinNotActive, GTA:SA:MP
 {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(Tabnummer != 1)
-{	
    SendInput, {%A_ThisHotkey%}
    return
 }

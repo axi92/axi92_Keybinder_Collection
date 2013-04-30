@@ -24,6 +24,23 @@ return
 Suspend Permit
 AddChatMessage(0xFFFFFF, "Tabnumber: " Tabnummer)
 
+RButton::
+IfWinNotActive, GTA:SA:MP
+{
+	SendInput, {%A_ThisHotkey%}
+	return
+}
+if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
+   SendInput, {%A_ThisHotkey%}
+   return
+}
+if (IsPlayerInAnyVehicle() == 1)
+{
+	SendChat("/zoll")
+	SendChat("/tor")
+}
+return
+
 MButton::
 IfWinNotActive, GTA:SA:MP
 {
