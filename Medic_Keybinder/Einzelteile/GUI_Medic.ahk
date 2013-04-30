@@ -20,7 +20,7 @@ Gui, 1:Add,   text,   cblack x%x1%  y205 +backgroundtrans, Numpad+ = Medicport B
 Gui, 1:Add,   text,   cblack x%x2% y45  +backgroundtrans, Punkt (.) = /revival
 Gui, 1:Add,   text,   cblack x%x2% y65  +backgroundtrans, Ende = Heal
 Gui, 1:Add,   text,   cblack x%x2% y85  +backgroundtrans, /tempomat
-Gui, 1:Add,   text,   cblack x%x2% y105 +backgroundtrans, /medichelp = Auflistung der Befehle
+Gui, 1:Add,   text,   cblack x%x2% y105 +backgroundtrans, < = Auflistung der Befehle
 Gui, 1:Add,   text,   cblack x%x2% y125 +backgroundtrans, /ab = Anrufabsage, verweis auf SMS
 Gui, 1:Add,   text,   cblack x%x2% y145 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x%x2% y165 +backgroundtrans, Num(-) = /duty

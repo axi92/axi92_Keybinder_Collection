@@ -4,6 +4,18 @@
     return
 }
 
+<::
+if(frakid != 4)
+{
+   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   return
+}
+Suspend, Permit
+Sleep, 500
+ShowDialog(0, ">>Medic Hilfe<<", "Pause = Keybinder pausieren`n^ = Motor`nNum(-) = /duty +Showme`nF2 = /acceptrevival`nF3 = /anrufliste`nF5 = Für Heilung bitte mit G einsteigen!`nF10 = Bitte umfahren Sie die Unfallstelle`nNumpad7 = Medicport LS`nNumpad8 = Medicport SF`nNumpad9 = Medicport LV`nNumpad+ = Medicport Base`nPunkt (.) = /revival`nEnde = Heal`n/tempomat`n/ab = Anrufabsage, verweis auf SMS`n1 = [EINSATZ] Bitte räumen sie SOFORT die Straße`n3 = Sirene und Sireneb`n/lgc = /listgangcars`n/sound`n/overlay", "Beenden")
+Suspend, Off
+return
+
 F2::
 IfWinNotActive, GTA:SA:MP
 {
@@ -260,18 +272,6 @@ return
 ;~ Suspend Off
 ;~ return
 
-:?:/medichelp::
-if(frakid != 4)
-{
-   AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
-   return
-}
-Suspend, Permit
-Sleep, 500
-ShowDialog(1, ">>Medic Hilfe<<", "Pause = Keybinder pausieren`n^ = Motor`nNum(-) = /duty +Showme`nF2 = /acceptrevival`nF3 = /anrufliste`nF5 = Für Heilung bitte mit G einsteigen!`nF10 = Bitte umfahren Sie die Unfallstelle`nNumpad7 = Medicport LS`nNumpad8 = Medicport SF`nNumpad9 = Medicport LV`nNumpad+ = Medicport Base`nPunkt (.) = /revival`nEnde = Heal`n/tempomat`n/ab = Anrufabsage, verweis auf SMS`n1 = [EINSATZ] Bitte räumen sie SOFORT die Straße`n3 = Sirene und Sireneb`n/lgc = /listgangcars`n/sound`n/overlay", "Beenden")
-Suspend, Off
-return
-
 1::
 IfWinNotActive, GTA:SA:MP
 {
@@ -295,7 +295,9 @@ return
 :?:/lgc::
 if(frakid != 4)
 {
+   Suspend Permit
    AddChatMessage(0xFF3366, "Du bist kein Medic, wenn doch mache bitte relog!")
+   Suspend Off
    return
 }
 Suspend Permit
