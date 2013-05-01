@@ -19,44 +19,41 @@ if(ZFreigabe == 0 && (IsPlayerInRangeOfPoint(54.620407104492, -1524.6511230469, 
 		;~ AddChatMessage(0xFF3333, "FEHLER: " str)
 	}
 }
-;Materialien
-if(IsPlayerInRangeOfPoint(2142.3315,2836.1289,10.8203, 10)) 
-{
-	SendChat("/materials deliver")
-	Sleep, 150
-	SendChat("/hi")
-}
-if(IsPlayerInRangeOfPoint(-1113.3816,-1620.8601,76.3739, 10)) ;
-{
-	SendChat("/materials get")
-	Sleep, 150
-	SendChat("/hi")
-}
-;oel
-if(IsPlayerInRangeOfPoint(259.6394,1384.6654,10.5859, 10) and IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
-{
-	SendChat("/loadoel 1000")
-	Sleep, 150
-	SendChat("/hi")
-}
-if(IsPlayerInRangeOfPoint(-1043.1525,-677.9094,32.0126, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) ;
-{
-	SendChat("/selloel 1000")
-	Sleep, 150
-	SendChat("/hi")
-}
-if(IsPlayerInRangeOfPoint(2759.5198,-2452.9226,14.5626, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
-{
-	SendChat("/loadimport 1000")
-	Sleep, 150
-	SendChat("/hi")
-}
-if(IsPlayerInRangeOfPoint(62,-252,2.6, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) ;
-{
-	SendChat("/sellimport 1000")
-	Sleep, 150
-	SendChat("/hi")
-}
+;~ ;Materialien
+;~ if(IsPlayerInRangeOfPoint(2142.3315,2836.1289,10.8203, 10)) 
+;~ {
+	;~ SendChat("/materials deliver")
+	;~ Sleep, 150
+;~ }
+;~ if(IsPlayerInRangeOfPoint(-1113.3816,-1620.8601,76.3739, 10)) ;
+;~ {
+	;~ SendChat("/materials get")
+	;~ Sleep, 150
+;~ }
+;~ ;oel
+;~ if(IsPlayerInRangeOfPoint(259.6394,1384.6654,10.5859, 10) and IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
+;~ {
+	;~ SendChat("/loadoel 1000")
+	;~ Sleep, 150
+;~ }
+;~ if(IsPlayerInRangeOfPoint(-1043.1525,-677.9094,32.0126, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) ;
+;~ {
+	;~ SendChat("/selloel 1000")
+	;~ Sleep, 150
+	;~ SendChat("/hi")
+;~ }
+;~ if(IsPlayerInRangeOfPoint(2759.5198,-2452.9226,14.5626, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
+;~ {
+	;~ SendChat("/loadimport 1000")
+	;~ Sleep, 150
+	;~ SendChat("/hi")
+;~ }
+;~ if(IsPlayerInRangeOfPoint(62,-252,2.6, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) ;
+;~ {
+	;~ SendChat("/sellimport 1000")
+	;~ Sleep, 150
+	;~ SendChat("/hi")
+;~ }
 
 ;tanken
 if(IsPlayerInRangeOfPoint(1242.8752,-2055.2163,59.8995, 10) || IsPlayerInRangeOfPoint(-91.7419,-1169.8896,2.4295, 10) || IsPlayerInRangeOfPoint(1004.0728,-939.5931,42.1797, 10) || IsPlayerInRangeOfPoint(1944.1292,-1772.9398,13.3906, 10) || IsPlayerInRangeOfPoint(-1675.7802,413.4920,7.1797, 10) || IsPlayerInRangeOfPoint(-2023.7025,156.5608,28.8359, 10)  || IsPlayerInRangeOfPoint(2114.6165,920.3948,10.8203, 10) || IsPlayerInRangeOfPoint(2639.9248,1105.9448,10.8203, 10) || IsPlayerInRangeOfPoint(2202.2808,2475.0046,10.8203, 10) || IsPlayerInRangeOfPoint(2147.4963,2747.4875,10.8203, 10) || IsPlayerInRangeOfPoint(1595.6571,2199.8210,10.8203, 10) || IsPlayerInRangeOfPoint(607.1201,1703.4415,6.9995, 10) || IsPlayerInRangeOfPoint(70.4910,1218.7430,18.8123, 10) || IsPlayerInRangeOfPoint(-1328.4259,2677.5176,50.0625, 10) || IsPlayerInRangeOfPoint(-2407.5227,976.3151,45.2969, 10) || IsPlayerInRangeOfPoint(-2244.1470,-2560.7310,31.9219, 10) || IsPlayerInRangeOfPoint(-1605.4554,-2714.2219,48.5335, 10) || IsPlayerInRangeOfPoint(655.5563,-565.0063,16.3359, 10) || IsPlayerInRangeOfPoint(1522.4402,-1765.0229,13.5469, 10))
