@@ -280,12 +280,6 @@ SendChat("/event")
 Suspend, Off
 return
 
-:?:/test::
-Suspend Permit
-AddChatMessage(0xFFFFFF, ErrorLevel)
-Suspend,Off
-return
-
 :?:/autofind::
 Suspend Permit
 if(autofind_status == false)
@@ -339,7 +333,7 @@ if(autofix_status == false)
 {
    autofix_status := true
    SetTimer, Autofix, 1500
-   AddChatMessage(0xFFFFFF, Autofix activated!)
+   AddChatMessage(0xFFFFFF, "Autofix activated!")
 }
 else
 {
@@ -349,7 +343,7 @@ Suspend Off
 return
 
 Autofix:
-if(GetVehicleHealth() < 900)
+if(GetVehicleHealth() < 900 AND IsPlayerInAnyVehicle() == 1)
 {
    SendChat("/fixveh")
 }
