@@ -166,3 +166,21 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1)
 }
 SendInput t{up}{space}{enter}
 return
+
+;~ LButton::
+;~ IfWinNotActive, GTA:SA:MP 
+;~ {
+   ;~ SendInput, {%A_ThisHotkey%}
+   ;~ return
+;~ }
+;~ if(IsChatOpen() == 1 || IsDialogOpen() == 1) 
+;~ {
+   ;~ SendInput, {%A_ThisHotkey%}
+   ;~ return
+;~ }
+;~ Sleep, 75
+;~ Send {c down}
+;~ Send {c Up}
+;~ Send {c down}
+;~ Send {c Up}
+;~ return
