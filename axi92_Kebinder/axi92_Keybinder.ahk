@@ -3,7 +3,8 @@
 #UseHook
 #NoEnv
 #Hotstring EndChars `n ` 
-MainDir := A_MyDocuments "\axi92_Keybinder"
+#IfWinActive, GTA:SA:MP
+MainDir := A_MyDocuments "\axi92_Keybindccer"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
 IfNotExist, %MainDir%\heal.wav
