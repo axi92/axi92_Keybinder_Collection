@@ -200,7 +200,11 @@ if(IsPlayerInAnyVehicle() == 1)
    if(GetVehicleModel() == 544)
    {
       SendChat("/attachobjecttovehicle 19419 0 2.8 1.45 0 0 0")
-   }     
+   } 
+   if(GetVehicleModel() == 560) ;Sultan
+   {
+      SendChat("/attachobjecttovehicle 19419 0 0.1 0.83 0 0 0")
+   }    
 }
 Suspend, Off
 return
@@ -347,4 +351,16 @@ if(GetVehicleHealth() < 900 AND IsPlayerInAnyVehicle() == 1)
 {
    SendChat("/fixveh")
 }
+return
+
+:?:/quiz::
+Suspend Permit
+SendChat("/o Blitzquiz: Welcher dieser Begriffe past nicht?")
+Sleep, 100
+SendChat("/o Tannenbaum, Christbaum, Purzelbaum, Nussbaum")
+Sleep, 100
+SendChat("/o Antwort per SMS an -> 11")
+Sleep, 100
+SendChat("/o NICHT im /a Chat antworten!")
+Suspend Off
 return
