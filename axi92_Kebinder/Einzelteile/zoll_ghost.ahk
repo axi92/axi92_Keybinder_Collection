@@ -19,17 +19,17 @@ if(ZFreigabe == 0 && (IsPlayerInRangeOfPoint(54.620407104492, -1524.6511230469, 
 		;~ AddChatMessage(0xFF3333, "FEHLER: " str)
 	}
 }
-;~ ;Materialien
-;~ if(IsPlayerInRangeOfPoint(2142.3315,2836.1289,10.8203, 10)) 
-;~ {
-	;~ SendChat("/materials deliver")
-	;~ Sleep, 150
-;~ }
-;~ if(IsPlayerInRangeOfPoint(-1113.3816,-1620.8601,76.3739, 10)) ;
-;~ {
-	;~ SendChat("/materials get")
-	;~ Sleep, 150
-;~ }
+;Materialien
+if(IsPlayerInRangeOfPoint(2142.3315,2836.1289,10.8203, 2)) 
+{
+	SendChat("/materials deliver 10")
+	Sleep, 250
+}
+if(IsPlayerInRangeOfPoint(-1113.3816,-1620.8601,76.3739, 2)) ;
+{
+	SendChat("/materials get 10")
+	Sleep, 250
+}
 ;~ ;oel
 ;~ if(IsPlayerInRangeOfPoint(259.6394,1384.6654,10.5859, 10) and IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
 ;~ {
