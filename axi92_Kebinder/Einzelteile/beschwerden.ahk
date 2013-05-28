@@ -3,7 +3,7 @@ return
 
 ;~ :?:/beschwerde::
 ;~ Suspend Permit
-;~ opfer := "Johnny_Bandana"
+;~ opfer := "Juanan"
 ;~ prisontime := "180"
 ;~ grund := "SDM"
 ;~ SendChat("/prison " opfer " " prisontime " " grund)
