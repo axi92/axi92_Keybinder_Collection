@@ -324,6 +324,8 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 Suspend, Permit
 SetTimer, Autofind, Off
 SetTimer, Autofix, Off
+autofix_status := false
+autofind_status := false
 Suspend, Off
 return
 
