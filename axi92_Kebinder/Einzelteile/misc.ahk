@@ -12,7 +12,7 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
    return
 }
 Suspend Permit
-SendChat("/addobject fass")
+SendChat("/ao fass")
 Suspend Off
 return
 
@@ -71,6 +71,7 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 if (IsPlayerInAnyVehicle() == 1)
 {
 	SendChat("/zoll")
+	SendChat("/tor")
 }
 return
 	
@@ -128,6 +129,10 @@ if (IsPlayerInAnyVehicle() != 1)
 {
 	SendChat("/pickupgun")
 }
+if(IsPlayerInRangeOfPoint(834, -1855, 8, 3) || IsPlayerInRangeOfPoint(2898.5, 1587.6, 9.8, 3) || IsPlayerInRangeOfPoint(-1479.1, 430.2, 6.1, 3))
+{
+	SendChat("/ablegen mats 500")
+}
 SendChat("/anos")
 return
 
@@ -151,6 +156,18 @@ SendChat("/pspawn Carl_Wales")
 SendChat("/pspawn Klaus_Wales")
 SendChat("/pspawn Georg_Wales")
 Suspend Off
+return
+
+:?:/time::
+Suspend Permit
+SendChat("/time")
+Sleep, 200
+GetChatLine(1, str)
+if InStr(str, "Anwalts Zeit:")
+{
+	SendChat("/s "str)
+}
+Suspend, Off
 return
 
 v::
