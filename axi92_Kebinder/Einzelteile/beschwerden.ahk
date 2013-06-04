@@ -1,22 +1,23 @@
+#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 IfWinNotActive, GTA:SA:MP
 return
 
 ;~ :?:/beschwerde::
 ;~ Suspend Permit
-;~ opfer := "Juanan"
-;~ prisontime := "180"
+;~ opfer := "Chester.Silva"
+;~ timeban := "4320"
 ;~ grund := "SDM"
-;~ SendChat("/prison " opfer " " prisontime " " grund)
-;~ Sleep, 500
 ;~ SendChat("/mark")
 ;~ Sleep, 500
 ;~ SendChat("/goto " opfer)
-;~ Sleep, 1000
+;~ Sleep, 500
 ;~ SendChat("/take Waffenschein " opfer)
 ;~ Sleep, 500
 ;~ SendChat("/gotomark")
 ;~ Sleep, 500
 ;~ SendChat("/warn " opfer " " grund)
+;~ Sleep, 500
+;~ SendChat("/tban " opfer " " timeban " " grund)
 ;~ Suspend Off
 ;~ return
 
