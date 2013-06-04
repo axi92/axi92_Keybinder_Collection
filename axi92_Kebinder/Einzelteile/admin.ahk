@@ -1,4 +1,5 @@
-﻿Numpad0::
+﻿#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
+Numpad0::
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
@@ -66,7 +67,7 @@ IfWinNotActive, GTA:SA:MP
 }
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nFahrzeug reparieren im Kampf -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskfluch -> 1 Warn + 120 min Prison`nOfflineflucht -> 1 Warn + 60 min Prison`nRelogbuguse -> 90 min Prison`nBuguse (SAMP Bug) -> 120 min Prison`nBeleidigung schwach -> 60 min Prison`nBeleidigung mittel -> 1 Warn + 5d Timeban + 120 min Prison`nBeleidigung schwer -> Ban`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nCheaten -> Ban`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nBunnyhop bei Gefahr -> 90min Prison`nNO-DM Flucht -> 60min Prison`nG-Buguse -> Prison 60 + Warn`nUmgangston -> Prison 30`nSchiessen in No-DM -> 45 Prison", "Beenden")
+ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskfluch -> 1 Warn + Tban: 2880`nBuguse Leicht: Tban: 4320`nBuguse Mittel: Tban: 10 080, 1 Warn, 70% Geldabzug`nBuguse Schwer: Tban: 43 200, 2 Warns, 80% Geldresett`nBeleidigung leicht -> Tban: 1440`nBeleidigung mittel -> Tban: 4320, 1 Warn`nBeleidigung schwer -> Tban: 10 080, 50% Geldresett, 1 Warn`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nOfflineflucht normal: 1 Warn + Tban: 2880`nBunnyhop bei Gefahr -> 60min Prison`nBunnyhop bei Gefahr mit Flagge: Tban: 360`nNO-DM Flucht -> 60min Prison`nUmgangston -> Prison 30`nSchiessen in No-DM -> 45 Prison", "Beenden")
 Suspend, Off
 return
 
@@ -204,8 +205,32 @@ if(IsPlayerInAnyVehicle() == 1)
    if(GetVehicleModel() == 560) ;Sultan
    {
       SendChat("/attachobjecttovehicle 19419 0 0.1 0.83 0 0 0")
-   }    
+   }       
 }
+Suspend, Off
+return
+
+:?:/flagge1::
+Suspend, Permit
+if(IsPlayerInAnyVehicle() == 1)
+{
+   if(GetVehicleModel() == 594) ;Limo Flagge
+   {
+      SendChat("/attachobjecttovehicle 2614 0 2.88 0.3 -95 180 0")
+   }
+}   
+Suspend, Off
+return
+
+:?:/flagge2::
+Suspend, Permit
+if(IsPlayerInAnyVehicle() == 1)
+{
+   if(GetVehicleModel() == 594) ;Limo Flagge
+   {
+      SendChat("/attachobjecttovehicle 2614 0 2.88 0.3 -95 180 0")
+   }
+}   
 Suspend, Off
 return
 
