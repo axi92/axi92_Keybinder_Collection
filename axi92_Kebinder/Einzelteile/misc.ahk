@@ -1,5 +1,4 @@
-﻿IfWinNotActive, GTA:SA:MP
-return
+﻿#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 
 ä::
 IfWinNotActive, GTA:SA:MP
@@ -70,9 +69,19 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 if (IsPlayerInAnyVehicle() == 1)
 {
-	SendChat("/zoll")
+	;~ SendChat("/zoll")
 	SendChat("/tor")
 }
+if(IsPlayerInRangeOfPoint(2759.5198,-2452.9226,14.5626, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
+{
+	SendChat("/loadimport 1000")
+	SendChat("/repairtruck")
+}
+if(IsPlayerInRangeOfPoint(62,-252,2.6, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515)
+{
+	SendChat("/sellimport 1000")
+}
+Goto, Zollsystem
 return
 	
 MButton::
@@ -170,7 +179,7 @@ if InStr(str, "Anwalts Zeit:")
 Suspend, Off
 return
 
-v::
+b::
 IfWinNotActive, GTA:SA:MP 
 {
    SendInput, {%A_ThisHotkey%}
