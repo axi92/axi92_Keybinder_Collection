@@ -3,8 +3,7 @@
 #UseHook
 #NoEnv
 #Hotstring EndChars `n ` 
-#IfWinActive, GTA:SA:MP
-MainDir := A_MyDocuments "\axi92_Keybindccer"
+MainDir := A_MyDocuments "\axi92_Keybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
 IfNotExist, %MainDir%\heal.wav
@@ -77,18 +76,6 @@ FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_PD.ahk
-;~ #Include Einzelteile/zoll-timer.ahk
-#Include Einzelteile/zoll_ghost.ahk
-#Include Einzelteile/pause.ahk ;Pause Funktion
-#Include Einzelteile/misc.ahk
-#Include Einzelteile/gk.ahk
-#Include Einzelteile/sound_system.ahk
-#Include Einzelteile/admin.ahk
-#Include Einzelteile/motor.ahk
-#Include Einzelteile/tacho.ahk
-#Include Einzelteile/heal_hud.ahk
-#Include Einzelteile/beschwerden.ahk
-#Include sanktionen.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 GUIclose:
 Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
@@ -166,3 +153,16 @@ FormatTime, zeit, %A_Now%, HH-mm-ss
 FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 }
 return
+
+;~ #Include Einzelteile/zoll-timer.ahk
+#Include Einzelteile/zoll_ghost.ahk
+#Include Einzelteile/pause.ahk ;Pause Funktion
+#Include Einzelteile/misc.ahk
+#Include Einzelteile/gk.ahk
+#Include Einzelteile/sound_system.ahk
+#Include Einzelteile/admin.ahk
+#Include Einzelteile/motor.ahk
+#Include Einzelteile/tacho.ahk
+#Include Einzelteile/heal_hud.ahk
+#Include Einzelteile/beschwerden.ahk
+#Include sanktionen.ahk
