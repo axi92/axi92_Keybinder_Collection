@@ -205,6 +205,14 @@ if(IsPlayerInAnyVehicle() == 1)
    if(GetVehicleModel() == 560) ;Sultan
    {
       SendChat("/attachobjecttovehicle 19419 0 0.1 0.83 0 0 0")
+   }  
+   if(GetVehicleModel() == 697) ;HotringRacer
+   {
+      SendChat("/attachobjecttovehicle 19419 0 -0.3 0.73 0 0 0")
+   }      
+   if(GetVehicleModel() == 697) ;HotringRacer
+   {
+      SendChat("/attachobjecttovehicle 19419 0 -0.3 0.73 0 0 0")
    }       
 }
 Suspend, Off
