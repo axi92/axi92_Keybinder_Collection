@@ -81,6 +81,18 @@ if(IsPlayerInRangeOfPoint(62,-252,2.6, 10) && IsPlayerInAnyVehicle()==1 && IsPla
 {
 	SendChat("/sellimport 1000")
 }
+if(IsPlayerInRangeOfPoint(-1042, -676, 33, 10) && IsPlayerDriver() == 1 && GetVehicleModel() == 515)
+{
+	SendChat("/filltrailer 1000")
+}
+if(IsPlayerInRangeOfPoint(1242.8752,-2055.2163,59.8995, 10) || IsPlayerInRangeOfPoint(-91.7419,-1169.8896,2.4295, 10) || IsPlayerInRangeOfPoint(1004.0728,-939.5931,42.1797, 10) || IsPlayerInRangeOfPoint(1944.1292,-1772.9398,13.3906, 10) || IsPlayerInRangeOfPoint(-1675.7802,413.4920,7.1797, 10) || IsPlayerInRangeOfPoint(-2023.7025,156.5608,28.8359, 10)  || IsPlayerInRangeOfPoint(2114.6165,920.3948,10.8203, 10) || IsPlayerInRangeOfPoint(2639.9248,1105.9448,10.8203, 10) || IsPlayerInRangeOfPoint(2202.2808,2475.0046,10.8203, 10) || IsPlayerInRangeOfPoint(2147.4963,2747.4875,10.8203, 10) || IsPlayerInRangeOfPoint(1595.6571,2199.8210,10.8203, 10) || IsPlayerInRangeOfPoint(607.1201,1703.4415,6.9995, 10) || IsPlayerInRangeOfPoint(70.4910,1218.7430,18.8123, 10) || IsPlayerInRangeOfPoint(-1328.4259,2677.5176,50.0625, 10) || IsPlayerInRangeOfPoint(-2407.5227,976.3151,45.2969, 10) || IsPlayerInRangeOfPoint(-2244.1470,-2560.7310,31.9219, 10) || IsPlayerInRangeOfPoint(-1605.4554,-2714.2219,48.5335, 10) || IsPlayerInRangeOfPoint(655.5563,-565.0063,16.3359, 10) || IsPlayerInRangeOfPoint(1522.4402,-1765.0229,13.5469, 10))
+{
+	SendChat("/sellfuel 1000")	
+}
+if(isPlayerInRangeOfPoint(1526,-1699,13, 10))
+{
+	SendChat("/oparking")
+}
 Goto, Zollsystem
 return
 	
@@ -209,4 +221,22 @@ return
 ;~ Send {c Up}
 ;~ Send {c down}
 ;~ Send {c Up}
+;~ return
+
+UpdateString:
+MouseGetPos, x,y
+newpos_x := (800/1920) * x
+newpos_y := (600/1080) * y
+ 
+;~ if(textid != -1)
+;~ {
+	;~ Tick := A_TickCount
+	;~ TextSetString(textid,Tick)
+	;~ TextSetColor(textid,0xFF000000 | Tick>>4 & 0xFFFF)
+ 
+	;~ TextSetPos(textid,newpos_x,newpos_y)
+;~ }
+ 
+;~ if(lineid != -1)
+	;~ LineSetPos(lineid,400,300,newpos_x,newpos_y)
 ;~ return
