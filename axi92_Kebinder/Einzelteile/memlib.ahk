@@ -1,6 +1,3 @@
-;--V1.1 Written by AmA-- 
-
-
 OpenMemoryfromProcess(process,right=0x1F0FFF)
 {
 Process,Exist,%process%
