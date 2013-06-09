@@ -22,15 +22,10 @@ SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, 10 
 
+;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
 version := 0.5
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
-Settimer, Zollsystem, 100
-;SetTimer, Sound, 200
-;Settimer, Playerheal, 1000
-SetTimer, Callback_Check_Vehicle, 30
-;Settimer, PressedEnter 500
-TextBindTimer(50)
 Freigabe := 1
 heal := -1
 Sound := 1
@@ -38,14 +33,21 @@ acolorcar_status := false
 update := false
 autofind_status := false
 autofix_status := false
+togloginlogout := false
 ZFreigabe := 0
+
+;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
+Settimer, Zollsystem, 100
+;SetTimer, Sound, 200
+;Settimer, Playerheal, 1000
+SetTimer, Callback_Check_Vehicle, 30
+Settimer, toggle_loginlogout, 1000
+TextBindTimer(50)
 SetTimer, Sound, 100
-Sleep, 500
 SetTimer, Logbackup, 500
 OnExit, Callback_OnExit
 
 IniRead, pw, %ini%, Einstellungen, IGPasswort
-
 #Include Einzelteile/ping.ahk
 OnlineCheck := Ping("www.axi92.at")
 if(OnlineCheck == 1)
@@ -151,6 +153,23 @@ FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
 FormatTime, datum, %A_Now%, dd.MM.yyyy
 FormatTime, zeit, %A_Now%, HH-mm-ss
 FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
+}
+return
+
+toggle_loginlogout:
+IfWinNotActive, GTA:SA:MP
+{
+   return
+}
+if(togloginlogout == false)
+{	
+	GetChatLine(0, str)
+	if InStr(str, "Bitte warten...")
+	{
+		SendChat("/togloginlogout")
+		togloginlogout := true
+		Settimer, toggle_loginlogout, off
+	}
 }
 return
 
