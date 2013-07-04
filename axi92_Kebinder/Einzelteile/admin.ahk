@@ -71,11 +71,10 @@ ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Mis
 Suspend, Off
 return
 
-:?:/acab::
 :?:/beleidigung::
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Sanktionen<<", "§4.1 Schwache Beleidigungen:`nZu den schwachen Beleidigungen zählen Wörter wie:`n'Arschloch', 'Penner', 'Assi', 'Spasti', ggf. 'ACAB'.`nBestraft werden diese mit einer Stunde Prison.", "Beenden")
+ShowDialog(0, ">>Beleidigungskatalog<<", "LEICHT`nFicker`nNutte`nWixer`nWichser`nFotze`nMongo`nSpast`nSpacko`nSpacken`nHomo`nFick dich`n-`nMITTEL`nBastard`nMissgeburt`n-`nSCHWER`nHuso`nMutterficker`nFamilienbezogen`nReallife Drohung`n-`nERLAUBT`nOpfer`nhdf`nDu bist schlecht`nunfähig`nlauch`nhorst`nfischkopf`ndu ei`npussy`nlappen`narsch`nSteckdosenbefruchter`nHoden`nHonk`nTrottel`nDumm`nDumpfbacke`nKack`nPenis`nPimmel`nAffe`nKackwurst`nidiot`nPottsau`nAssi", "Beenden")
 Suspend, Off
 return
 
