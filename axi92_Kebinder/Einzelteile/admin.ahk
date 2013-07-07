@@ -111,11 +111,11 @@ SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
 Suspend, Off
 return
 
-;~ :?:/gotooamt::
-;~ Suspend, Permit
-;~ SendChat("/gotocoords 2220.86,-1163.61,25.73") ; Buggy coords
-;~ Suspend, Off
-;~ return
+:?:/gotooamt::
+Suspend, Permit
+SendChat("/gotocoords 929, -1218, 17")
+Suspend, Off
+return
 
 :?:/gotokh::
 Suspend, Permit
@@ -246,6 +246,12 @@ Suspend, Permit
 SendChat("/gotocoords 1212.9,-881.5,55.5")
 SendChat("/setvirtualworld 0")
 SendChat("/setint 0")
+Suspend, Off
+return
+
+:?:/gotorace::
+Suspend, Permit
+SendChat("/gotocoords -521.0,-3643.0,7.0")
 Suspend, Off
 return
 
@@ -389,7 +395,7 @@ if(GetVehicleHealth() < 900 AND IsPlayerInAnyVehicle() == 1)
 }
 return
 
-:?:/quiz::
+:?:/quiz1::
 Suspend Permit
 SendChat("/o Blitzquiz: Welcher dieser Begriffe past nicht?")
 Sleep, 100
@@ -398,5 +404,20 @@ Sleep, 100
 SendChat("/o Antwort per SMS an -> 11")
 Sleep, 100
 SendChat("/o NICHT im /a Chat antworten!")
+Suspend Off
+return
+
+:?:/laufscript::
+Suspend Permit
+if(laufscript == false)
+{
+   laufscript := true
+   AddChatMessage(0xFF0000, "Laufscript: {2C6700}AN")
+}
+else
+{
+   laufscript := false
+   AddChatMessage(0xFF0000, "Laufscript: {FF0000}OFF")
+}
 Suspend Off
 return
