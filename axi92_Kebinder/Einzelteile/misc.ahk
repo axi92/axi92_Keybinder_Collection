@@ -241,13 +241,16 @@ newpos_y := (600/1080) * y
 	;~ LineSetPos(lineid,400,300,newpos_x,newpos_y)
 ;~ return
 
-;~ *~$SHIFT::
-;~ Loop
-;~ {
-	;~ GetKeyState, SpaceState, SHIFT, P
-	;~ If SpaceState = U
-	;~ break
-	;~ Sleep 1
-	;~ Send, {Blind}{SHIFT}
-;~ }
-;~ Return
+*~$SHIFT::
+if(laufscript == true)
+{
+	Loop
+	{
+		GetKeyState, SpaceState, SHIFT, P
+		If SpaceState = U
+		break
+		Sleep 1
+		Send, {Blind}{SHIFT}
+	}
+}
+Return
