@@ -34,6 +34,7 @@ update := false
 autofind_status := false
 autofix_status := false
 togloginlogout := false
+laufscript := false
 ZFreigabe := 0
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
