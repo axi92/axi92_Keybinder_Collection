@@ -241,6 +241,21 @@ newpos_y := (600/1080) * y
 	;~ LineSetPos(lineid,400,300,newpos_x,newpos_y)
 ;~ return
 
+:?:/ls::
+Suspend Permit
+if(laufscript == false)
+{
+   laufscript := true
+   AddChatMessage(0xFF0000, "Laufscript: {2C6700}AN")
+}
+else
+{
+   laufscript := false
+   AddChatMessage(0xFF0000, "Laufscript: {FF0000}OFF")
+}
+Suspend Off
+return
+
 *~$SHIFT::
 if(laufscript == true)
 {
