@@ -104,10 +104,14 @@ return
 :?:/save-all::
 Suspend, Permit
 SendChat("/cnnn 3 ~n~~n~~r~Speicherung! Kann zu laggs fuehren!")
+AddChatMessage(0xFF3333, "Speicherung beginnt!")
 Sleep, 1000
 SendChat("/saveall")
+StartTime := A_TickCount
 Sleep, 1000
 SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
+ElapsedTime := A_TickCount - StartTime
+AddChatMessage(0xFF3333, "Dauer der Speicherung: " ElapsedTime "ms")
 Suspend, Off
 return
 
@@ -404,20 +408,5 @@ Sleep, 100
 SendChat("/o Antwort per SMS an -> 11")
 Sleep, 100
 SendChat("/o NICHT im /a Chat antworten!")
-Suspend Off
-return
-
-:?:/laufscript::
-Suspend Permit
-if(laufscript == false)
-{
-   laufscript := true
-   AddChatMessage(0xFF0000, "Laufscript: {2C6700}AN")
-}
-else
-{
-   laufscript := false
-   AddChatMessage(0xFF0000, "Laufscript: {FF0000}OFF")
-}
 Suspend Off
 return
