@@ -69,7 +69,7 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 if (IsPlayerInAnyVehicle() == 1)
 {
-	;~ SendChat("/zoll")
+	SendChat("/zoll")
 	SendChat("/tor")
 }
 if(IsPlayerInRangeOfPoint(2759.5198,-2452.9226,14.5626, 10) && IsPlayerInAnyVehicle()==1 && IsPlayerDriver() == 1 && GetVehicleModel() == 515) 
@@ -93,7 +93,6 @@ if(isPlayerInRangeOfPoint(1526,-1699,13, 10))
 {
 	SendChat("/oparking")
 }
-Goto, Zollsystem
 return
 	
 MButton::
