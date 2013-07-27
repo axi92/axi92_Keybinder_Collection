@@ -182,10 +182,20 @@ return
 Suspend Permit
 SendChat("/time")
 Sleep, 200
-GetChatLine(1, str)
-if InStr(str, "Anwalts Zeit:")
+GetChatLine(0, str0)
+GetChatLine(1, str1)
+GetChatLine(2, str2)
+if InStr(str0, "Anwalts Zeit:")
 {
-	SendChat("/s "str)
+	SendChat("/s "str0)
+}
+else if (InStr(str1, "Anwalts Zeit:"))
+{
+	SendChat("/s "str1)	
+}
+else if (InStr(str2, "Anwalts Zeit:"))
+{
+	SendChat("/s "str2)	
 }
 Suspend, Off
 return
