@@ -37,7 +37,7 @@ SetTimer, Sound, 100
 SetTimer, Logbackup, 500
 OnExit, Callback_OnExit
 
-IniRead, pw, %ini%, Einstellungen, IGPasswort
+;~ IniRead, pw, %ini%, Einstellungen, IGPasswort
 
 #Include Einzelteile/ping.ahk
 OnlineCheck := Ping("axi92.at")
@@ -45,20 +45,20 @@ if(OnlineCheck == 1)
 {
     UrlDownloadToFile, http://www.axi92.at/download/keybinder/pd/version.txt, %MainDir%\version.txt
 }
-FileRead, newver, %MainDir%\version.txt
-FileDelete, %MainDir%\version.txt
+;~ FileRead, newver, %MainDir%\version.txt
+;~ FileDelete, %MainDir%\version.txt
 if (version < newver)
 {
-	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver% es wird geupdated
+	MsgBox,0,, Es ist eine neue Version verfügbar, v%newver% es wird geupdated %A_ScriptName%
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/pd/PD_Keybinder.exe, %MainDir%\%A_ScriptName%.new
-	BatchFile=n
+	Msgbox, nach dl
+	BatchFile=
 	(
 		Ping 127.0.0.1
 		Del "%A_ScriptName%"
 		Rename "%A_ScriptName%.new" "%A_ScriptName%"
 		cd "%A_ScriptFullPath%"
 		%A_ScriptName%"
-		Del Update.bat
 	)
 	FileDelete,update.bat
 	FileAppend,%BatchFile%,update.bat
