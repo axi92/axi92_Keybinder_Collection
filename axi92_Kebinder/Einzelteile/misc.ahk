@@ -152,6 +152,27 @@ if (IsPlayerInAnyVehicle() != 1)
 if(IsPlayerInRangeOfPoint(834, -1855, 8, 3) || IsPlayerInRangeOfPoint(2898.5, 1587.6, 9.8, 3) || IsPlayerInRangeOfPoint(-1479.1, 430.2, 6.1, 3))
 {
 	SendChat("/ablegen mats 500")
+	SendChat("/ablegen drogen 16")
+}
+if(IsPlayerInRangeOfPoint(-90.7137, -38.4757, 6.4844, 1))
+{
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
+	SendChat("/get drugs 1")
 }
 SendChat("/anos")
 return
