@@ -337,7 +337,7 @@ if(autofind_status == false)
    Input,aufnahme_autofind,V I M T10,{ENTER},*
    If(aufnahme_autofind != "")
    {
-      SetTimer, Autofind, 1500
+      SetTimer, Autofind, 4000
    }
    else
    {
