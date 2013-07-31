@@ -185,4 +185,5 @@ return
 #Include Einzelteile/tacho.ahk
 #Include Einzelteile/heal_hud.ahk
 #Include Einzelteile/beschwerden.ahk
+#Include Einzelteile/anwalt.ahk
 #Include sanktionen.ahk
