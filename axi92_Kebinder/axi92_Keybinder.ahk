@@ -20,7 +20,7 @@ IfNotExist, %MainDir%\beep.wav
 }
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
-SoundSetWaveVolume, 10 
+SoundSetWaveVolume, +100
 
 ;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
 version := 0.5
@@ -36,6 +36,8 @@ autofix_status := false
 togloginlogout := false
 laufscript := false
 ZFreigabe := 0
+DoOnce := 0
+Do_HP_Once := 0
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 Settimer, Zollsystem, 100
@@ -46,6 +48,7 @@ Settimer, toggle_loginlogout, 1000
 TextBindTimer(50)
 SetTimer, Sound, 100
 SetTimer, Logbackup, 500
+SetTimer, OnPlayerTakeDmg, 100
 OnExit, Callback_OnExit
 
 IniRead, pw, %ini%, Einstellungen, IGPasswort
@@ -76,6 +79,8 @@ if (version < newver AND update == true)
 	ExitApp
 }
 FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
+FileInstall, Einzelteile/sounds/attack_mode.mp3, %MainDir%/attack_mode.mp3
+FileInstall, Einzelteile/sounds/punch.mp3, %MainDir%/punch.mp3
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_PD.ahk
@@ -186,4 +191,3 @@ return
 #Include Einzelteile/heal_hud.ahk
 #Include Einzelteile/beschwerden.ahk
 #Include Einzelteile/anwalt.ahk
-#Include sanktionen.ahk
