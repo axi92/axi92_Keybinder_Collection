@@ -50,4 +50,10 @@ else if InStr(Str, ticket)
 	Sleep, 5000
 	;AddChatMessage(0xFFFFF, "Sound play Tot")
 }
+if(A_Min == 15 AND A_Sec == 01)
+{
+	SendChat("/startlotto")
+	Sleep, 5000
+}
+;~ AddChatMessage(0xFFFFFF, A_Min ":" A_Sec)
 return
