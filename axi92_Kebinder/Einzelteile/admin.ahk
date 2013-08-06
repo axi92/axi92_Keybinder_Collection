@@ -20,12 +20,7 @@ return
 
 <::
 :?:/cars::
-IfWinNotActive, GTA:SA:MP
-{
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
+if(IsChatOpen() == 1 || IsDialogOpen() == 1 ) {
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -49,25 +44,10 @@ ShowDialog(0, ">>Fraktion ID's<<", "ID1: Admin`nID2: PHD`nID3: Army`nID4: Medic`
 Suspend, Off
 return
 
-:?:/carsa::
-IfWinNotActive, GTA:SA:MP
-{
-   return
-}
-Suspend, Permit
-Sleep, 500
-ShowDialog(1, ">>Car ID's<<", "445 - Admiral`n602 - Alpha`n416 - Ambulance`n`n`n`n`n", "Beenden")
-Suspend, Off
-return
-
 :?:/sanktionen::
-IfWinNotActive, GTA:SA:MP
-{
-   return
-}
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskfluch -> 1 Warn + Tban: 2880`nBuguse Leicht: Tban: 4320`nBuguse Mittel: Tban: 10 080, 1 Warn, 70% Geldabzug`nBuguse Schwer: Tban: 43 200, 2 Warns, 80% Geldresett`nBeleidigung leicht -> Tban: 1440`nBeleidigung mittel -> Tban: 4320, 1 Warn`nBeleidigung schwer -> Tban: 10 080, 50% Geldresett, 1 Warn`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nOfflineflucht normal: 1 Warn + Tban: 2880`nBunnyhop bei Gefahr -> 60min Prison`nBunnyhop bei Gefahr mit Flagge: Tban: 360`nNO-DM Flucht -> 60min Prison`nUmgangston -> Prison 30`nSchiessen in No-DM -> 45 Prison", "Beenden")
+ShowDialog(0, ">>Sanktionen<<", "KICK GRÜNDE------------------------`n`n/ad Missbrauch (Bei Neulingen)`nAngriff auf /aond`n/a- und /sup- Missbrauch`n`nWEITERE SANKTIONEN-------`nAutoschieben -> 30 min Prison`nSpawnkilling -> 60 min Prison`nHealen im Kampf/Pushen -> 90 min Prison`nEingreifen in GF -> Zivilist 90 min Prison | Gang 120 min Prison`nDeskflucht -> 1 Warn + Tban: 2880`nBuguse Leicht: Tban: 4320`nBuguse Mittel: Tban: 10 080, 1 Warn, 70% Geldabzug`nBuguse Schwer: Tban: 43 200, 2 Warns, 80% Geldresett`nBeleidigung leicht -> Tban: 1440`nBeleidigung mittel -> Tban: 4320, 1 Warn`nBeleidigung schwer -> Tban: 10 080, 50% Geldresett, 1 Warn`nAD- Misbrauch -> 15min Prison`nBeleidigung in AD -> Ban`n /a /sup Misbrauch (mehrmal) -> 30min Prison`nFahrer Driveby (Totparken, schießen,...) -> Schein entzug + 90min Prison`nSDM -> Warn + 180min Prison`nDM auf Dienstleistende -> 1 Warn + 180min Prison`nTotsprayen (50HP+) -> 60min Prison`nOffline Fluch vor Admin -> Zeit + 0.5 x Zeit`nOfflineflucht normal: 1 Warn + Tban: 2880`nBunnyhop bei Gefahr -> 60min Prison`nBunnyhop bei Gefahr mit Flagge: Tban: 360`nNO-DM Flucht -> 60min Prison`nUmgangston -> Prison 30`nSchiessen in No-DM -> 45 Prison", "Beenden")
 Suspend, Off
 return
 
@@ -117,7 +97,7 @@ return
 
 :?:/gotooamt::
 Suspend, Permit
-SendChat("/gotocoords 929, -1218, 17")
+SendChat("/gotocoords 929,-1218,17")
 Suspend, Off
 return
 
@@ -335,7 +315,7 @@ if(autofind_status == false)
    AddChatMessage(0xFFFFFF, "ID?")
    SendInput t
    Input,aufnahme_autofind,V I M T10,{ENTER},*
-   If(aufnahme_autofind != "")
+   If(aufnahme_autofind != "" OR aufnahme_autofind != 0)
    {
       SetTimer, Autofind, 4000
    }
@@ -383,13 +363,17 @@ if(autofix_status == false)
 {
    autofix_status := true
    SetTimer, Autofix, 1500
+   SoundSetWaveVolume, 30
    AddChatMessage(0xFFFFFF, "Autofix activated!")
+   SoundPlay, %MainDir%\attack_mode.mp3 ;K.I.T.T. Attack Mode
 }
 else
 {
    autofix_status := false
+   AddChatMessage(0xFFFFFF, "Autofix deactivated!")
 }
 Suspend Off
+SoundSetWaveVolume, 10
 return
 
 Autofix:
