@@ -299,3 +299,22 @@ if(laufscript == true)
 	}
 }
 Return
+
+OnPlayerTakeDmg:
+if(Do_HP_Once == 0)
+{
+	Old_HP_State := GetPlayerHealth()
+	Do_HP_Once := 1
+}
+New_HP_State := GetPlayerHealth()
+if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0)
+{
+	AddChatMessage(0xFF3333, "Old" Old_HP_State " neu: " New_HP_State)
+	SoundPlay, %MainDir%\punch.mp3
+	Old_HP_State := GetPlayerHealth()
+}
+else
+{
+	Old_HP_State := GetPlayerHealth()
+}
+return
