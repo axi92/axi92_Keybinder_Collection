@@ -44,7 +44,7 @@ Settimer, Zollsystem, 100
 ;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 30
-Settimer, toggle_loginlogout, 1000
+Settimer, toggle_loginlogout, 500
 TextBindTimer(50)
 SetTimer, Sound, 100
 SetTimer, Logbackup, 500
