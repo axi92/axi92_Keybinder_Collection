@@ -307,9 +307,9 @@ if(Do_HP_Once == 0)
 	Do_HP_Once := 1
 }
 New_HP_State := GetPlayerHealth()
-if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0)
+if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0 AND GetClipForCurrentWeapon() > 0)
 {
-	AddChatMessage(0xFF3333, "Old" Old_HP_State " neu: " New_HP_State)
+	AddChatMessage(0xFF3333, "Old: " Old_HP_State " neu: " New_HP_State " Waffe: " GetClipForCurrentWeapon())
 	SoundPlay, %MainDir%\punch.mp3
 	Old_HP_State := GetPlayerHealth()
 }
