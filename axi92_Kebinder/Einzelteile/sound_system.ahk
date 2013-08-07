@@ -33,7 +33,7 @@ if InStr(Str, bankrob)
 	;MsgBox % "heal.wav würde nun spielen"
 	SoundPlay, %MainDir%\heal.wav ;Bankrobsound
 	Sleep, 5000
-	;AddChatMessage(0xFFFFF, "Sound play Heal")
+	AddChatMessage(0xFFFFF, "Bankrob!")
 	return
 }
 else if InStr(Str, fahrzeugklau)
@@ -48,7 +48,7 @@ else if InStr(Str, ticket)
 	;MsgBox % "tot.wav würde nun spielen"
 	SoundPlay, %MainDir%\beep.wav
 	Sleep, 5000
-	;AddChatMessage(0xFFFFF, "Sound play Tot")
+	SendChat("/tickets")
 }
 if(A_Min == 15 AND A_Sec == 01)
 {
