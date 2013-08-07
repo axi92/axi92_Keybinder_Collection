@@ -21,9 +21,9 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		GoSub, Motor%Zufall%
 		if (GetVehicleLightState() == 1)
 		SendChat("/licht")
-		;~ Send, {n down}
-		;~ Sleep 300
-		;~ Send, {n up}
+		Send, {n down}
+		Sleep 300
+		Send, {n up}
 		;AddChatMessage(0xFF3333, "Handbremse angezogen - Motor AUS")
 	} 
 	else if (GetVehicleEngineState() == 0)
@@ -41,11 +41,10 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 		Sleep, 200
 		IfInString, Str, %handbremse%
 		{
-			;~ Send, {n down}
-			;~ Sleep 300
-			;~ Send, {n up}
+			Send, {n down}
+			Sleep 300
+			Send, {n up}
 			;AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
-			GoSub, Motor%Zufall%
 		}
 	}
 }
