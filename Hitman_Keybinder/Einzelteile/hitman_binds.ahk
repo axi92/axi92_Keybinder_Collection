@@ -44,15 +44,14 @@ return
 :?:/con::
 Suspend Permit
 Sleep, 300
+SendChat("/portable")
+Sleep, 200
+SendChat("Contracts")
 AddChatMessage(0xFFFFFF, "ID?")
 SendInput t
 Input,aufnahme_con,V I M T10,{ENTER},*
 If(aufnahme_con != "" OR aufnahme_con != 0)
 {
-    SendChat("/portable")
-    Sleep, 200
-    SendChat("Contracts")
-    Sleep, 200
     SendChat("TakeContract " aufnahme_con)
     Sleep, 200
     my_Id := GetPlayerId()
