@@ -92,3 +92,4 @@ return
 #Include Einzelteile/sound_system.ahk
 #Include Einzelteile/motor.ahk
 #Include Einzelteile/misc.ahk
+#Include Einzelteile/hitman_binds.ahk
