@@ -44,6 +44,8 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 			Send, {n down}
 			Sleep 300
 			Send, {n up}
+			Sleep, 200
+			SendChat("/motor")
 			;AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
 		}
 	}
@@ -69,6 +71,17 @@ if(OldState == PLAYER_STATE_DRIVING && NewState != PLAYER_STATE_DRIVING)
 else if(OldState != PLAYER_STATE_DRIVING && NewState == PLAYER_STATE_DRIVING)
 {
 	OldState := GetPlayerState()
+}
+if(savetime == true)
+{
+	GetChatLine(0, str0)
+	if InStr(str0, "Alle Daten wurden gespeichert")
+	{
+		savetime := false
+		SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
+		ElapsedTime := A_TickCount - StartTime
+		AddChatMessage(0xFF3333, "Dauer der Speicherung: " ElapsedTime "ms")
+	}
 }
 return
  
