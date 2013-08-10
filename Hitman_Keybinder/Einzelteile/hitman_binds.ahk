@@ -1,4 +1,4 @@
-#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
+﻿#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 
 Numpad0::
 IfWinNotActive, GTA:SA:MP
