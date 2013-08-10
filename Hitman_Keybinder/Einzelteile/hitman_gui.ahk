@@ -1,9 +1,9 @@
-#IfWinActive, GTA:SA:MP
+﻿#IfWinActive, GTA:SA:MP
 #UseHook
 #SingleInstance, Force
 #Persistent
 
-Gui, Add, Picture, xCenter yCenter w600 h480, Hintergrund.jpg
+Gui, Add, Picture, xCenter yCenter w600 h480, %MainDir%/Hintergrund.jpg
 
 Gui, Add, Text, x15 y15 cred +BackgroundTrans, Hitman Keybidner by MiLo 
 Gui, Add, Text, x15 y30 cwhite +BackgroundTrans,
