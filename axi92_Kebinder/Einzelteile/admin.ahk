@@ -88,10 +88,7 @@ AddChatMessage(0xFF3333, "Speicherung beginnt!")
 Sleep, 1000
 SendChat("/saveall")
 StartTime := A_TickCount
-Sleep, 1000
-SendChat("/cnnn 3 ~n~~n~~g~SPEICHERUNG ERFOLGREICH")
-ElapsedTime := A_TickCount - StartTime
-AddChatMessage(0xFF3333, "Dauer der Speicherung: " ElapsedTime "ms")
+savetime := true
 Suspend, Off
 return
 
