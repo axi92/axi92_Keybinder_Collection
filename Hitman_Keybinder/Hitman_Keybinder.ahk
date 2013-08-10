@@ -20,6 +20,7 @@ SetTimer, Logbackup, 500
 
 FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 FileInstall, Einzelteile/sounds/punch.mp3, %MainDir%/punch.mp3
+FileInstall, Einzelteile/Hintergrund.jpg, %MainDir%/Hintergrund.jpg
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/hitman_gui.ahk
