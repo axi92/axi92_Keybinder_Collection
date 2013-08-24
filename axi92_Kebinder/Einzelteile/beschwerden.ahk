@@ -4,7 +4,7 @@ return
 
 ;~ :?:/beschwerde::
 ;~ Suspend Permit
-;~ opfer := "Chester.Silva"
+;~ opfer := "enesrexx"
 ;~ timeban := "4320"
 ;~ grund := "SDM"
 ;~ SendChat("/mark")
@@ -20,6 +20,14 @@ return
 ;~ SendChat("/tban " opfer " " timeban " " grund)
 ;~ Suspend Off
 ;~ return
+
+:?:/ban1::
+Suspend Permit
+SendChat("/ban enesrexx 3xSDM")
+SendChat("/ban Kerk699 3xSDM")
+SendChat("/ban Scofield 3xSDM")
+Suspend Off
+return
 
 ;~ :?:/beschwerde::
 ;~ Suspend Permit
