@@ -83,6 +83,40 @@ if(savetime == true)
 		AddChatMessage(0xFF3333, "Dauer der Speicherung: " ElapsedTime "ms")
 	}
 }
+GetChatLine(0, str0)
+if InStr(str0, "Halte durch! Wir retten dich!")
+{
+	khtime := true
+	kh_StartTime := A_TickCount
+	AddChatMessage(0xFF3333, "KH Timer Start at: " kh_StartTime "ms")
+}
+if(khtime == true)
+{
+	if InStr(str0, "Du hast soweit alles")
+	{
+		kh_ElapsedTime := A_TickCount - kh_StartTime
+		AddChatMessage(0xFF3333, "Dauer des KH: " ms2his(kh_ElapsedTime) "ms Timer End: " ms2his(A_TickCount))
+		khtime := false
+		kh_ElapsedTime := 0
+	}
+}
+GetChatLine(2, str0)
+if InStr(str0, "raubt die Bank in")
+{
+	br_time := true
+	br_StartTime := A_TickCount
+	AddChatMessage(0xFF3333, "BR Timer Start at: " ms2his(br_StartTime) "ms")
+}
+if(br_time == true)
+{
+	if InStr(str0, "hat die Bank erfolgreich ausgeraubt")
+	{
+		br_ElapsedTime := A_TickCount - br_StartTime
+		AddChatMessage(0xFF3333, "Dauer des BR: " ms2his(br_ElapsedTime) "ms Timer End: " ms2his(A_TickCount))
+		br_time := false
+		br_ElapsedTime := 0
+	}
+}
 return
  
 OnPlayerExitVehicle()
@@ -112,3 +146,19 @@ return
 	;~ ;}
 ;~ }
 ;~ return
+
+:?:/stopbr::
+Suspend Permit
+br_time := false
+br_ElapsedTime := 0
+AddChatMessage(0xFF3333, "BR_Timer AUS")
+Suspend Off
+return
+
+:?:/stopkh::
+Suspend Permit
+khtime := false
+kh_ElapsedTime := 0
+AddChatMessage(0xFF3333, "KH_Timer AUS")
+Suspend Off
+return
