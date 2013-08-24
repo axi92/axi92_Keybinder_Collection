@@ -318,3 +318,21 @@ else
 	Old_HP_State := GetPlayerHealth()
 }
 return
+
+ms2his(milli, ByRef hours=0, ByRef mins=0, ByRef secs=0, secPercision=0)
+{
+  SetFormat, FLOAT, 0.%secPercision%
+  milli /= 1000.0
+  secs := mod(milli, 60)
+  SetFormat, FLOAT, 0.0
+  milli //= 60
+  mins := mod(milli, 60)
+  hours := milli //60
+  return hours . ":" . mins . ":" . secs
+}
+
+:?:/tick::
+Suspend Permit
+AddChatMessage(0xFF3333, ms2his(A_TickCount))
+Suspend off
+return
