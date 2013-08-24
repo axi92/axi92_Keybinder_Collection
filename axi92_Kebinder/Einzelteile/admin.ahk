@@ -391,3 +391,16 @@ Sleep, 100
 SendChat("/o NICHT im /a Chat antworten!")
 Suspend Off
 return
+
+:?:/brtime::
+Suspend Permit
+br_ElapsedTime := A_TickCount - br_StartTime
+AddChatMessage(0xFF3333, "BR vergangene Zeit: " br_ElapsedTime "ms Timer derzeit: " A_TickCount)
+Suspend Off
+return
+
+:?:/gotobankls::
+Suspend Permit
+SendChat("/gotocoords 1461,-1030,24")
+Suspend Off
+return
