@@ -133,7 +133,7 @@ return
 
 Motor3:
 SendChat("/motor       3")
-;AddChatMessage(0xFF3333, "3")
+;~ ;AddChatMessage(0xFF3333, "3")   2624  31426
 return
 
 Callback_OnExit:
