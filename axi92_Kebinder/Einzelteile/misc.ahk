@@ -300,6 +300,33 @@ if(laufscript == true)
 }
 Return
 
+:?:/zahlenangriff::
+Suspend Permit
+SendChat("|-------------------------------------------------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|----------------ZAHLENANGRIFF----------------|")
+SendChat("|-------------------------------------------------------|")
+SendChat("")
+Sleep, 3000
+ddos_start_time := A_TickCount
+Loop, 500
+{
+	Random, zahl, 1579
+	SendChat(zahl)
+	;zahl++
+}
+ddos_end_time := A_TickCount - ddos_start_time
+SendChat("Time: " ddos_end_time)
+Suspend off
+return
+
 OnPlayerTakeDmg:
 if(Do_HP_Once == 0)
 {

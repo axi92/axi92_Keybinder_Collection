@@ -38,6 +38,8 @@ laufscript := false
 ZFreigabe := 0
 DoOnce := 0
 Do_HP_Once := 0
+zahl := 0
+ddos_stat := false
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 Settimer, Zollsystem, 100
