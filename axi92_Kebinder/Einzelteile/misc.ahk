@@ -203,21 +203,74 @@ return
 Suspend Permit
 SendChat("/time")
 Sleep, 200
-GetChatLine(0, str0)
-GetChatLine(1, str1)
-GetChatLine(2, str2)
-if InStr(str0, "Anwalts Zeit:")
+GetChatLine(0, str_aw0)
+GetChatLine(1, str_aw1)
+GetChatLine(2, str_aw2)
+if InStr(str_aw0, "Anwalts Zeit:")
 {
-	SendChat("/s "str0)
+	SendChat("/s "str_aw0)
+	str_anwalt := str_aw0
 }
-else if (InStr(str1, "Anwalts Zeit:"))
+else if (InStr(str_aw1, "Anwalts Zeit:"))
 {
-	SendChat("/s "str1)	
+	SendChat("/s "str_aw1)	
+	str_anwalt := str_aw1
 }
-else if (InStr(str2, "Anwalts Zeit:"))
+else if (InStr(str_aw2, "Anwalts Zeit:"))
 {
-	SendChat("/s "str2)	
+	SendChat("/s "str_aw2)	
+	str_anwalt := str_aw2
 }
+else
+{
+	AddChatMessage(0xFF0000, "Nichts gefunden: ")
+	AddChatMessage(0xFF0000, str_anwalt)
+	sms := 0
+}
+if (client_number != "" AND sms != 0) 
+{
+	SendChat("/sms " client_number " " str_anwalt)
+}
+Suspend, Off
+return
+
+:?:/free::
+Suspend Permit
+Sleep, 200
+AddChatMessage(0xFFFFFF, "Name?")
+SendInput t
+Input,find_name,V I M T10,{ENTER},*
+If(find_name != "" OR find_name != 0)
+{
+	client_number := GetPlayerNumber(find_name)
+	AddChatMessage(0xFF0000, "Variable Anwalt gespeichert: {2C6700}" client_number)
+}
+else
+{
+  AddChatMessage(0xFFFFFF, "Fehler, du hast zu lange gebraucht.")
+}
+;~ Sleep, 200
+;~ GetChatLine(0, str0)
+;~ GetChatLine(1, str1)
+;~ GetChatLine(2, str2)
+;~ if InStr(str0, "Du hast den Fall von")
+;~ {
+	;~ RegExMatch(str0, "Du hast den Fall von (\w*) angenommen, du musst nun in das Anwalt Büro." ,var)
+	;~ client_number := GetPlayerNumber(var1)
+	;~ AddChatMessage(0xFF0000, "Variable Anwalt gespeichert: {2C6700}" client_number)
+;~ }
+/*
+else if (InStr(str1, "Du hast den Fall von"))
+{
+	RegExMatch(str1, "Du hast den Fall von (.*).*" ,var)
+	SendChat("/s "var1)
+}
+else if (InStr(str2, "Du hast den Fall von"))
+{
+	RegExMatch(str2, "Du hast den Fall von (.*).*" ,var)
+	SendChat("/s "var1)
+}
+*/
 Suspend, Off
 return
 
