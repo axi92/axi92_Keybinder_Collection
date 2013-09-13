@@ -2,7 +2,7 @@
 #Persistent
 #UseHook
 #NoEnv
-#Hotstring EndChars `n ` 
+#Hotstring EndChars `n
 MainDir := A_MyDocuments "\axi92_Keybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
@@ -48,9 +48,7 @@ Settimer, Zollsystem, 100
 SetTimer, Callback_Check_Vehicle, 30
 Settimer, toggle_loginlogout, 500
 TextBindTimer(50)
-SetTimer, Sound, 100
 SetTimer, Logbackup, 500
-SetTimer, OnPlayerTakeDmg, 100
 OnExit, Callback_OnExit
 
 IniRead, pw, %ini%, Einstellungen, IGPasswort
@@ -157,13 +155,14 @@ Logbackup:
 WinWait, GTA:SA:MP
 WinWaitClose, GTA:SA:MP
 {
-FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
-FormatTime, datum, %A_Now%, dd.MM.yyyy
-FormatTime, zeit, %A_Now%, HH-mm-ss
-FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
+	FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
+	FormatTime, datum, %A_Now%, dd.MM.yyyy
+	FormatTime, zeit, %A_Now%, HH-mm-ss
+	FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 }
 return
 
+:?:/togloginlogout::
 toggle_loginlogout:
 IfWinNotActive, GTA:SA:MP
 {
@@ -177,6 +176,9 @@ if(togloginlogout == false)
 		SendChat("/togloginlogout")
 		togloginlogout := true
 		Settimer, toggle_loginlogout, off
+		SetTimer, OnPlayerTakeDmg, 100
+		Sleep, 500
+		SetTimer, Sound, 100
 	}
 }
 return
@@ -193,3 +195,4 @@ return
 #Include Einzelteile/heal_hud.ahk
 #Include Einzelteile/beschwerden.ahk
 #Include Einzelteile/anwalt.ahk
+#Include Einzelteile/functions.ahk
