@@ -193,32 +193,12 @@ if(IsPlayerInAnyVehicle() == 1)
    if(GetVehicleModel() == 697) ;HotringRacer
    {
       SendChat("/attachobjecttovehicle 19419 0 -0.3 0.73 0 0 0")
-   }       
+   }
+   if(GetVehicleModel() == 433) ;Barraks
+   {
+      SendChat("/attachobjecttovehicle 19419 0 1.2 1.7 0 0 0")
+   }   
 }
-Suspend, Off
-return
-
-:?:/flagge1::
-Suspend, Permit
-if(IsPlayerInAnyVehicle() == 1)
-{
-   if(GetVehicleModel() == 594) ;Limo Flagge
-   {
-      SendChat("/attachobjecttovehicle 2614 0 2.88 0.3 -95 180 0")
-   }
-}   
-Suspend, Off
-return
-
-:?:/flagge2::
-Suspend, Permit
-if(IsPlayerInAnyVehicle() == 1)
-{
-   if(GetVehicleModel() == 594) ;Limo Flagge
-   {
-      SendChat("/attachobjecttovehicle 2614 0 2.88 0.3 -95 180 0")
-   }
-}   
 Suspend, Off
 return
 
@@ -227,12 +207,6 @@ Suspend, Permit
 SendChat("/gotocoords 1212.9,-881.5,55.5")
 SendChat("/setvirtualworld 0")
 SendChat("/setint 0")
-Suspend, Off
-return
-
-:?:/gotorace::
-Suspend, Permit
-SendChat("/gotocoords -521.0,-3643.0,7.0")
 Suspend, Off
 return
 
@@ -271,7 +245,7 @@ SendChat("/gotocoords 1904,-2453,21")
 Suspend, Off
 return
 
-:?:/event1::
+:?:/eventmr::
 Suspend, Permit
 SendChat("/o Event: Massive Rampage wurde eröffnet!")
 Sleep, 1000
