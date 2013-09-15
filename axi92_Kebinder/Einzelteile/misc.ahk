@@ -224,7 +224,7 @@ else if (InStr(str_aw2, "Anwalts Zeit:"))
 else
 {
 	AddChatMessage(0xFF0000, "Nichts gefunden: ")
-	AddChatMessage(0xFF0000, str_anwalt)
+	;~ AddChatMessage(0xFF0000, str_anwalt)
 	sms := 0
 }
 if (client_number != "" AND sms != 0) 
@@ -244,6 +244,7 @@ If(find_name != "" OR find_name != 0)
 {
 	client_number := GetPlayerNumber(find_name)
 	AddChatMessage(0xFF0000, "Variable Anwalt gespeichert: {2C6700}" client_number)
+	SendChat("/free " find_name)
 }
 else
 {
