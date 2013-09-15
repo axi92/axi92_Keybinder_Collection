@@ -42,13 +42,12 @@ zahl := 0
 ddos_stat := false
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
-Settimer, Zollsystem, 100
 ;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
-SetTimer, Callback_Check_Vehicle, 30
+;~ SetTimer, Callback_Check_Vehicle, 30
 Settimer, toggle_loginlogout, 500
 TextBindTimer(50)
-SetTimer, Logbackup, 500
+;~ SetTimer, Logbackup, 500
 OnExit, Callback_OnExit
 
 IniRead, pw, %ini%, Einstellungen, IGPasswort
@@ -170,6 +169,25 @@ IfWinNotActive, GTA:SA:MP
 }
 if(togloginlogout == false)
 {	
+	if(IsPlayerFrozen() == 1)
+	{
+	}
+	else if(IsPlayerFrozen() == 0)
+	{
+		AddChatMessage(0xFF0000, "DEBUG: Eingeloggt") 
+		togloginlogout := true
+		SendChat("/togloginlogout")
+		Settimer, toggle_loginlogout, off
+		Sleep, 200
+		SetTimer, OnPlayerTakeDmg, 100
+		Sleep, 200
+		SetTimer, Sound, 100
+		Sleep, 200
+		Settimer, Zollsystem, 100
+		Sleep, 200
+		SetTimer, Callback_Check_Vehicle, 30
+	}
+/*
 	GetChatLine(0, str)
 	if InStr(str, "Bitte warten...")
 	{
@@ -180,6 +198,7 @@ if(togloginlogout == false)
 		Sleep, 500
 		SetTimer, Sound, 100
 	}
+*/
 }
 return
 
