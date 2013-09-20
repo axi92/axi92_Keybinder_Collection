@@ -50,6 +50,7 @@ GetPlayerData_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlay
 GetPlayerHealth_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerHealth")
 GetPlayerId_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerId")
 GetPlayerIdByName_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerIdByName")
+GetPlayersInVehicle_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayersInVehicle")
 GetPlayerMoney_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerMoney")
 GetPlayerName_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerName")
 GetPlayerNameById_func := DllCall("GetProcAddress", UInt, hModule, Str, "API_GetPlayerNameById")
@@ -300,6 +301,13 @@ GetPlayerIdByName(Name)
 {
 	global GetPlayerIdByName_func
 	Result := DllCall(GetPlayerIdByName_func, Str, Name)
+	return Result
+}
+
+GetPlayersInVehicle(ByRef Seat1, ByRef Seat2, ByRef Seat3, ByRef Seat4)
+{
+	global GetPlayersInVehicle_func
+	Result := DllCall(GetPlayersInVehicle_func, IntP, Seat1, IntP, Seat2, IntP, Seat3, IntP, Seat4)
 	return Result
 }
 
