@@ -6,6 +6,7 @@
 MainDir := A_MyDocuments "\axi92_Keybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
+FileCopy, Einzelteile/API.dll, %MainDir%/API.dll
 IfNotExist, %MainDir%\heal.wav
 {
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/heal.wav, %MainDir%\heal.wav
