@@ -136,7 +136,7 @@ if(IsPlayerInRangeOfPoint(2142.3821,2836.0293,10.8203, 2))
 }
 SetTimer, Callback_Check_Vehicle, 100
 Settimer, Logbackup, 1000
-;~ Settimer, Zollsystem, 100
+Settimer, Zollsystem, 100
 If(Sound = 1)
 {
 	;SoundPlay, %MainDir%\beep.wav
