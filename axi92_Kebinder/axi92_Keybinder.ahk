@@ -144,12 +144,14 @@ ExitApp
 return
 
 :?:/q::
+Suspend Permit
+Sleep, 100
+Send t/q{ENTER}
 ;WinWait, GTA:SA:MP
 ;////////////////////////
 ;Settimer, Logbackup, Off
-Suspend Permit
-SendChat("/q")
-Settimer, Zollsystem, Off
+;~ Suspend Permit
+;~ Settimer, Zollsystem, Off
 ;SetTimer, Sound, Off
 ;SetTimer, Callback_Check_Vehicle, Off
 ;Settimer, Speedo, Off
@@ -164,6 +166,7 @@ WinWaitClose, GTA:SA:MP
 	FormatTime, zeit, %A_Now%, HH-mm-ss
 	FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 }
+Suspend Off
 return
 
 :?:/togloginlogout::
