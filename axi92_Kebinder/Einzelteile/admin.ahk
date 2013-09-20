@@ -378,3 +378,9 @@ Suspend Permit
 SendChat("/gotocoords 1461,-1030,24")
 Suspend Off
 return
+
+:?:/goto_dm1::
+Suspend Permit
+SendChat("/gotocoords 4152,-1874,10")
+Suspend Off
+return
