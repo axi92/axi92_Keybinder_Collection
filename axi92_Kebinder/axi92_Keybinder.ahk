@@ -24,6 +24,7 @@ FileCreateDir, %MainDir%
 SoundSetWaveVolume, +100
 
 ;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
+debug := false
 version := 0.5
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
@@ -146,6 +147,8 @@ return
 ;WinWait, GTA:SA:MP
 ;////////////////////////
 ;Settimer, Logbackup, Off
+Suspend Permit
+SendChat("/q")
 Settimer, Zollsystem, Off
 ;SetTimer, Sound, Off
 ;SetTimer, Callback_Check_Vehicle, Off
@@ -176,7 +179,10 @@ if(togloginlogout == false)
 	}
 	else if(IsPlayerFrozen() == 0)
 	{
-		AddChatMessage(0xFF0000, "DEBUG: Eingeloggt") 
+		if(debug == true)
+		{
+			AddChatMessage(0xFF0000, "DEBUG: Eingeloggt") 
+		}
 		togloginlogout := true
 		SendChat("/togloginlogout")
 		Settimer, toggle_loginlogout, off

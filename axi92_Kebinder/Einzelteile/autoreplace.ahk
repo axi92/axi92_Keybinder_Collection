@@ -14,11 +14,13 @@ if(IsChatOpen() == 1)
 	autoreplace := Clipboard
 	Clipboard := Clipboard_old
 	RegExMatch(autoreplace, "(\d*)$" ,var)
+	var_length := StrLen(var)
 	GetPlayerData()
 	GetPlayerNameById(var, name)
+	;~ SendChat(var_length)
 	if(name != -1)
 	{
-		Send {Backspace 2}%name%
+		Send {Backspace %var_length%}%name%
 	}
 	Suspend Off
 	Return
