@@ -91,16 +91,14 @@ Gui, Submit ; speichert die Benutzerdaten des Fensters und versteckt es
 IniWrite, %Overlay%, %SpeicherDatei%, Einstellung, Overlay
 ExitApp
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
-Hotkey, Enter, Off
-Hotkey, Escape, Off
 ; Von hier bis....
 
 +T::
 ~t::
-;~ Suspend On
+Suspend On
 Hotkey, Enter, On
 Hotkey, Escape, On
-Hotkey, Tab, On
+;~ Hotkey, Tab, On
 Hotkey, t, Off
 return
 ; Hier wird bestimmt, das wenn ihr im Spiel T drückt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...

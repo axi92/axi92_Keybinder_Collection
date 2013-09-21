@@ -149,6 +149,11 @@ if (IsPlayerInAnyVehicle() != 1)
 {
 	SendChat("/pickupgun")
 }
+waffe := GetCurrentWeaponId()
+if(waffe == 9)
+{
+	SendChat("/pickwood")
+}
 if(IsPlayerInRangeOfPoint(834, -1855, 8, 3) || IsPlayerInRangeOfPoint(2898.5, 1587.6, 9.8, 3) || IsPlayerInRangeOfPoint(-1479.1, 430.2, 6.1, 3))
 {
 	SendChat("/ablegen mats 500")

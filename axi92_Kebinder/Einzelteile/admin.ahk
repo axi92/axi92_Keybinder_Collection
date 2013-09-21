@@ -19,7 +19,7 @@ if(name == "axi92")
 return
 
 <::
-:?:/cars::
+;~ :?:/cars::
 if(IsChatOpen() == 1 || IsDialogOpen() == 1 ) {
    SendInput, {%A_ThisHotkey%}
    return

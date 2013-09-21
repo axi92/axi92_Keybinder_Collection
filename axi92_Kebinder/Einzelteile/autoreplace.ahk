@@ -7,7 +7,7 @@ IfWinNotActive, GTA:SA:MP
 }
 if(IsChatOpen() == 1) 
 {
-	Suspend Permit
+	;~ Suspend Permit
 	Chat := IsChatOpen()
 	Clipboard_old := Clipboard
 	Send {ctrl down}ac{ctrl up}{Right}
@@ -22,7 +22,7 @@ if(IsChatOpen() == 1)
 	{
 		Send {Backspace %var_length%}%name%
 	}
-	Suspend Off
+	;~ Suspend Off
 	Return
 }
 else 
