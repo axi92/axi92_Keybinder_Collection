@@ -13,7 +13,7 @@ if(IsChatOpen() == 1)
 	Send {ctrl down}ac{ctrl up}{Right}
 	autoreplace := Clipboard
 	Clipboard := Clipboard_old
-	RegExMatch(autoreplace, "(\d*)$" ,var)
+	RegExMatch(autoreplace, "(\d{1,3})$" ,var)
 	var_length := StrLen(var)
 	GetPlayerData()
 	GetPlayerNameById(var, name)
