@@ -180,6 +180,10 @@ if(IsPlayerInRangeOfPoint(-90.7137, -38.4757, 6.4844, 1))
 	SendChat("/get drugs 1")
 }
 SendChat("/anos")
+if(debug == true)
+{
+	AddChatMessage(0xFF0000, "DEBUG: Mittlere Maustaste fertig") 
+}
 return
 
 :?:/ab::
