@@ -1,13 +1,22 @@
 #IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 Tab::
+Suspend Permit
 IfWinNotActive, GTA:SA:MP
 {
    SendInput, {%A_ThisHotkey%}
+   Suspend Off
    return
+}
+if(debug == true)
+{
+	AddChatMessage(0xFF0000, "DEBUG: TAB OK!") 
 }
 if(IsChatOpen() == 1) 
 {
-	;~ Suspend Permit
+	if(debug == true)
+	{
+		AddChatMessage(0xFF0000, "DEBUG: TAB IsChatOpen == 1") 
+	}
 	Chat := IsChatOpen()
 	Clipboard_old := Clipboard
 	Send {ctrl down}ac{ctrl up}{Right}
@@ -22,11 +31,15 @@ if(IsChatOpen() == 1)
 	{
 		Send {Backspace %var_length%}%name%
 	}
-	;~ Suspend Off
+	Suspend Off
 	Return
 }
 else 
 {
-   SendInput, {%A_ThisHotkey%}
-   return
+	SendInput, {%A_ThisHotkey%}
+	if(debug == true)
+	{
+		AddChatMessage(0xFF0000, "DEBUG: TAB IsChatOpen == 0") 
+	}
+	return
 }
