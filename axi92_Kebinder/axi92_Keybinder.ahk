@@ -46,7 +46,7 @@ ddos_stat := false
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 ;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
-;~ SetTimer, Callback_Check_Vehicle, 30
+SetTimer, Callback_Check_Vehicle, 30
 Settimer, toggle_loginlogout, 500
 TextBindTimer(50)
 ;~ SetTimer, Logbackup, 500
@@ -98,7 +98,7 @@ ExitApp
 Suspend On
 Hotkey, Enter, On
 Hotkey, Escape, On
-;~ Hotkey, Tab, On
+Hotkey, Tab, On
 Hotkey, t, Off
 return
 ; Hier wird bestimmt, das wenn ihr im Spiel T drückt, der Keybinder Suspendet (Ausschaltet/Pausiert) und kein Anderer Hotkey Losgehen kann...
