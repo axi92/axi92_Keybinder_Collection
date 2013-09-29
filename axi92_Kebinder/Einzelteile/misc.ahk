@@ -1,20 +1,5 @@
 ﻿#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 
-ä::
-IfWinNotActive, GTA:SA:MP
-{
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
-   SendInput, {%A_ThisHotkey%}
-   return
-}
-Suspend Permit
-SendChat("/ao fass")
-Suspend Off
-return
-
 :?:/aa::
 Suspend Permit
 SendChat("/accept refill")
@@ -135,8 +120,6 @@ if(IsPlayerInRangeOfPoint(2142.3821,2836.0293,10.8203, 2))
 		SendChat("/materials deliver 10")
 }
 SetTimer, Callback_Check_Vehicle, 100
-Settimer, Logbackup, 1000
-Settimer, Zollsystem, 100
 If(Sound = 1)
 {
 	;SoundPlay, %MainDir%\beep.wav
