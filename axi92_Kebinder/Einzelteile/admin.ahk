@@ -335,7 +335,8 @@ if(autofix_status == false)
    autofix_status := true
    SetTimer, Autofix, 1500
    SoundSetWaveVolume, 30
-   AddChatMessage(0xFFFFFF, "Autofix activated!")
+   ;~ AddChatMessage(0xFFFFFF, "Autofix activated!")
+   SendChat("/me 's car is switching to ATTACK Mode!")
    SoundPlay, %MainDir%\attack_mode.mp3 ;K.I.T.T. Attack Mode
 }
 else
