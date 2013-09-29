@@ -42,6 +42,7 @@ DoOnce := 0
 Do_HP_Once := 0
 zahl := 0
 ddos_stat := false
+pd_binds := true
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 ;SetTimer, Sound, 200
@@ -153,17 +154,13 @@ Send t/q{ENTER}
 ;SetTimer, Sound, Off
 ;SetTimer, Callback_Check_Vehicle, Off
 ;Settimer, Speedo, Off
-DestroyAllVisual()
+;~ DestroyAllVisual()
 ;////////////////////////
-Logbackup:
-WinWait, GTA:SA:MP
-WinWaitClose, GTA:SA:MP
-{
-	FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
-	FormatTime, datum, %A_Now%, dd.MM.yyyy
-	FormatTime, zeit, %A_Now%, HH-mm-ss
-	FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
-}
+;~ Logbackup:
+FileCreateDir, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs
+FormatTime, datum, %A_Now%, dd.MM.yyyy
+FormatTime, zeit, %A_Now%, HH-mm-ss
+FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 Suspend Off
 return
 
@@ -225,3 +222,4 @@ return
 #Include Einzelteile/anwalt.ahk
 #Include Einzelteile/functions.ahk
 #Include Einzelteile/autoreplace.ahk
+;~ #Include Einzelteile/pd.ahk
