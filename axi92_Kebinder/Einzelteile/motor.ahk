@@ -46,6 +46,7 @@ if(IsPlayerInAnyVehicle() == 1 || GetVehicleModel() != 510 || GetVehicleModel() 
 			Send, {n up}
 			Sleep, 200
 			SendChat("/motor")
+			SendChat("/lock")
 			;AddChatMessage(0xFF3333, "Handbremse gelöst - Motor AN")
 		}
 	}
