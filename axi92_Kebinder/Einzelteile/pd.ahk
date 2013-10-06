@@ -4,7 +4,7 @@
 Suspend Permit
 if(pd_binds == true)
 {
-   SendInput /arrest 8000 2 1 16000
+   SendChat("/arrest 1 16000")
 }
 Suspend Off
 Return
@@ -13,209 +13,35 @@ Return
 Suspend Permit
 if(pd_binds == true)
 {
-   SendInput /arrest 16000 3 1 32000
+   SendChat("/arrest 1 32000")
 }
 Suspend Off
 Return
 
-:?:/w3::
-Suspend Permit
-SendInput /arrest 24000 6 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/w4::
-Suspend Permit
-SendInput /arrest 32000 9 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
 !1::
-IfWinNotActive, GTA:SA:MP {return}
 Suspend Permit
-SendInput t/arrest 8000 3 1 16000
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
+if(pd_binds == true)
+{
+   IfWinNotActive, GTA:SA:MP
+   {
+      SendInput, {%A_ThisHotkey%}
+      Suspend Off
+      return
+   }
+   if(IsChatOpen() == 1 || IsDialogOpen() == 1)
+   {
+      SendInput, {%A_ThisHotkey%}
+      Suspend Off
+      return
+   }
+   SendChat("/arrest 0 0")
+}
 Suspend Off
 Return
 
-!2::
-IfWinNotActive, GTA:SA:MP {return}
+:?:/pa::
 Suspend Permit
-SendInput t/arrest 16000 6 1 32000
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-!3::
-IfWinNotActive, GTA:SA:MP {return}
-Suspend Permit
-SendInput t/arrest 24000 9 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-!4::
-IfWinNotActive, GTA:SA:MP {return}
-Suspend Permit
-SendInput t/arrest 32000 12 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-!5::
-IfWinNotActive, GTA:SA:MP {return}
-Suspend Permit
-SendInput t/arrest 40000 15 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-!6::
-IfWinNotActive, GTA:SA:MP {return}
-Suspend Permit
-SendInput t/arrest 48000 18 0 0
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a7::
-Suspend Permit
-SendInput /prisonarrest{space}{space}56000 21{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a8::
-Suspend Permit
-SendInput /prisonarrest{space}{space}64000 24{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a9::
-Suspend Permit
-SendInput /prisonarrest{space}{space}72000 27{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a10::
-Suspend Permit
-SendInput /prisonarrest{space}{space}80000 30{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a11::
-Suspend Permit
-SendInput /prisonarrest{space}{space}88000 33{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a12::
-Suspend Permit
-SendInput /prisonarrest{space}{space}96000 36{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a13::
-Suspend Permit
-SendInput /prisonarrest{space}{space}104000 39{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a14::
-Suspend Permit
-SendInput /prisonarrest{space}{space}112000 41{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a15::
-Suspend Permit
-SendInput /prisonarrest{space}{space}120000 44{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a16::
-Suspend Permit
-SendInput /prisonarrest{space}{space}128000 47{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a17::
-Suspend Permit
-SendInput /prisonarrest{space}{space}136000 50{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a18::
-Suspend Permit
-SendInput /prisonarrest{space}{space}144000 53{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a19::
-Suspend Permit
-SendInput /prisonarrest{space}{space}152000 56{home}{Right 14}
-Suspend On
-Hotkey, Enter, On
-Hotkey, Escape, On
-Suspend Off
-Return
-
-:?:/a20::
-Suspend Permit
-SendInput /prisonarrest{space}{space}160000 59{home}{Right 14}
+SendInput /prisonarrest{space}
 Suspend On
 Hotkey, Enter, On
 Hotkey, Escape, On
