@@ -19,12 +19,13 @@ IfNotExist, %MainDir%\beep.wav
 {
 	UrlDownloadToFile, http://www.axi92.at/download/keybinder/medic/sound/beep.wav, %MainDir%\beep.wav
 }
+
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
 SoundSetWaveVolume, +100
 
 ;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
-debug := false
+debug := falset
 version := 0.5
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
@@ -138,7 +139,6 @@ SendChat("/motor       3")
 return
 
 Callback_OnExit:
-DestroyAllVisual()
 ExitApp
 return
 
@@ -162,6 +162,7 @@ FormatTime, datum, %A_Now%, dd.MM.yyyy
 FormatTime, zeit, %A_Now%, HH-mm-ss
 FileCopy, %A_MyDocuments%\GTA San Andreas User Files\SAMP\chatlog.txt, %A_MyDocuments%\GTA San Andreas User Files\SAMP\Chatlogs\Chatlog vom %datum% um %zeit% Uhr.txt, 0
 Suspend Off
+;ExitApp
 return
 
 :?:/togloginlogout::
@@ -189,7 +190,7 @@ if(togloginlogout == false)
 		Sleep, 200
 		SetTimer, Sound, 100
 		Sleep, 200
-		Settimer, Zollsystem, 100
+		;~ Settimer, Zollsystem, 100
 		Sleep, 200
 		SetTimer, Callback_Check_Vehicle, 30
 	}
