@@ -198,6 +198,10 @@ if(IsPlayerInAnyVehicle() == 1)
    {
       SendChat("/attachobjecttovehicle 19419 0 1.2 1.7 0 0 0")
    }   
+   if(GetVehicleModel() == 403) ;Linerunner
+   {
+      SendChat("/attachobjecttovehicle 19419 0 1 1.5 0 0 0")
+   }   
 }
 Suspend, Off
 return
