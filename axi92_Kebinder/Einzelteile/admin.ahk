@@ -33,14 +33,14 @@ return
 :?:/jobid::
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Jobs<<", "ID1: Detektiv`nID2: Anwalt`nID3: Hure`nID4: Drogendealer`nID5: Autodieb`nID6: Wanted-Hacker`nID7: Mechaniker`nID8: Bodyguard`nID9: Waffendealer`nID10: Bauer`nID:11: Hotdog-Verkäufer`nID12: Arbeitslos`nID13: Arbeitslos`nID:14: Tuner`nID15: Arbeitslos`nID16: Trucker`nID17: Taschendieb`nID18: Holzfäller", "Beenden")
+ShowDialog(0, ">>Jobs<<", "ID1: Detektiv`nID2: Anwalt`nID3: Müllman`nID4: Drogendealer`nID5: Autodieb`nID6: Wanted-Hacker`nID7: Mechaniker`nID8: Bodyguard`nID9: Waffendealer`nID10: Bauer`nID:11: Hotdog-Verkäufer`nID12: Arbeitslos`nID13: Arbeitslos`nID:14: Tuner`nID15: Arbeitslos`nID16: Trucker`nID17: Taschendieb`nID18: Holzfäller", "Beenden")
 Suspend, Off
 return
 
 :?:/frakid::
 Suspend, Permit
 Sleep, 500
-ShowDialog(0, ">>Fraktion ID's<<", "ID1: Admin`nID2: PHD`nID3: Army`nID4: Medic`nID5: LCN`nID6: Yakuza`nID7: FBI`nID8: Hitman`nID9: News Reporter`nID10: Terroristen`nID:11: Fahrschule`nID12: Bürgermeister`nID13: Ordnungsamt`nID:14: LSPD`nID15: Wheelman`nID16: SFPD`nID17: RM`nID18: Aztecas`nID19: Groove`nID20: Ballas`nID21: WCC`nID22: RS`nID23: RS`nID24: Vagos", "Beenden")
+ShowDialog(0, ">>Fraktion ID's<<", "ID1: Admin`nID2: PHD`nID3: Army`nID4: Medic`nID5: LCN`nID6: Yakuza`nID7: FBI`nID8: Hitman`nID9: News Reporter`nID10: Terroristen`nID:11: Fahrschule`nID12: Bürgermeister`nID13: Ordnungsamt`nID:14: LSPD`nID15: Wheelman`nID16: SFPD`nID17: RM`nID18: Mara Salva Trucha`nID19: Groove`nID20: Ballas`nID21: WCC`nID22: RS`nID23: RS`nID24: Vagos", "Beenden")
 Suspend, Off
 return
 
@@ -202,6 +202,10 @@ if(IsPlayerInAnyVehicle() == 1)
    {
       SendChat("/attachobjecttovehicle 19419 0 1 1.5 0 0 0")
    }   
+   if(GetVehicleModel() == 522) ;NRG
+   {
+      SendChat("/attachobjecttovehicle 19419 0 -1.1 0.55 0 0 0")
+   }      
 }
 Suspend, Off
 return
@@ -353,7 +357,7 @@ SoundSetWaveVolume, 10
 return
 
 Autofix:
-if(GetVehicleHealth() < 900 AND IsPlayerInAnyVehicle() == 1)
+if(GetVehicleHealth() < 600 AND IsPlayerInAnyVehicle() == 1)
 {
    SendChat("/fixveh")
 }
@@ -393,5 +397,21 @@ return
 :?:/froschcar::
 Suspend Permit
 SendChat("/acolorcar 226 226")
+Suspend Off
+return
+
+
+:?:/frage::
+Suspend Permit
+if(frage == true)
+{
+   SendChat("/setplayerattachedobject 1 0 2 0.5 0 0 0 90 180 1 1 1")
+   frage:= false
+}
+else
+{
+   SendChat("/setplayerattachedobject 1 19800 2 0.5 0 0 0 90 180 1 1 1")
+   frage:= true
+}
 Suspend Off
 return
