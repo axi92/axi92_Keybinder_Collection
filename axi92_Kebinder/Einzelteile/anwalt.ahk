@@ -21,7 +21,7 @@ FormatNumberWithThousandSeparator(Number1,DS,TS)
   
 Update:
 Gui 1:Submit, NoHide
-preis:= FormatNumberWithThousandSeparator(Ceil(sekunden/60/6*100000),",",".")
+preis:= FormatNumberWithThousandSeparator(Ceil((sekunden/60/6*100000)/15),",",".")
 dauer:= Round((sekunden/6), 0)
 ;MsgBox, %preis% : %sekunden%
 preis:= preis "$ und " dauer " Sekunden verbleibend"
