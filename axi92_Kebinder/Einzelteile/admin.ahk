@@ -356,6 +356,20 @@ Suspend Off
 SoundSetWaveVolume, 10
 return
 
+:?:/autotrack::
+Suspend Permit
+if(trackify_is_on == true)
+{
+   trackify_is_on := false
+}
+else
+{
+   trackify_is_on := true
+}
+AddChatMessage(0xFF0000, "Info: {FFFFFF}" trackify_is_on)
+Suspend Off
+return
+
 Autofix:
 if(GetVehicleHealth() < 600 AND IsPlayerInAnyVehicle() == 1)
 {
@@ -378,7 +392,15 @@ return
 :?:/brtime::
 Suspend Permit
 br_ElapsedTime := A_TickCount - br_StartTime
-AddChatMessage(0xFF3333, "BR vergangene Zeit: " br_ElapsedTime "ms Timer derzeit: " A_TickCount)
+AddChatMessage(0xFF3333, "BR vergangene Zeit: " ms2his(br_ElapsedTime) "ms Timer derzeit: " ms2his(A_TickCount))
+AddChatMessage(0xFF3333, "/brstop um Timer zu clearen")
+Suspend Off
+return
+
+:?:/brstop::
+Suspend Permit
+br_ElapsedTime := 0
+AddChatMessage(0xFF3333, "BR Timer gecleared: " ms2his(br_ElapsedTime) )
 Suspend Off
 return
 
