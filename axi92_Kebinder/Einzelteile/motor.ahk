@@ -1,7 +1,6 @@
 ﻿IfWinNotActive, GTA:SA:MP
 return
 
-!E::
 ^::
 IfWinNotActive, GTA:SA:MP
 {
