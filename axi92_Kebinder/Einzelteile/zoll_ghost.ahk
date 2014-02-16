@@ -27,6 +27,11 @@ if(IsPlayerInRangeOfPoint(2142.3315,2836.1289,10.8203, 2))
 	SendChat("/materials deliver 10")
 	Sleep, 250
 }
+if(IsPlayerInRangeOfPoint(260.0, 1386.0, 11.0, 5)) 
+{
+	SendChat("/loadoel 1000")
+	Sleep, 250
+}
 if(IsPlayerInRangeOfPoint(-1113.3816,-1620.8601,76.3739, 2)) ;
 {
 	SendChat("/materials get 10")
