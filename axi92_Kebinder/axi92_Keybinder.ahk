@@ -25,7 +25,7 @@ FileCreateDir, %MainDir%
 SoundSetWaveVolume, +100
 
 ;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
-debug := falset
+debug := false
 version := 0.5
 SpeicherDatei := MainDir . "\Datei.ini"
 ini := "Datei.ini"
@@ -44,6 +44,11 @@ Do_HP_Once := 0
 zahl := 0
 ddos_stat := false
 pd_binds := true
+open_1 := true
+open_2 := true
+open_3 := true
+open_4 := true
+open_5 := true
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 ;SetTimer, Sound, 200
