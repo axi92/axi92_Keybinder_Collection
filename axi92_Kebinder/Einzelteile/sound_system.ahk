@@ -55,5 +55,12 @@ if(A_Min == 15 AND A_Sec == 01)
 	SendChat("/startlotto")
 	Sleep, 5000
 }
+trackify_minute = A_Min
+trackify_minute=trackify_minute/2
+if (trackify_minute is Integer AND A_Sec == 01 AND trackify_is_on == true)
+{
+	;~ SendChat("/trackify")
+	Sleep, 5000
+}
 ;~ AddChatMessage(0xFFFFFF, A_Min ":" A_Sec)
 return
