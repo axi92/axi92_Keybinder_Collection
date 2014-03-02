@@ -44,7 +44,7 @@ else
 	return
 }
 
-.::
+^Tab::
 Suspend Permit
 IfWinNotActive, GTA:SA:MP
 {
