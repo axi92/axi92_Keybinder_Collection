@@ -3,7 +3,7 @@
 #UseHook
 #NoEnv
 #Hotstring EndChars `n
-MainDir := A_MyDocuments "\axi92_Keybinder_z"
+MainDir := A_MyDocuments "\axi92_Keybinder"
 IfNotExist, %MainDir%
 	FileCreateDir, %MainDir%
 FileCopy, Einzelteile/API.dll, %MainDir%/API.dll
@@ -54,7 +54,7 @@ open_5 := true
 ;SetTimer, Sound, 200
 ;Settimer, Playerheal, 1000
 SetTimer, Callback_Check_Vehicle, 30
-;~ Settimer, toggle_loginlogout, 500
+Settimer, toggle_loginlogout, 500
 TextBindTimer(50)
 ;~ SetTimer, Logbackup, 500
 OnExit, Callback_OnExit
@@ -89,6 +89,7 @@ if (version < newver AND update == true)
 FileInstall, Einzelteile/API.dll, %MainDir%/API.dll, 1
 FileInstall, Einzelteile/sounds/attack_mode.mp3, %MainDir%/attack_mode.mp3
 FileInstall, Einzelteile/sounds/punch.mp3, %MainDir%/punch.mp3
+#Include Einzelteile/memlib.ahk
 #Include Einzelteile/memlib.ahk
 #Include Einzelteile/API.ahk
 #Include Einzelteile/GUI_PD.ahk
@@ -128,21 +129,6 @@ Hotkey, Enter, Off
 Hotkey, Escape, Off
 return
 
-Motor1:
-SendChat("/motor 1")
-;AddChatMessage(0xFF3333, "1")
-return
-
-Motor2:
-SendChat("/motor   2")
-;AddChatMessage(0xFF3333, "2")
-return
-
-Motor3:
-SendChat("/motor       3")
-;~ ;AddChatMessage(0xFF3333, "3")   2624  31426
-return
-
 Callback_OnExit:
 ExitApp
 return
@@ -170,47 +156,49 @@ Suspend Off
 ;ExitApp
 return
 
-;~ :?:/togloginlogout::
-;~ toggle_loginlogout:
-;~ IfWinNotActive, GTA:SA:MP
-;~ {
-   ;~ return
-;~ }
-;~ if(togloginlogout == false)
-;~ {	
-	;~ if(IsPlayerFrozen() == 1)
-	;~ {
-	;~ }
-	;~ else if(IsPlayerFrozen() == 0)
-	;~ {
-		;~ if(debug == true)
-		;~ {
-			;~ AddChatMessage(0xFF0000, "DEBUG: Eingeloggt") 
-		;~ }
-		;~ togloginlogout := true
-		;~ SendChat("/togloginlogout")
-		;~ Settimer, toggle_loginlogout, off
-		;~ Sleep, 200
-		;~ SetTimer, OnPlayerTakeDmg, 100
-		;~ Sleep, 200
-		;~ SetTimer, Sound, 100
-		;~ Sleep, 200
-		;~ SetTimer, Callback_Check_Vehicle, 30
-	;~ }
-;~ /*
-	;~ GetChatLine(0, str)
-	;~ if InStr(str, "Bitte warten...")
-	;~ {
-		;~ SendChat("/togloginlogout")
-		;~ togloginlogout := true
-		;~ Settimer, toggle_loginlogout, off
-		;~ SetTimer, OnPlayerTakeDmg, 100
-		;~ Sleep, 500
-		;~ SetTimer, Sound, 100
-	;~ }
-;~ */
-;~ }
-;~ return
+:?:/togloginlogout::
+toggle_loginlogout:
+IfWinNotActive, GTA:SA:MP
+{
+   return
+}
+if(togloginlogout == false)
+{	
+	if(IsPlayerFrozen() == 1)
+	{
+	}
+	else if(IsPlayerFrozen() == 0)
+	{
+		if(debug == true)
+		{
+			AddChatMessage(0xFF0000, "DEBUG: Eingeloggt") 
+		}
+		togloginlogout := true
+		SendChat("/togloginlogout")
+		Settimer, toggle_loginlogout, off
+		Sleep, 200
+		SetTimer, OnPlayerTakeDmg, 100
+		Sleep, 200
+		SetTimer, Sound, 100
+		Sleep, 200
+		;~ Settimer, Zollsystem, 100
+		Sleep, 200
+		SetTimer, Callback_Check_Vehicle, 30
+	}
+/*
+	GetChatLine(0, str)
+	if InStr(str, "Bitte warten...")
+	{
+		SendChat("/togloginlogout")
+		togloginlogout := true
+		Settimer, toggle_loginlogout, off
+		SetTimer, OnPlayerTakeDmg, 100
+		Sleep, 500
+		SetTimer, Sound, 100
+	}
+*/
+}
+return
 
 ;~ #Include Einzelteile/zoll-timer.ahk
 #Include Einzelteile/zoll_ghost.ahk
@@ -221,7 +209,7 @@ return
 #Include Einzelteile/admin.ahk
 #Include Einzelteile/motor.ahk
 #Include Einzelteile/tacho.ahk
-#Include Einzelteile/heal_hud.ahk
+;~ #Include Einzelteile/heal_hud.ahk
 #Include Einzelteile/beschwerden.ahk
 #Include Einzelteile/anwalt.ahk
 #Include Einzelteile/functions.ahk
