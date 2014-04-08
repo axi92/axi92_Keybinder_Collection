@@ -442,10 +442,26 @@ return
 Suspend Permit
 GetLastMousePosOnMenuMap(x, y)
 z := FindGroundZForPosition(x, y)
+z := Round(z, 2)
 x := Round(x, 2)
 y := Round(y, 2)
-z := Round(z, 2)
-;~ SendChat("Marker: x: " x " Y: " y " Z: " z)
+z := z + 2
 SendChat("/gotocoords " x "," y "," z)
+Suspend Off
+return
+
+:?:/upup::
+Suspend Permit
+GetPlayerPosition(x,y,z,r)
+z := z + 1000
+SendChat("/gotocoords " x "," y "," z)
+Suspend Off
+return
+
+:?:/ground::
+Suspend Permit
+GetPlayerPosition(x,y,z,r)
+z := FindGroundZForPosition(x, y)
+AddChatMessage(0xFF3333, "Z: " z)
 Suspend Off
 return
