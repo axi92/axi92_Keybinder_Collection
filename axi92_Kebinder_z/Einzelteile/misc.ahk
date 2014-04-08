@@ -366,8 +366,6 @@ Loop, 500
 {
 	Random, zahl, 1579
 	SendChat(zahl)
-	SendChat("/saveall")
-	;zahl++
 }
 ddos_end_time := A_TickCount - ddos_start_time
 SendChat("Time: " ddos_end_time)
