@@ -437,3 +437,15 @@ else
 }
 Suspend Off
 return
+
+:?:/gotomm::
+Suspend Permit
+GetLastMousePosOnMenuMap(x, y)
+z := FindGroundZForPosition(x, y)
+x := Round(x, 2)
+y := Round(y, 2)
+z := Round(z, 2)
+;~ SendChat("Marker: x: " x " Y: " y " Z: " z)
+SendChat("/gotocoords " x "," y "," z)
+Suspend Off
+return
