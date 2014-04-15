@@ -5,7 +5,7 @@ IfWinNotActive, GTA:SA:MP
    SendInput, {%A_ThisHotkey%}
    return
 }
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
+if(IsChatOpen() == 1 || IsDialogOpen() == 1  || IsMenuOpen() == 1 || IsPlayerInAnyVehicle() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -19,8 +19,7 @@ if(name == "axi92")
 return
 
 <::
-;~ :?:/cars::
-if(IsChatOpen() == 1 || IsDialogOpen() == 1 ) {
+if(IsChatOpen() == 1 || IsDialogOpen() == 1  || IsMenuOpen() == 1) {
    SendInput, {%A_ThisHotkey%}
    return
 }
@@ -83,7 +82,7 @@ return
 
 :?:/save-all::
 Suspend, Permit
-SendChat("/cnnn 3 ~n~~n~~r~Speicherung! Kann zu laggs fuehren!")
+SendChat("/cnnn 3 ~n~~n~~r~Speicherung!")
 AddChatMessage(0xFF3333, "Speicherung beginnt!")
 Sleep, 1000
 SendChat("/saveall")
@@ -296,7 +295,7 @@ if(autofind_status == false)
    Input,aufnahme_autofind,V I M T10,{ENTER},*
    If(aufnahme_autofind != "" OR aufnahme_autofind != 0)
    {
-      SetTimer, Autofind, 4000
+      SetTimer, Autofind, 4500
    }
    else
    {
