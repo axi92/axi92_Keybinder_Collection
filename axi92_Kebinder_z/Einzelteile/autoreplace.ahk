@@ -21,11 +21,19 @@ if(IsChatOpen() == 1)
 	Clipboard_old := Clipboard
 	Send {ctrl down}ac{ctrl up}{Right}
 	autoreplace := Clipboard
+	if(debug == true)
+	{
+		AddChatMessage(0xFF0000, "DEBUG: autoreplace " autoreplace) 
+	}
 	Clipboard := Clipboard_old
 	RegExMatch(autoreplace, "(\d{1,3})$" ,var)
 	var_length := StrLen(var)
 	UpdateServerData()
 	GetPlayerNameById(var, name)
+	if(debug == true)
+	{
+		AddChatMessage(0xFF0000, "DEBUG: ID " var " Name: " name) 
+	}
 	;~ SendChat(var_length)
 	if(name != -1)
 	{
