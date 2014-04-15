@@ -49,6 +49,7 @@ open_2 := true
 open_3 := true
 open_4 := true
 open_5 := true
+frakid := 4
 
 ;TIMER - TIMER - TIMER - TIMER - TIMER - TIMER
 ;SetTimer, Sound, 200
@@ -216,3 +217,4 @@ return
 #Include Einzelteile/autoreplace.ahk
 ;~ #Include Einzelteile/alejandro_surelli.ahk
 ;~ #Include Einzelteile/pd.ahk
+#Include Einzelteile/medic_binds.ahk
