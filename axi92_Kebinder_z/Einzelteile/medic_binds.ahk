@@ -319,43 +319,43 @@ if(IsChatOpen() == 1 || IsDialogOpen() == 1) {
 }
 Suspend Permit
 SendChat("/duty")
-Sleep, 500
-GetChatLine(0, str0)
-dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
-   if InStr(str0, dutystr)
-   {
-      SendChat("/showme")
-      Loopstart1:
-      if (IsDialogOpen() != 1)
-      {
-         Sleep, 500
-         Goto, Loopstart1
-      }
-      else
-      {
-         Sleep, 100
-         Send {DOWN 3}
-         Sleep, 100
-         Send {ENTER}
-      }
-   }  
-   else
-   {
-      SendChat("/showme")
-      Loopstart2:
-      if (IsDialogOpen() != 1)
-      {
-         Sleep, 500
-         Goto, Loopstart2
-      }
-      else
-      {
-         Sleep, 100
-         Send {DOWN 6}
-         Sleep, 100
-         Send {ENTER}
-      }
-   }  
+;~ Sleep, 500
+;~ GetChatLine(0, str0)
+;~ dutystr := "Du bist nun im Dienst als Medic und wirst Notrufe empfangen."
+   ;~ if InStr(str0, dutystr)
+   ;~ {
+      ;~ SendChat("/showme")
+      ;~ Loopstart1:
+      ;~ if (IsDialogOpen() != 1)
+      ;~ {
+         ;~ Sleep, 500
+         ;~ Goto, Loopstart1
+      ;~ }
+      ;~ else
+      ;~ {
+         ;~ Sleep, 100
+         ;~ Send {DOWN 3}
+         ;~ Sleep, 100
+         ;~ Send {ENTER}
+      ;~ }
+   ;~ }  
+   ;~ else
+   ;~ {
+      ;~ SendChat("/showme")
+      ;~ Loopstart2:
+      ;~ if (IsDialogOpen() != 1)
+      ;~ {
+         ;~ Sleep, 500
+         ;~ Goto, Loopstart2
+      ;~ }
+      ;~ else
+      ;~ {
+         ;~ Sleep, 100
+         ;~ Send {DOWN 6}
+         ;~ Sleep, 100
+         ;~ Send {ENTER}
+      ;~ }
+   ;~ }  
 ;~ Sleep, 300
 ;~ AddChatMessage(0xFF3366, "                                             ")
 ;~ AddChatMessage(0xFF3366, "                                             ")
