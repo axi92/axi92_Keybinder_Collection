@@ -27,6 +27,8 @@ Gui, 1:Add,   text,   cblack x200 y125 +backgroundtrans, /ab = Anrufabsage, verw
 Gui, 1:Add,   text,   cblack x200 y145 +backgroundtrans, /lgc = /listgangcars
 Gui, 1:Add,   text,   cblack x200 y165 +backgroundtrans, XXX
 
+Gui, 1:Add,   Button,        x200 y200 w100 h25 gsamp_optimizer, SAMP-Optimize
+
 Gui, 1:Show,,Version: %version%
 return
 
