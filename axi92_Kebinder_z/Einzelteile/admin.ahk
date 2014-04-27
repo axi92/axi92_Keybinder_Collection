@@ -457,10 +457,9 @@ SendChat("/gotocoords " x "," y "," z)
 Suspend Off
 return
 
-:?:/ground::
+:?:/pos::
 Suspend Permit
 GetPlayerPosition(x,y,z,r)
-z := FindGroundZForPosition(x, y)
-AddChatMessage(0xFF3333, "Z: " z)
+AddChatMessage(0xFF3333, "X: " x " Y: " y " Z: " z)
 Suspend Off
 return
