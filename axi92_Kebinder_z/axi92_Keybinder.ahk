@@ -22,7 +22,7 @@ IfNotExist, %MainDir%\beep.wav
 
 SetWorkingDir, %MainDir%
 FileCreateDir, %MainDir%
-SoundSetWaveVolume, +100
+;~ SoundSetWaveVolume, +100
 
 ;VAR - VAR - VAR - VAR - VAR - VAR - VAR - VAR
 debug := false
@@ -218,3 +218,4 @@ return
 ;~ #Include Einzelteile/alejandro_surelli.ahk
 ;~ #Include Einzelteile/pd.ahk
 #Include Einzelteile/medic_binds.ahk
+#Include Einzelteile/samp_optimizer.ahk
