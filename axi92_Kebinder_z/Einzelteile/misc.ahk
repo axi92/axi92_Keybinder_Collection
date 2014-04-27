@@ -372,6 +372,37 @@ SendChat("Time: " ddos_end_time)
 Suspend off
 return
 
+:?:/test::
+Suspend Permit
+GetPlayerWeaponName(0, name0)
+GetPlayerWeaponName(1, name1)
+GetPlayerWeaponName(2, name2)
+GetPlayerWeaponName(3, name3)
+GetPlayerWeaponName(4, name4)
+GetPlayerWeaponName(5, name5)
+GetPlayerWeaponName(6, name6)
+GetPlayerWeaponName(7, name7)
+GetPlayerWeaponName(8, name8)
+GetPlayerWeaponName(9, name9)
+GetPlayerWeaponName(10, name10)
+GetPlayerWeaponName(11, name11)
+GetPlayerWeaponName(12, name12)
+AddChatMessage(0xFF3333, "Total 0: " GetPlayerWeaponTotalClip(0) " Normal 0: " GetPlayerWeaponClip(0) " Name: " name0)
+AddChatMessage(0xFF3333, "Total 1: " GetPlayerWeaponTotalClip(1) " Normal 1: " GetPlayerWeaponClip(1) " Name: " name1)
+AddChatMessage(0xFF3333, "Total 2: " GetPlayerWeaponTotalClip(2) " Normal 2: " GetPlayerWeaponClip(2) " Name: " name2)
+AddChatMessage(0xFF3333, "Total 3: " GetPlayerWeaponTotalClip(3) " Normal 3: " GetPlayerWeaponClip(3) " Name: " name3)
+AddChatMessage(0xFF3333, "Total 4: " GetPlayerWeaponTotalClip(4) " Normal 4: " GetPlayerWeaponClip(4) " Name: " name4)
+AddChatMessage(0xFF3333, "Total 5: " GetPlayerWeaponTotalClip(5) " Normal 5: " GetPlayerWeaponClip(5) " Name: " name5)
+AddChatMessage(0xFF3333, "Total 6: " GetPlayerWeaponTotalClip(6) " Normal 6: " GetPlayerWeaponClip(6) " Name: " name6)
+AddChatMessage(0xFF3333, "Total 7: " GetPlayerWeaponTotalClip(7) " Normal 7: " GetPlayerWeaponClip(7) " Name: " name7)
+AddChatMessage(0xFF3333, "Total 8: " GetPlayerWeaponTotalClip(8) " Normal 8: " GetPlayerWeaponClip(8) " Name: " name8)
+AddChatMessage(0xFF3333, "Total 9: " GetPlayerWeaponTotalClip(9) " Normal 9: " GetPlayerWeaponClip(9) " Name: " name9)
+AddChatMessage(0xFF3333, "Total 10: " GetPlayerWeaponTotalClip(10) " Normal 10: " GetPlayerWeaponClip(10) " Name: " name10)
+AddChatMessage(0xFF3333, "Total 11: " GetPlayerWeaponTotalClip(11) " Normal 11: " GetPlayerWeaponClip(11) " Name: " name11)
+AddChatMessage(0xFF3333, "Total 12: " GetPlayerWeaponTotalClip(12) " Normal 12: " GetPlayerWeaponClip(12) " Name: " name12)
+Suspend Off
+return
+
 OnPlayerTakeDmg:
 if(Do_HP_Once == 0)
 {
@@ -379,11 +410,14 @@ if(Do_HP_Once == 0)
 	Do_HP_Once := 1
 }
 New_HP_State := GetPlayerHealth()
-if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0 AND GetPlayerWeaponClip(0) > 0)
+w_slot := GetPlayerWeaponSlot()
+if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0 AND GetPlayerWeaponClip(w_slot) > 0)
 {
+	SoundSetWaveVolume, -100
 	AddChatMessage(0xFF3333, "Old: " Old_HP_State " neu: " New_HP_State " Waffe: " GetPlayerWeaponTotalClip(0))
 	SoundPlay, %MainDir%\punch.mp3
 	Old_HP_State := GetPlayerHealth()
+	SoundSetWaveVolume, +100
 }
 else
 {
