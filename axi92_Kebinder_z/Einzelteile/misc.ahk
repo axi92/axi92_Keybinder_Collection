@@ -1,4 +1,4 @@
-﻿#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
+#IfWinActive, GTA:SA:MP ; Folgende Hotkeys Funktionieren nur wenn GTA SA:MP ge�ffnet ist
 
 :?:/aa::
 Suspend Permit
@@ -413,11 +413,11 @@ New_HP_State := GetPlayerHealth()
 w_slot := GetPlayerWeaponSlot()
 if(Old_HP_State-2 > New_HP_State AND New_HP_State != 0 AND GetPlayerWeaponClip(w_slot) > 0)
 {
-	SoundSetWaveVolume, -100
+	;SoundSetWaveVolume, -100
 	AddChatMessage(0xFF3333, "Old: " Old_HP_State " neu: " New_HP_State " Waffe: " GetPlayerWeaponTotalClip(0))
 	SoundPlay, %MainDir%\punch.mp3
 	Old_HP_State := GetPlayerHealth()
-	SoundSetWaveVolume, +100
+	;SoundSetWaveVolume, +100
 }
 else
 {

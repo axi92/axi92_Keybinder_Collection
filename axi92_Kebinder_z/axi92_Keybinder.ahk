@@ -217,5 +217,5 @@ return
 #Include Einzelteile/autoreplace.ahk
 ;~ #Include Einzelteile/alejandro_surelli.ahk
 ;~ #Include Einzelteile/pd.ahk
-#Include Einzelteile/medic_binds.ahk
+;~ #Include Einzelteile/medic_binds.ahk
 #Include Einzelteile/samp_optimizer.ahk
