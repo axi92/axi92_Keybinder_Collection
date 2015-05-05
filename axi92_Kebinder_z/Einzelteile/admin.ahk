@@ -341,7 +341,7 @@ if(autofix_status == false)
 {
    autofix_status := true
    SetTimer, Autofix, 1500
-   SoundSetWaveVolume, 30
+   ;~ SoundSetWaveVolume, 30
    ;~ AddChatMessage(0xFFFFFF, "Autofix activated!")
    SendChat("/me 's car is switching to ATTACK Mode!")
    SoundPlay, %MainDir%\attack_mode.mp3 ;K.I.T.T. Attack Mode
@@ -352,7 +352,7 @@ else
    AddChatMessage(0xFFFFFF, "Autofix deactivated!")
 }
 Suspend Off
-SoundSetWaveVolume, 10
+;~ SoundSetWaveVolume, 10
 return
 
 :?:/autotrack::
@@ -437,17 +437,17 @@ else
 Suspend Off
 return
 
-:?:/gotomm::
-Suspend Permit
-GetLastMousePosOnMenuMap(x, y)
-z := FindGroundZForPosition(x, y)
-z := Round(z, 2)
-x := Round(x, 2)
-y := Round(y, 2)
-z := z + 2
-SendChat("/gotocoords " x "," y "," z)
-Suspend Off
-return
+;~ :?:/gotomm::
+;~ Suspend Permit
+;~ GetLastMousePosOnMenuMap(x, y)
+;~ z := FindGroundZForPosition(x, y)
+;~ z := Round(z, 2)
+;~ x := Round(x, 2)
+;~ y := Round(y, 2)
+;~ z := z + 2
+;~ SendChat("/gotocoords " x "," y "," z)
+;~ Suspend Off
+;~ return
 
 :?:/upup::
 Suspend Permit
@@ -461,5 +461,69 @@ return
 Suspend Permit
 GetPlayerPosition(x,y,z,r)
 AddChatMessage(0xFF3333, "X: " x " Y: " y " Z: " z)
+Suspend Off
+return
+
+:?:/ssultan::
+Suspend Permit
+WriteMemory(1, 0xB3DB9E,"GTA:SA:MP")
+Suspend Off
+return
+
+:?:/randhouse::
+randhouse:
+Suspend Permit
+Random, randhouse , 0, 112
+SendChat("Random ID: "randhouse)
+Suspend Off
+return
+
+:?:/randtanke::
+randtanke:
+Suspend Permit
+Random, randhouse , 0, 21
+SendChat("Random ID: "randhouse)
+Suspend Off
+return
+
+:?:/randbiz::
+randbiz:
+Suspend Permit
+Random, randhouse , 0, 23
+SendChat("Random ID: "randhouse)
+Suspend Off
+return
+
+:?:/randsbiz::
+randsbiz:
+Suspend Permit
+Random, randhouse , 0, 15
+SendChat("Random ID: "randhouse)
+Suspend Off
+return
+
+:?:/randox::
+Suspend Permit
+Random, randox , 0, 3
+if (randox == 0)
+{
+   SendChat("Random Haus")
+   Goto randhouse
+}
+elseif (randox == 1)
+{  
+   SendChat("Random Tankstelle")
+   goto randtanke
+}
+elseif (randox == 2)
+{  
+   SendChat("Random Biz")
+   Goto randbiz
+}
+elseif (randox == 3)
+{  
+   SendChat("Random SBiz")
+   Goto randsbiz
+}
 Suspend Off
 return

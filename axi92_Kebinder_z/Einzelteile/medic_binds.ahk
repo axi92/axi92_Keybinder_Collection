@@ -512,3 +512,4 @@ if(GetVehicleModelId() == 416)
    SendChat("/attachobjecttovehicle 19419 0 -3.2 1.75 0 0 0")
    Sleep, 500
 }
+return
